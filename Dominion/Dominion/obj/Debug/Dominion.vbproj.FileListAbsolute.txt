@@ -1,0 +1,11 @@
+c:\users\enricotj\documents\visual studio 2013\Projects\Dominion\Dominion\bin\Debug\Dominion.exe.config
+c:\users\enricotj\documents\visual studio 2013\Projects\Dominion\Dominion\bin\Debug\Dominion.exe
+c:\users\enricotj\documents\visual studio 2013\Projects\Dominion\Dominion\bin\Debug\Dominion.pdb
+c:\users\enricotj\documents\visual studio 2013\Projects\Dominion\Dominion\bin\Debug\Dominion.xml
+c:\users\enricotj\documents\visual studio 2013\Projects\Dominion\Dominion\obj\Debug\Dominion.FormCreate.resources
+c:\users\enricotj\documents\visual studio 2013\Projects\Dominion\Dominion\obj\Debug\Dominion.FormGame.resources
+c:\users\enricotj\documents\visual studio 2013\Projects\Dominion\Dominion\obj\Debug\Dominion.Resources.resources
+c:\users\enricotj\documents\visual studio 2013\Projects\Dominion\Dominion\obj\Debug\Dominion.vbproj.GenerateResource.Cache
+c:\users\enricotj\documents\visual studio 2013\Projects\Dominion\Dominion\obj\Debug\Dominion.exe
+c:\users\enricotj\documents\visual studio 2013\Projects\Dominion\Dominion\obj\Debug\Dominion.xml
+c:\users\enricotj\documents\visual studio 2013\Projects\Dominion\Dominion\obj\Debug\Dominion.pdb
