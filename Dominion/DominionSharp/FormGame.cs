@@ -16,5 +16,20 @@ namespace DominionSharp
         {
             InitializeComponent();
         }
+
+        public String getLabel3Text()
+        {
+            return Label3.Text;
+        }
+
+        public String getLabel2Text()
+        {
+            return Label2.Text;
+        }
+
+        public String getLabel1Text()
+        {
+            return Label1.Text;
+        }
     }
 }

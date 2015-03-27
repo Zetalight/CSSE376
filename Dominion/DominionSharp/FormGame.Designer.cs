@@ -45,9 +45,11 @@
             // GroupBox1
             // 
             this.GroupBox1.Controls.Add(this.Button2);
-            this.GroupBox1.Location = new System.Drawing.Point(12, 12);
+            this.GroupBox1.Location = new System.Drawing.Point(16, 15);
+            this.GroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(600, 267);
+            this.GroupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupBox1.Size = new System.Drawing.Size(800, 329);
             this.GroupBox1.TabIndex = 8;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Supply";
@@ -56,9 +58,10 @@
             // 
             this.Button2.BackgroundImage = global::DominionSharp.Properties.Resources.chapel;
             this.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Button2.Location = new System.Drawing.Point(6, 19);
+            this.Button2.Location = new System.Drawing.Point(8, 23);
+            this.Button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(170, 242);
+            this.Button2.Size = new System.Drawing.Size(227, 298);
             this.Button2.TabIndex = 0;
             this.Button2.UseVisualStyleBackColor = true;
             // 
@@ -66,37 +69,41 @@
             // 
             this.tabsPlayers.Controls.Add(this.TabPage1);
             this.tabsPlayers.Controls.Add(this.TabPage2);
-            this.tabsPlayers.Location = new System.Drawing.Point(12, 314);
+            this.tabsPlayers.Location = new System.Drawing.Point(16, 386);
+            this.tabsPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabsPlayers.Name = "tabsPlayers";
             this.tabsPlayers.SelectedIndex = 0;
-            this.tabsPlayers.Size = new System.Drawing.Size(600, 276);
+            this.tabsPlayers.Size = new System.Drawing.Size(800, 340);
             this.tabsPlayers.TabIndex = 6;
             // 
             // TabPage1
             // 
-            this.TabPage1.Location = new System.Drawing.Point(4, 22);
+            this.TabPage1.Location = new System.Drawing.Point(4, 25);
+            this.TabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TabPage1.Name = "TabPage1";
-            this.TabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPage1.Size = new System.Drawing.Size(592, 250);
+            this.TabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage1.Size = new System.Drawing.Size(792, 311);
             this.TabPage1.TabIndex = 2;
             this.TabPage1.Text = "*Player 1";
             this.TabPage1.UseVisualStyleBackColor = true;
             // 
             // TabPage2
             // 
-            this.TabPage2.Location = new System.Drawing.Point(4, 22);
+            this.TabPage2.Location = new System.Drawing.Point(4, 25);
+            this.TabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TabPage2.Name = "TabPage2";
-            this.TabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPage2.Size = new System.Drawing.Size(592, 250);
+            this.TabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage2.Size = new System.Drawing.Size(792, 311);
             this.TabPage2.TabIndex = 3;
             this.TabPage2.Text = "Player 2";
             this.TabPage2.UseVisualStyleBackColor = true;
             // 
             // Button1
             // 
-            this.Button1.Location = new System.Drawing.Point(497, 285);
+            this.Button1.Location = new System.Drawing.Point(663, 351);
+            this.Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(112, 23);
+            this.Button1.Size = new System.Drawing.Size(149, 28);
             this.Button1.TabIndex = 7;
             this.Button1.Text = "Hide/Reveal Hand";
             this.Button1.UseVisualStyleBackColor = true;
@@ -104,44 +111,48 @@
             // Label3
             // 
             this.Label3.AutoSize = true;
-            this.Label3.Location = new System.Drawing.Point(394, 290);
+            this.Label3.Location = new System.Drawing.Point(525, 357);
+            this.Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(45, 13);
+            this.Label3.Size = new System.Drawing.Size(59, 17);
             this.Label3.TabIndex = 12;
             this.Label3.Text = "Coins: 0";
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(294, 290);
+            this.Label2.Location = new System.Drawing.Point(392, 357);
+            this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(42, 13);
+            this.Label2.Size = new System.Drawing.Size(55, 17);
             this.Label2.TabIndex = 11;
             this.Label2.Text = "Buys: 1";
             // 
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(182, 290);
+            this.Label1.Location = new System.Drawing.Point(243, 357);
+            this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(54, 13);
+            this.Label1.Size = new System.Drawing.Size(70, 17);
             this.Label1.TabIndex = 10;
             this.Label1.Text = "Actions: 1";
             // 
             // Button3
             // 
-            this.Button3.Location = new System.Drawing.Point(12, 285);
+            this.Button3.Location = new System.Drawing.Point(16, 351);
+            this.Button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(112, 23);
+            this.Button3.Size = new System.Drawing.Size(149, 28);
             this.Button3.TabIndex = 9;
             this.Button3.Text = "Start/End Turn";
             this.Button3.UseVisualStyleBackColor = true;
             // 
             // FormGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 602);
+            this.ClientSize = new System.Drawing.Size(832, 741);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.tabsPlayers);
             this.Controls.Add(this.Button1);
@@ -149,6 +160,7 @@
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.Button3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormGame";
             this.Text = "FormGame";
             this.GroupBox1.ResumeLayout(false);

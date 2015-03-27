@@ -1,0 +1,10 @@
+C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\DominionSharp\bin\Debug\DominionSharp.exe.config
+C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\DominionSharp\bin\Debug\DominionSharp.exe
+C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\DominionSharp\bin\Debug\DominionSharp.pdb
+C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\Dominion.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.FormCreate.resources
+C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.FormGame.resources
+C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\Dominion.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.exe
+C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.pdb
