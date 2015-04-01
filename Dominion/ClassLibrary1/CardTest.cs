@@ -9,18 +9,18 @@ using DominionSharp;
 namespace ClassLibrary1
 {
     [TestClass()]
-    class CardTest
+    public class CardTest
     {
-        private Card T; //TODO: Change these to Cards
-        private Card V;
-        private int K;
+        private TreasureCard T; //TODO: Change these to Cards
+        private VictoryCard V;
+        private ActionCard K;
 
         [TestInitialize()]
         public void setupTests()
         {
             this.T = new TreasureCopper(); //TODO: Replace these with new Treasure, Victory, and Kingdom Cards
             this.V = new VictoryEstate();
-            this.K = 3;
+            this.K = new ActionChapel();
         }
 
         [TestMethod()]
@@ -28,6 +28,7 @@ namespace ClassLibrary1
         {
             Assert.AreEqual(0, T.Cost);
             Assert.AreEqual(2, V.Cost);
+            Assert.AreEqual(2, K.Cost);
         }
 
         [TestMethod()]
@@ -35,12 +36,24 @@ namespace ClassLibrary1
         {
             Assert.AreEqual("Copper", T.Name);
             Assert.AreEqual("Estate", V.Name);
+            Assert.AreEqual("Chapel", K.Name);
         }
 
         [TestMethod()]
         public void testImage()
         {
             Assert.Fail("No test yet!");
+        }
+        [TestMethod()]
+        public void testVictoryPoints()
+        {
+            Assert.AreEqual(1, V.VictoryPoints);
+        }
+
+        [TestMethod()]
+        public void testValue()
+        {
+            Assert.AreEqual(1, T.Value);
         }
     }
 }

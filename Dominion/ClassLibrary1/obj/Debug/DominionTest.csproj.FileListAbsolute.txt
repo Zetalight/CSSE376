@@ -5,3 +5,10 @@ C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug
 C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug\DominionSharp.pdb
 C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\Don\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\obj\Debug\DominionTest.csprojResolveAssemblyReference.cache
+C:\Users\Don\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\Don\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\Don\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\Don\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug\DominionSharp.exe
+C:\Users\Don\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug\DominionSharp.pdb
+C:\Users\Don\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
