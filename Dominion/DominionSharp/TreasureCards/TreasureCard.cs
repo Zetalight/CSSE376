@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DominionSharp
+{
+    abstract class TreasureCard : Card
+    {
+        protected int value;
+
+        public int Value
+        {
+            get
+            {
+                return value;
+            }
+        }
+    }
+}
