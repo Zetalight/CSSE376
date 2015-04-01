@@ -2,8 +2,6 @@ C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\obj\Debug
 C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug\ClassLibrary1.dll
 C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
 C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug\DominionSharp.exe
-C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug\nunit.framework.dll
 C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug\DominionSharp.pdb
-C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\bin\Debug\nunit.framework.xml
 C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 C:\Users\Administrator\Documents\GitHub\CSSE376\Dominion\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
