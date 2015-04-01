@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    class TreasureCopper : TreasureCard
+    public class TreasureCopper : TreasureCard
     {
         public TreasureCopper()
         {

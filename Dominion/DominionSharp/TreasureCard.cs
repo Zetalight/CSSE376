@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    abstract class TreasureCard : Card
+    public abstract class TreasureCard : Card
     {
         protected int value;
 

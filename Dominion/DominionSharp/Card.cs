@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    abstract class Card
+    public abstract class Card
     {
         protected string name;
         protected int cost;

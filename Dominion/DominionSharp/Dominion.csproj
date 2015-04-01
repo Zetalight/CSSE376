@@ -63,6 +63,11 @@
     <Compile Include="TreasureCopper.cs" />
     <Compile Include="TreasureGold.cs" />
     <Compile Include="TreasureSilver.cs" />
+    <Compile Include="VictoryCard.cs" />
+    <Compile Include="VictoryCurse.cs" />
+    <Compile Include="VictoryDutchy.cs" />
+    <Compile Include="VictoryEstate.cs" />
+    <Compile Include="VictoryProvince.cs" />
     <EmbeddedResource Include="FormCreate.resx">
       <DependentUpon>FormCreate.cs</DependentUpon>
     </EmbeddedResource>
