@@ -4,28 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominionSharp;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ClassLibrary1
 {
-    [TestFixture()]
+    [TestClass()]
     public class CardsTest
     {
-        [Test()]
+        [TestMethod()]
         public void TestThatTreasureInitializes()
         {
             var target = new FormGame();
             Assert.AreEqual(target.getLabel3Text(), "Coins: 0");
         }
 
-        [Test()]
+        [TestMethod()]
         public void TestThatActionsInitializes()
         {
             var target = new FormGame();
             Assert.AreEqual(target.getLabel2Text(), "Buys: 1");
         }
 
-        [Test()]
+        [TestMethod()]
         public void TestThatBuysInitializes()
         {
             var target = new FormGame();
