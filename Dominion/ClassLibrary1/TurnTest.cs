@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ClassLibrary1
 {
     [TestClass()]
-    public class CardsTest
+    public class TurnTest
     {
         [TestMethod()]
         public void TestThatTreasureInitializes()
