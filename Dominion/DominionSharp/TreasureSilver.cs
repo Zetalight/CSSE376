@@ -11,8 +11,8 @@ namespace DominionSharp
         public TreasureSilver()
         {
             this.name = "Silver";
-            this.cost = 2;
-            this.value = this.cost;
+            this.cost = 3;
+            this.value = 2;
             this.picture = null;
         }
     }

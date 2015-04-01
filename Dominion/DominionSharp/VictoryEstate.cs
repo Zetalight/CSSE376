@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    class TreasureGold : TreasureCard
+    public class VictoryEstate : VictoryCard
     {
-        public TreasureGold()
+        public VictoryEstate()
         {
-            this.name = "Gold";
-            this.cost = 6;
-            this.value = 3;
+            this.name = "Estate";
+            this.cost = 2;
+            this.victoryPoints = 1;
             this.picture = null;
         }
     }
