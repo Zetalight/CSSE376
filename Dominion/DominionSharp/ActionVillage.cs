@@ -14,7 +14,7 @@ namespace DominionSharp
             this.cost = 3;
             this.picture = null;
         }
-        public void play()
+        public override void play()
         {
 
         }

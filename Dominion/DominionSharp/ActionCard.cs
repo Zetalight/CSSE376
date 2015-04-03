@@ -8,6 +8,6 @@ namespace DominionSharp
 {
     public abstract class ActionCard : Card
     {
-
+        public abstract void play();
     }
 }

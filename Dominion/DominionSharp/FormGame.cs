@@ -12,10 +12,11 @@ namespace DominionSharp
 {
     public partial class FormGame : Form
     {
+        public Card startHand1;
         public FormGame()
         {
             InitializeComponent();
-            Card startHand1 = new ActionChapel();
+            startHand1 = new ActionChapel(); //Make this general
             button4.Image = startHand1.Picture;
         }
 
@@ -36,7 +37,8 @@ namespace DominionSharp
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            ActionCard test = (ActionCard) startHand1;
+            test.play();
         }
     }
 }
