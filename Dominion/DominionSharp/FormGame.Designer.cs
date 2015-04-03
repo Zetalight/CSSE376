@@ -38,17 +38,19 @@
             this.Label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
             this.Button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.GroupBox1.SuspendLayout();
             this.tabsPlayers.SuspendLayout();
+            this.TabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GroupBox1
             // 
             this.GroupBox1.Controls.Add(this.Button2);
             this.GroupBox1.Location = new System.Drawing.Point(16, 15);
-            this.GroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.GroupBox1.Size = new System.Drawing.Size(800, 329);
             this.GroupBox1.TabIndex = 8;
             this.GroupBox1.TabStop = false;
@@ -59,7 +61,7 @@
             this.Button2.BackgroundImage = global::DominionSharp.Properties.Resources.chapel;
             this.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Button2.Location = new System.Drawing.Point(8, 23);
-            this.Button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button2.Margin = new System.Windows.Forms.Padding(4);
             this.Button2.Name = "Button2";
             this.Button2.Size = new System.Drawing.Size(227, 298);
             this.Button2.TabIndex = 0;
@@ -70,7 +72,7 @@
             this.tabsPlayers.Controls.Add(this.TabPage1);
             this.tabsPlayers.Controls.Add(this.TabPage2);
             this.tabsPlayers.Location = new System.Drawing.Point(16, 386);
-            this.tabsPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabsPlayers.Margin = new System.Windows.Forms.Padding(4);
             this.tabsPlayers.Name = "tabsPlayers";
             this.tabsPlayers.SelectedIndex = 0;
             this.tabsPlayers.Size = new System.Drawing.Size(800, 340);
@@ -78,10 +80,11 @@
             // 
             // TabPage1
             // 
+            this.TabPage1.Controls.Add(this.button4);
             this.TabPage1.Location = new System.Drawing.Point(4, 25);
-            this.TabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage1.Name = "TabPage1";
-            this.TabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.TabPage1.Size = new System.Drawing.Size(792, 311);
             this.TabPage1.TabIndex = 2;
             this.TabPage1.Text = "*Player 1";
@@ -90,9 +93,9 @@
             // TabPage2
             // 
             this.TabPage2.Location = new System.Drawing.Point(4, 25);
-            this.TabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage2.Name = "TabPage2";
-            this.TabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.TabPage2.Size = new System.Drawing.Size(792, 311);
             this.TabPage2.TabIndex = 3;
             this.TabPage2.Text = "Player 2";
@@ -101,7 +104,7 @@
             // Button1
             // 
             this.Button1.Location = new System.Drawing.Point(663, 351);
-            this.Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button1.Margin = new System.Windows.Forms.Padding(4);
             this.Button1.Name = "Button1";
             this.Button1.Size = new System.Drawing.Size(149, 28);
             this.Button1.TabIndex = 7;
@@ -141,12 +144,22 @@
             // Button3
             // 
             this.Button3.Location = new System.Drawing.Point(16, 351);
-            this.Button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button3.Margin = new System.Windows.Forms.Padding(4);
             this.Button3.Name = "Button3";
             this.Button3.Size = new System.Drawing.Size(149, 28);
             this.Button3.TabIndex = 9;
             this.Button3.Text = "Start/End Turn";
             this.Button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(7, 7);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(224, 297);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FormGame
             // 
@@ -160,11 +173,12 @@
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.Button3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormGame";
             this.Text = "FormGame";
             this.GroupBox1.ResumeLayout(false);
             this.tabsPlayers.ResumeLayout(false);
+            this.TabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +196,6 @@
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.Button Button3;
+        private System.Windows.Forms.Button button4;
     }
 }

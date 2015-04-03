@@ -15,6 +15,8 @@ namespace DominionSharp
         public FormGame()
         {
             InitializeComponent();
+            Card startHand1 = new ActionChapel();
+            button4.Image = startHand1.Picture;
         }
 
         public String getLabel3Text()
@@ -30,6 +32,11 @@ namespace DominionSharp
         public String getLabel1Text()
         {
             return Label1.Text;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

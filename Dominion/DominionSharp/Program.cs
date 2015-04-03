@@ -16,7 +16,7 @@ namespace DominionSharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormCreate());
+            Application.Run(new FormGame());
         }
     }
 }
