@@ -22,6 +22,7 @@ namespace ClassLibrary1
             A = new ActionCellar();
             A = new ActionMoat();
             A = new ActionChancellor();
+            A = new ActionWoodcutter();
         }
         [TestMethod()]
         public void TestActionCardsValues()
@@ -44,6 +45,9 @@ namespace ClassLibrary1
             A = new ActionChancellor();
             Assert.AreEqual(3, A.Cost);
             Assert.AreEqual("Chancellor", A.Name);
+            A = new ActionWoodcutter();
+            Assert.AreEqual(3, A.Cost);
+            Assert.AreEqual("Woodcutter", A.Name);
 
             //Costs 4
 
