@@ -44,30 +44,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionAdventure.cs" />
-    <Compile Include="ActionBureaucrat.cs" />
-    <Compile Include="ActionCellar.cs" />
-    <Compile Include="ActionChancellor.cs" />
-    <Compile Include="ActionCouncilRoom.cs" />
-    <Compile Include="ActionFeast.cs" />
-    <Compile Include="ActionFestival.cs" />
-    <Compile Include="ActionLaboratory.cs" />
-    <Compile Include="ActionLibrary.cs" />
-    <Compile Include="ActionMarket.cs" />
-    <Compile Include="ActionMilitia.cs" />
-    <Compile Include="ActionMine.cs" />
-    <Compile Include="ActionMoat.cs" />
-    <Compile Include="ActionMoneylender.cs" />
-    <Compile Include="ActionRemodel.cs" />
-    <Compile Include="ActionSmithy.cs" />
-    <Compile Include="ActionSpy.cs" />
-    <Compile Include="ActionThief.cs" />
-    <Compile Include="ActionThroneRoom.cs" />
-    <Compile Include="ActionWoodcutter.cs" />
+    <Compile Include="ActionCards\ActionAdventure.cs" />
+    <Compile Include="ActionCards\ActionBureaucrat.cs" />
+    <Compile Include="ActionCards\ActionCellar.cs" />
+    <Compile Include="ActionCards\ActionChancellor.cs" />
+    <Compile Include="ActionCards\ActionCouncilRoom.cs" />
+    <Compile Include="ActionCards\ActionFeast.cs" />
+    <Compile Include="ActionCards\ActionFestival.cs" />
+    <Compile Include="ActionCards\ActionLaboratory.cs" />
+    <Compile Include="ActionCards\ActionLibrary.cs" />
+    <Compile Include="ActionCards\ActionMarket.cs" />
+    <Compile Include="ActionCards\ActionMilitia.cs" />
+    <Compile Include="ActionCards\ActionMine.cs" />
+    <Compile Include="ActionCards\ActionMoat.cs" />
+    <Compile Include="ActionCards\ActionMoneylender.cs" />
+    <Compile Include="ActionCards\ActionRemodel.cs" />
+    <Compile Include="ActionCards\ActionSmithy.cs" />
+    <Compile Include="ActionCards\ActionSpy.cs" />
+    <Compile Include="ActionCards\ActionThief.cs" />
+    <Compile Include="ActionCards\ActionThroneRoom.cs" />
+    <Compile Include="ActionCards\ActionWoodcutter.cs" />
     <Compile Include="Card.cs" />
-    <Compile Include="ActionChapel.cs" />
-    <Compile Include="ActionVillage.cs" />
-    <Compile Include="ActionWitch.cs" />
+    <Compile Include="ActionCards\ActionChapel.cs" />
+    <Compile Include="ActionCards\ActionVillage.cs" />
+    <Compile Include="ActionCards\ActionWitch.cs" />
     <Compile Include="FormCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,20 +80,20 @@
     <Compile Include="FormGame.Designer.cs">
       <DependentUpon>FormGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="ActionCard.cs" />
+    <Compile Include="ActionCards\ActionCard.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TreasureCard.cs" />
-    <Compile Include="TreasureCopper.cs" />
-    <Compile Include="TreasureGold.cs" />
-    <Compile Include="TreasureSilver.cs" />
-    <Compile Include="VictoryCard.cs" />
-    <Compile Include="VictoryCurse.cs" />
-    <Compile Include="VictoryDutchy.cs" />
-    <Compile Include="VictoryEstate.cs" />
-    <Compile Include="VictoryProvince.cs" />
-    <Compile Include="ActionWorkshop.cs" />
+    <Compile Include="TreasureCards\TreasureCard.cs" />
+    <Compile Include="TreasureCards\TreasureCopper.cs" />
+    <Compile Include="TreasureCards\TreasureGold.cs" />
+    <Compile Include="TreasureCards\TreasureSilver.cs" />
+    <Compile Include="VictoryCards\VictoryCard.cs" />
+    <Compile Include="VictoryCards\VictoryCurse.cs" />
+    <Compile Include="VictoryCards\VictoryDutchy.cs" />
+    <Compile Include="VictoryCards\VictoryEstate.cs" />
+    <Compile Include="VictoryCards\VictoryProvince.cs" />
+    <Compile Include="ActionCards\ActionWorkshop.cs" />
     <EmbeddedResource Include="FormCreate.resx">
       <DependentUpon>FormCreate.cs</DependentUpon>
     </EmbeddedResource>
