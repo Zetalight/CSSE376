@@ -23,6 +23,7 @@ namespace ClassLibrary1
             A = new ActionMoat();
             A = new ActionChancellor();
             A = new ActionWoodcutter();
+            A = new ActionWorkshop();
         }
         [TestMethod()]
         public void TestActionCardsValues()
@@ -48,6 +49,9 @@ namespace ClassLibrary1
             A = new ActionWoodcutter();
             Assert.AreEqual(3, A.Cost);
             Assert.AreEqual("Woodcutter", A.Name);
+            A = new ActionWorkshop();
+            Assert.AreEqual(3, A.Cost);
+            Assert.AreEqual("Workshop", A.Name);
 
             //Costs 4
 
