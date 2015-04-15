@@ -29,6 +29,7 @@ namespace ClassLibrary1
             //A = new ActionGardens();
             A = new ActionMilitia();
             A = new ActionMoneylender();
+            A = new ActionRemodel();
         }
         [TestMethod()]
         public void TestActionCardsValues()
@@ -74,6 +75,9 @@ namespace ClassLibrary1
             A = new ActionMoneylender();
             Assert.AreEqual(4, A.Cost);
             Assert.AreEqual("Moneylender", A.Name);
+            A = new ActionRemodel();
+            Assert.AreEqual(4, A.Cost);
+            Assert.AreEqual("Remodel", A.Name);
 
             //Costs 5
             A = new ActionWitch();
