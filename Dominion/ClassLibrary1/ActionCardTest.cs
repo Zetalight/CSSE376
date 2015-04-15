@@ -36,6 +36,7 @@ namespace ClassLibrary1
             A = new ActionThroneRoom();
             A = new ActionCouncilRoom();
             A = new ActionFestival();
+            A = new ActionLaboratory();
         }
         [TestMethod()]
         public void TestActionCardsValues()
@@ -107,7 +108,9 @@ namespace ClassLibrary1
             A = new ActionFestival();
             Assert.AreEqual(5, A.Cost);
             Assert.AreEqual("Festival", A.Name);
-
+            A = new ActionLaboratory();
+            Assert.AreEqual(5, A.Cost);
+            Assert.AreEqual("Laboratory", A.Name);
 
             //Costs 6
         }
