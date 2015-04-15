@@ -40,7 +40,7 @@ namespace ClassLibrary1
             A = new ActionLibrary();
             A = new ActionMarket();
             A = new ActionMine();
-            A = new Adventure();
+            A = new ActionAdventure();
         }
         [TestMethod()]
         public void TestActionCardsValues()
