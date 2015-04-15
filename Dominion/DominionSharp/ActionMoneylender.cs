@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    class ActionMoneylender
+    public class ActionMoneylender : ActionCard
     {
+        public ActionMoneylender()
+        {
+            this.name = "Moneylender";
+            this.cost = 4;
+            this.picture = null; //TODO: Add Picture
+        }
+        public override void play()
+        {
+            Console.WriteLine("Moneylender Played");
+        }
     }
 }

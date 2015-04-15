@@ -50,6 +50,7 @@
     <Compile Include="ActionFeast.cs" />
     <Compile Include="ActionMilitia.cs" />
     <Compile Include="ActionMoat.cs" />
+    <Compile Include="ActionMoneylender.cs" />
     <Compile Include="ActionWoodcutter.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="ActionChapel.cs" />
