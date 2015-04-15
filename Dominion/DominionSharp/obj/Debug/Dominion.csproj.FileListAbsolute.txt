@@ -21,3 +21,10 @@ C:\Users\Don\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\DominionS
 C:\Users\Don\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.FormGame.resources
 C:\Users\Don\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.Properties.Resources.resources
 C:\Users\Don\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\Dominion.csproj.GenerateResource.Cache
+C:\Users\enricotj\Code\QA\FinalProject\CSSE376\Dominion\DominionSharp\bin\Debug\DominionSharp.exe
+C:\Users\enricotj\Code\QA\FinalProject\CSSE376\Dominion\DominionSharp\bin\Debug\DominionSharp.pdb
+C:\Users\enricotj\Code\QA\FinalProject\CSSE376\Dominion\DominionSharp\obj\Debug\Dominion.csprojResolveAssemblyReference.cache
+C:\Users\enricotj\Code\QA\FinalProject\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.FormCreate.resources
+C:\Users\enricotj\Code\QA\FinalProject\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.FormGame.resources
+C:\Users\enricotj\Code\QA\FinalProject\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.Properties.Resources.resources
+C:\Users\enricotj\Code\QA\FinalProject\CSSE376\Dominion\DominionSharp\obj\Debug\Dominion.csproj.GenerateResource.Cache
