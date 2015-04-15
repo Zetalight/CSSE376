@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    class ActionThroneRoom
+    public class ActionThroneRoom : ActionCard
     {
+        public ActionThroneRoom()
+        {
+            this.name = "Throne Room";
+            this.cost = 4;
+            this.picture = null; //TODO: Add Picture
+        }
+        public override void play()
+        {
+            Console.WriteLine("Throne Room Played");
+        }
     }
 }
