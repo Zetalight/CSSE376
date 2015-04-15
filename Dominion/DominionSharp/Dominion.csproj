@@ -44,30 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionAdventure.cs" />
     <Compile Include="ActionBureaucrat.cs" />
     <Compile Include="ActionCellar.cs" />
     <Compile Include="ActionChancellor.cs" />
     <Compile Include="ActionFeast.cs" />
-    <Compile Include="ActionFestival.cs" />
-    <Compile Include="ActionLaboratory.cs" />
-    <Compile Include="ActionLibrary.cs" />
-    <Compile Include="ActionMarket.cs" />
     <Compile Include="ActionMilitia.cs" />
-    <Compile Include="ActionMine.cs" />
     <Compile Include="ActionMoat.cs" />
     <Compile Include="ActionMoneylender.cs" />
     <Compile Include="ActionRemodel.cs" />
     <Compile Include="ActionSmithy.cs" />
     <Compile Include="ActionSpy.cs" />
     <Compile Include="ActionThief.cs" />
-    <Compile Include="ActionThroneRoom.cs" />
     <Compile Include="ActionWoodcutter.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="ActionChapel.cs" />
     <Compile Include="ActionVillage.cs" />
     <Compile Include="ActionWitch.cs" />
-    <Compile Include="ActionCouncilRoom.cs" />
     <Compile Include="FormCreate.cs">
       <SubType>Form</SubType>
     </Compile>
