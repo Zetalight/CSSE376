@@ -25,7 +25,35 @@ namespace DominionSharp
 
         public void setPlayerCount(int count)
         {
-            tabsPlayers.TabPages.Clear();
+            players.Clear();
+            if (count >= 2 && count <= 4)
+            {
+                int cardWidth = (tabsPlayers.Size.Width - 48) / 5;
+                int cardHeight = (tabsPlayers.Size.Height) - 32;
+                tabsPlayers.TabPages.Clear();
+                for (int i = 0; i < count; i++)
+                {
+                    Player p = new Player();
+                    players.Add(p);
+                    tabsPlayers.TabPages.Add("Player" + (i + 1));
+
+                    var n = 0;
+                    foreach (Card card in p.getHand())
+                    {
+                        Button cardButton = new Button();
+                        cardButton.Text = card.Name;
+                        cardButton.Location = new Point(4 + n * (cardWidth + 8), 0);
+                        cardButton.Size = new Size(cardWidth, cardHeight);
+                        n++;
+                        tabsPlayers.TabPages[i].Controls.Add(cardButton);
+                    }
+
+                }
+            }
+            else
+            {
+                throw new Exception("INVALID PLAYER COUNT");
+            }
         }
 
         public int getPlayerTabCount()
@@ -38,25 +66,30 @@ namespace DominionSharp
             return players;
         }
 
-        public String getLabel3Text()
+        public String getCoinsText()
         {
-            return Label3.Text;
+            return lblCoins.Text;
         }
 
-        public String getLabel2Text()
+        public String getBuysText()
         {
-            return Label2.Text;
+            return lblBuys.Text;
         }
 
-        public String getLabel1Text()
+        public String getActionsText()
         {
-            return Label1.Text;
+            return lblActions.Text;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             ActionCard test = (ActionCard) startHand1;
             test.play();
+        }
+
+        private void FormGame_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

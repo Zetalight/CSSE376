@@ -15,21 +15,21 @@ namespace ClassLibrary1
         public void TestThatTreasureInitializes()
         {
             var target = new FormGame();
-            Assert.AreEqual(target.getLabel3Text(), "Coins: 0");
+            Assert.AreEqual(target.getCoinsText(), "Coins: 0");
         }
 
         [TestMethod()]
         public void TestThatActionsInitializes()
         {
             var target = new FormGame();
-            Assert.AreEqual(target.getLabel2Text(), "Buys: 1");
+            Assert.AreEqual(target.getBuysText(), "Buys: 1");
         }
 
         [TestMethod()]
         public void TestThatBuysInitializes()
         {
             var target = new FormGame();
-            Assert.AreEqual(target.getLabel1Text(), "Actions: 1");
+            Assert.AreEqual(target.getActionsText(), "Actions: 1");
         }
     }
 }

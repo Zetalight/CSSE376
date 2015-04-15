@@ -24,6 +24,7 @@ namespace DominionSharp
         private void btnStart_Click(object sender, EventArgs e)
         {
             game.Show();
+            game.setPlayerCount(Convert.ToInt32(comboNumPlayers.SelectedItem.ToString()));
             this.Hide();
         }
     }
