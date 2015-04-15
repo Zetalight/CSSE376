@@ -21,6 +21,7 @@ namespace ClassLibrary1
             A = new ActionWitch();
             A = new ActionCellar();
             A = new ActionMoat();
+            A = new ActionChancellor();
         }
         [TestMethod()]
         public void TestActionCardsValues()
@@ -40,6 +41,9 @@ namespace ClassLibrary1
             A = new ActionVillage();
             Assert.AreEqual(3, A.Cost);
             Assert.AreEqual("Village", A.Name);
+            A = new ActionChancellor();
+            Assert.AreEqual(3, A.Cost);
+            Assert.AreEqual("Chancellor", A.Name);
 
             //Costs 4
 

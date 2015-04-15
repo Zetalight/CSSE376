@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionCellar.cs" />
+    <Compile Include="ActionMoat.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="ActionChapel.cs" />
     <Compile Include="ActionVillage.cs" />
