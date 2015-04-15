@@ -51,6 +51,10 @@
     <Compile Include="ActionMilitia.cs" />
     <Compile Include="ActionMoat.cs" />
     <Compile Include="ActionMoneylender.cs" />
+    <Compile Include="ActionRemodel.cs" />
+    <Compile Include="ActionSmithy.cs" />
+    <Compile Include="ActionSpy.cs" />
+    <Compile Include="ActionThief.cs" />
     <Compile Include="ActionWoodcutter.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="ActionChapel.cs" />
