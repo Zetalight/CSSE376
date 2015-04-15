@@ -39,6 +39,7 @@ namespace ClassLibrary1
             A = new ActionLaboratory();
             A = new ActionLibrary();
             A = new ActionMarket();
+            A = new ActionMine();
         }
         [TestMethod()]
         public void TestActionCardsValues()
@@ -119,6 +120,9 @@ namespace ClassLibrary1
             A = new ActionMarket();
             Assert.AreEqual(5, A.Cost);
             Assert.AreEqual("Market", A.Name);
+            A = new ActionMine();
+            Assert.AreEqual(5, A.Cost);
+            Assert.AreEqual("Mine", A.Name);
 
             //Costs 6
         }
