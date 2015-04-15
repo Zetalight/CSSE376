@@ -81,6 +81,7 @@
       <DependentUpon>FormGame.cs</DependentUpon>
     </Compile>
     <Compile Include="ActionCard.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TreasureCard.cs" />

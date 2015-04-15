@@ -130,5 +130,10 @@ namespace ClassLibrary1
             Assert.AreEqual(6, A.Cost);
             Assert.AreEqual("Adventure", A.Name);
         }
+        [TestMethod()]
+        public void TestActionCardFunctions()
+        {
+
+        }
     }
 }
