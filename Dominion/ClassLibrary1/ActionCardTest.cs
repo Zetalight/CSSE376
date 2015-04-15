@@ -24,6 +24,8 @@ namespace ClassLibrary1
             A = new ActionChancellor();
             A = new ActionWoodcutter();
             A = new ActionWorkshop();
+            A = new ActionBureaucrat();
+            A = new ActionFeast();
         }
         [TestMethod()]
         public void TestActionCardsValues()
@@ -57,6 +59,9 @@ namespace ClassLibrary1
             A = new ActionBureaucrat();
             Assert.AreEqual(4, A.Cost);
             Assert.AreEqual("Bureaucrat", A.Name);
+            A = new ActionFeast();
+            Assert.AreEqual(4, A.Cost);
+            Assert.AreEqual("Feast", A.Name);
 
             //Costs 5
             A = new ActionWitch();
