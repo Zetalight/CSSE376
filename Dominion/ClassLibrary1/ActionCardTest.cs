@@ -54,11 +54,15 @@ namespace ClassLibrary1
             Assert.AreEqual("Workshop", A.Name);
 
             //Costs 4
+            A = new ActionBureaucrat();
+            Assert.AreEqual(4, A.Cost);
+            Assert.AreEqual("Bureaucrat", A.Name);
 
             //Costs 5
             A = new ActionWitch();
             Assert.AreEqual(5, A.Cost);
             Assert.AreEqual("Witch", A.Name);
+
 
             //Costs 6
         }
