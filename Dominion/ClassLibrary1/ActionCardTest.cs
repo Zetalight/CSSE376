@@ -34,6 +34,7 @@ namespace ClassLibrary1
             A = new ActionSpy();
             A = new ActionThief();
             A = new ActionThroneRoom();
+            A = new ActionCouncilRoom();
         }
         [TestMethod()]
         public void TestActionCardsValues()
@@ -98,7 +99,10 @@ namespace ClassLibrary1
             //Costs 5
             A = new ActionWitch();
             Assert.AreEqual(5, A.Cost);
-            Assert.AreEqual("Witch", A.Name);
+            Assert.AreEqual("Witch", A.Name); 
+            A = new ActionCouncilRoom();
+            Assert.AreEqual(5, A.Cost);
+            Assert.AreEqual("Council Room", A.Name);
 
 
             //Costs 6
