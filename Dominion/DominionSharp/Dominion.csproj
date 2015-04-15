@@ -44,8 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionBureaucrat.cs" />
     <Compile Include="ActionCellar.cs" />
+    <Compile Include="ActionChancellor.cs" />
+    <Compile Include="ActionFeast.cs" />
+    <Compile Include="ActionMilitia.cs" />
     <Compile Include="ActionMoat.cs" />
+    <Compile Include="ActionWoodcutter.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="ActionChapel.cs" />
     <Compile Include="ActionVillage.cs" />
@@ -74,6 +79,7 @@
     <Compile Include="VictoryDutchy.cs" />
     <Compile Include="VictoryEstate.cs" />
     <Compile Include="VictoryProvince.cs" />
+    <Compile Include="ActionWorkshop.cs" />
     <EmbeddedResource Include="FormCreate.resx">
       <DependentUpon>FormCreate.cs</DependentUpon>
     </EmbeddedResource>

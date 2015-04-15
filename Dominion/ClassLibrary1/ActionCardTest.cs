@@ -27,6 +27,7 @@ namespace ClassLibrary1
             A = new ActionBureaucrat();
             A = new ActionFeast();
             //A = new ActionGardens();
+            A = new ActionMilitia();
         }
         [TestMethod()]
         public void TestActionCardsValues()
@@ -66,9 +67,9 @@ namespace ClassLibrary1
             //A = new ActionGardens(); //Do We want to put as ActionCard or Victory Card. Bought like Action, used like Victory.
             //Assert.AreEqual(4, A.Cost);
             //Assert.AreEqual("Gardens", A.Name);
-            A = new ActionMilita();
+            A = new ActionMilitia();
             Assert.AreEqual(4, A.Cost);
-            Assert.AreEqual("Milita", A.Name);
+            Assert.AreEqual("Militia", A.Name);
 
             //Costs 5
             A = new ActionWitch();
