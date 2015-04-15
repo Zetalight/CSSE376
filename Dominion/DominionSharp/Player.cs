@@ -8,9 +8,21 @@ namespace DominionSharp
 {
     public class Player
     {
-        public int coins = 0;
-        public int actions = 1;
-        public int buys = 1;
+        private int coins = 0;
+        private int actions = 1;
+        private int buys = 1;
+        private List<Card> deck;
+        private List<Card> hand;
+
+        public List<Card> getDeck()
+        {
+            return deck;
+        }
+
+        public List<Card> getHand()
+        {
+            return hand;
+        }
 
         public int getCoins()
         {

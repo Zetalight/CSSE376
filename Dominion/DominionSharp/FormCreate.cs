@@ -12,9 +12,19 @@ namespace DominionSharp
 {
     public partial class FormCreate : Form
     {
+        FormGame game;
+
         public FormCreate()
         {
             InitializeComponent();
+            game = new FormGame();
+            game.Hide();
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            game.Show();
+            this.Hide();
         }
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ActionCardTest.cs" />
     <Compile Include="CardTest.cs" />
+    <Compile Include="GameInitializationTest.cs" />
     <Compile Include="PlayerTest.cs" />
     <Compile Include="TurnTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

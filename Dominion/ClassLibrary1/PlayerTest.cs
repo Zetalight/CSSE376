@@ -21,9 +21,9 @@ namespace ClassLibrary1
         public void TestThatPlayerValuesInitialize()
         {
             Player p = new Player();
-            Assert.AreEqual(0, p.coins);
-            Assert.AreEqual(1, p.actions);
-            Assert.AreEqual(1, p.buys);
+            Assert.AreEqual(0, p.getCoins());
+            Assert.AreEqual(1, p.getActions());
+            Assert.AreEqual(1, p.getBuys());
         }
         [TestMethod()]
         public void TestPlayerGetSets()

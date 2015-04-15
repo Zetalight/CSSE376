@@ -13,11 +13,29 @@ namespace DominionSharp
     public partial class FormGame : Form
     {
         public Card startHand1;
+
+        public List<Player> players = new List<Player>();
+
         public FormGame()
         {
             InitializeComponent();
             startHand1 = new ActionChapel(); //Make this general
             button4.Image = startHand1.Picture;
+        }
+
+        public void setPlayerCount(int count)
+        {
+            tabsPlayers.TabPages.Clear();
+        }
+
+        public int getPlayerTabCount()
+        {
+            return tabsPlayers.TabCount;
+        }
+
+        public List<Player> getPlayers()
+        {
+            return players;
         }
 
         public String getLabel3Text()
