@@ -13,10 +13,13 @@ namespace DominionSharp
             this.name = "Chancellor";
             this.cost = 3;
             this.picture = null; //TODO: Add Picture
+            this.coins = 2;
         }
-        public override void play(ref List<Player> targets)
+        public override void play()
         {
+            base.play();
             Console.WriteLine("Chancellor Played");
+            //TODO: You may immediately put your deck into your discard pile.
         }
     }
 }

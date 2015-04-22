@@ -13,9 +13,12 @@ namespace DominionSharp
             this.name = "Woodcutter";
             this.cost = 3;
             this.picture = null; //TODO: Add Picture
+            this.coins = 2;
+            this.buys = 1;
         }
-        public override void play(ref List<Player> targets)
+        public override void play()
         {
+            base.play();
             Console.WriteLine("Woodcutter Played");
         }
     }

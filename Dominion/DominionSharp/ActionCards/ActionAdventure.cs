@@ -14,9 +14,14 @@ namespace DominionSharp
             this.cost = 6;
             this.picture = null; //TODO: Add Picture
         }
-        public override void play(ref List<Player> targets)
+        public override void play()
         {
+            base.play();
             Console.WriteLine("Adventure Played");
+            //TODO: Reveal cards from your deck until you reveal 
+            //2 Treasure cards. 
+            //Put those Treasure cards in your hand and 
+            //discard the other revealed cards.
         }
     }
 }

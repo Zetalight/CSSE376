@@ -13,9 +13,13 @@ namespace DominionSharp
             this.name = "Festival";
             this.cost = 5;
             this.picture = null; //TODO: Add Picture
+            this.actions = 2;
+            this.buys = 1;
+            this.coins = 2;
         }
-        public override void play(ref List<Player> targets)
+        public override void play()
         {
+            base.play();
             Console.WriteLine("Festival Played");
         }
     }

@@ -14,9 +14,13 @@ namespace DominionSharp
             this.cost = 4;
             this.picture = null; //TODO: Add Picture
         }
-        public override void play(ref List<Player> targets)
+        public override void play()
         {
+            base.play();
             Console.WriteLine("Remodel Played");
+            //TODO: Trash a card from your hand. 
+            //Gain a card costing up to $2 
+            //more than the trashed card.
         }
     }
 }

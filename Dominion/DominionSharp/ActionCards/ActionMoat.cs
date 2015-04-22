@@ -13,10 +13,13 @@ namespace DominionSharp
             this.name = "Moat";
             this.cost = 2;
             this.picture = null ; //TODO: Add Picture
+            this.cards = 2;
         }
-        public override void play(ref List<Player> targets)
+        public override void play()
         {
+            base.play();
             Console.WriteLine("Moat Played");
+
         }
     }
 }

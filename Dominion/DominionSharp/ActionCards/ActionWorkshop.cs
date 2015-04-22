@@ -14,9 +14,11 @@ namespace DominionSharp
             this.cost = 3;
             this.picture = null; //TODO: Add Picture
         }
-        public override void play(ref List<Player> targets)
+        public override void play()
         {
+            base.play();
             Console.WriteLine("Workshop Played");
+            //TODO: Get 1 card that costs up to 4 coins
         }
     }
 }
