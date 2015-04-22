@@ -83,5 +83,15 @@ namespace DominionSharp
         {
             this.buys = b;
         }
+
+        public int getDeckSize()
+        {
+            return this.deck.Count;
+        }
+
+        public int getHandSize()
+        {
+            return this.hand.Count;
+        }
     }
 }
