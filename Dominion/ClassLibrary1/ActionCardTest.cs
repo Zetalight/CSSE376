@@ -138,7 +138,14 @@ namespace ClassLibrary1
             A.play(B);
             Assert.AreEqual(B.getBuys(), 2);
             Assert.AreEqual(B.getCoins(), 2);
+            Assert.AreEqual(B.getActions(), 0);
 
+            B = new Player();
+            A = new ActionFestival();
+            A.play(B);
+            Assert.AreEqual(B.getBuys(), 2);
+            Assert.AreEqual(B.getCoins(), 2);
+            Assert.AreEqual(B.getActions(), 2);
         }
     }
 }
