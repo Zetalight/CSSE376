@@ -32,6 +32,8 @@ namespace ClassLibrary1
             Assert.AreEqual(0, p.getCoins());
             Assert.AreEqual(1, p.getActions());
             Assert.AreEqual(1, p.getBuys());
+            Assert.AreEqual(5, p.getDeckSize());
+            Assert.AreEqual(5, p.getHandSize());
             p.setCoins(2);
             p.setActions(2);
             p.setBuys(2);
