@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    public class Turn
+    public sealed class Turn
     {
+        private static volatile Turn instance;
         private Player activePlayer;
         private List<Player> players;
         private int currentPlayerIndex;
@@ -16,72 +17,86 @@ namespace DominionSharp
         private int buys;
         private int trashes;
 
-        public Turn(ref List<Player> plist)
+        private Turn()
         {
-            this.players = plist;
-            this.currentPlayerIndex = 0;
-            activePlayer = plist[0];
-            this.reInitVals();
+        }
+
+        public static Turn Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new Turn();
+                return instance;
+            }
+        }
+
+        public void instantiate(ref List<Player> plist)
+        {
+            instance.players = plist;
+            instance.activePlayer = plist[0];
+            instance.currentPlayerIndex = 0;
+            instance.reInitVals();
         }
 
         public int getActions()
         {
-            return this.actions;
+            return instance.actions;
         }
 
         public void setActions(int i)
         {
-            this.actions = i;
+            instance.actions = i;
         }
 
         public int getBuys()
         {
-            return this.buys;
+            return instance.buys;
         }
 
         public void setBuys(int i)
         {
-            this.buys = i;
+            instance.buys = i;
         }
 
         public int getCoins()
         {
-            return this.coins;
+            return instance.coins;
         }
 
         public void setCoins(int i)
         {
-            this.coins = i;
+            instance.coins = i;
         }
 
         public int getTrashes()
         {
-            return this.trashes;
+            return instance.trashes;
         }
 
         public void setTrashes(int i)
         {
-            this.trashes = i;
+            instance.trashes = i;
         }
 
         public Player getActivePlayer()
         {
-            return this.activePlayer;
+            return instance.activePlayer;
         }
 
         public void nextTurn()
         {
-            this.currentPlayerIndex = (this.currentPlayerIndex + 1) % this.players.Count;
-            this.activePlayer = this.players[this.currentPlayerIndex];
-            this.reInitVals();
+            instance.currentPlayerIndex = (instance.currentPlayerIndex + 1) % instance.players.Count;
+            instance.activePlayer = instance.players[instance.currentPlayerIndex];
+            instance.reInitVals();
         }
 
         public void reInitVals()
         {
-            this.coins = 0;
-            this.buys = 1;
-            this.actions = 1;
-            this.trashes = 0;
+            instance.coins = 0;
+            instance.buys = 1;
+            instance.actions = 1;
+            instance.trashes = 0;
         }
     }
 }
