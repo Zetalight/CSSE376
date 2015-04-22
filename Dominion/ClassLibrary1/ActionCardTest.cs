@@ -136,16 +136,26 @@ namespace ClassLibrary1
             Player B = new Player();
             A = new ActionWoodcutter();
 //            A.play(B);
-            Assert.AreEqual(B.getBuys(), 2);
-            Assert.AreEqual(B.getCoins(), 2);
-            Assert.AreEqual(B.getActions(), 0);
+            Assert.AreEqual(2, B.getBuys());
+            Assert.AreEqual(2, B.getCoins());
+            Assert.AreEqual(0, B.getActions());
+            Assert.AreEqual(4, B.getHandSize());
 
             B = new Player();
             A = new ActionFestival();
 //            A.play(B);
-            Assert.AreEqual(B.getBuys(), 2);
-            Assert.AreEqual(B.getCoins(), 2);
-            Assert.AreEqual(B.getActions(), 2);
+            Assert.AreEqual(2, B.getBuys());
+            Assert.AreEqual(2, B.getCoins());
+            Assert.AreEqual(2, B.getActions());
+            Assert.AreEqual(4, B.getHandSize());
+
+            B = new Player();
+            A = new ActionSmithy();
+//            A.play(B);
+            Assert.AreEqual(1, B.getBuys());
+            Assert.AreEqual(0, B.getCoins());
+            Assert.AreEqual(0, B.getActions());
+            Assert.AreEqual(7, B.getHandSize());
         }
     }
 }
