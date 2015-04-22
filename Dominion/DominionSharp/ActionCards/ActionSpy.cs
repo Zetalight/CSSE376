@@ -14,7 +14,7 @@ namespace DominionSharp
             this.cost = 4;
             this.picture = null; //TODO: Add Picture
         }
-        public override void play()
+        public override void play(ref List<Player> targets)
         {
             Console.WriteLine("Spy Played");
         }

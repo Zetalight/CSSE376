@@ -14,7 +14,7 @@ namespace DominionSharp
             this.cost = 2;
             this.picture = global::DominionSharp.Properties.Resources.chapel; ;
         }
-        public override void play()
+        public override void play(ref List<Player> targets)
         {
             Console.WriteLine("Chapel Played");
         }
