@@ -9,27 +9,28 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ClassLibrary1
 {
     [TestClass()]
-    public class TurnTest
+    class TurnTest
     {
         [TestMethod()]
-        public void TestThatTreasureInitializes()
+        public void TestThatTurnInitializes()
         {
-            var target = new FormGame();
-            Assert.AreEqual(target.getCoinsText(), "Coins: 0");
+            Player p1 = new Player();
+            Player p2 = new Player();
+            Player p3 = new Player();
+            List<Player> plist = new List<Player> {p1, p2, p3};
+            Turn target = new Turn(ref plist);
+            
         }
 
         [TestMethod()]
-        public void TestThatActionsInitializes()
+        public void TestNextTurn()
         {
-            var target = new FormGame();
-            Assert.AreEqual(target.getBuysText(), "Buys: 1");
-        }
-
-        [TestMethod()]
-        public void TestThatBuysInitializes()
-        {
-            var target = new FormGame();
-            Assert.AreEqual(target.getActionsText(), "Actions: 1");
+            Player p1 = new Player();
+            Player p2 = new Player();
+            Player p3 = new Player();
+            List<Player> plist = new List<Player> { p1, p2, p3 };
+            Turn target = new Turn(ref plist);
+            target.nextTurn();
         }
     }
 }
