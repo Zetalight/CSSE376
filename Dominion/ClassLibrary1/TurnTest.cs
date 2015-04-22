@@ -23,6 +23,7 @@ namespace ClassLibrary1
             Assert.AreEqual(0, target.getCoins());
             Assert.AreEqual(1, target.getActions());
             Assert.AreEqual(1, target.getBuys());
+            Assert.AreEqual(0, target.getTrashes());
             
         }
 
@@ -36,6 +37,7 @@ namespace ClassLibrary1
             Turn target = new Turn(ref plist);
             target.nextTurn();
             Assert.AreEqual(p2, target.getActivePlayer());
+
         }
     }
 }
