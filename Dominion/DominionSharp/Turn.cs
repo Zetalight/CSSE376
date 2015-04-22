@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    public sealed class Turn
+    public class Turn
     {
-        private static volatile Turn instance;
+        private static Turn instance;
         private Player activePlayer;
         private List<Player> players;
         private int currentPlayerIndex;

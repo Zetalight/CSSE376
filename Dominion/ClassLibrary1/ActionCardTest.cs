@@ -134,12 +134,13 @@ namespace ClassLibrary1
         [TestMethod()]
         public void TestActionCardFunctions()
         {
+            Turn.Instance.reInitVals();
             //2 coin cost cards
             A = new ActionCellar();
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(1, Turn.Instance.getActions());
+            Assert.AreEqual(2, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -147,15 +148,15 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
-            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Assert.AreEqual(1, Turn.Instance.getActions());
+            Assert.AreEqual(4, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
             A = new ActionMoat();
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -164,7 +165,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(2, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -172,7 +173,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(2, Turn.Instance.getActions());
+            Assert.AreEqual(3, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -180,7 +181,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(2, Turn.Instance.getBuys());
             Assert.AreEqual(2, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -188,7 +189,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -197,7 +198,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -205,7 +206,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -221,7 +222,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(2, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -229,7 +230,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -237,7 +238,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -245,14 +246,15 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
             A = new ActionSpy();
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(1, Turn.Instance.getActions());
+            Assert.AreEqual(2, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -260,7 +262,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -268,7 +270,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -277,7 +279,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(2, Turn.Instance.getBuys());
             Assert.AreEqual(2, Turn.Instance.getCoins());
-            Assert.AreEqual(2, Turn.Instance.getActions());
+            Assert.AreEqual(3, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -285,7 +287,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(1, Turn.Instance.getActions());
+            Assert.AreEqual(2, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -293,7 +295,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -301,7 +303,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(2, Turn.Instance.getBuys());
             Assert.AreEqual(1, Turn.Instance.getCoins());
-            Assert.AreEqual(1, Turn.Instance.getActions());
+            Assert.AreEqual(2, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -309,7 +311,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -317,7 +319,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
 
@@ -326,7 +328,7 @@ namespace ClassLibrary1
             A.play();
             Assert.AreEqual(1, Turn.Instance.getBuys());
             Assert.AreEqual(0, Turn.Instance.getCoins());
-            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(1, Turn.Instance.getActions());
             Assert.AreEqual(0, Turn.Instance.getTrashes());
             Turn.Instance.reInitVals();
         }

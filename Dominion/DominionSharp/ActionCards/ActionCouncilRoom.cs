@@ -14,7 +14,7 @@ namespace DominionSharp
             this.cost = 5;
             this.picture = null; //TODO: Add Picture
             this.cards = 4;
-            this.buy = 1;
+            this.buys = 1;
         }
         public override void play()
         {

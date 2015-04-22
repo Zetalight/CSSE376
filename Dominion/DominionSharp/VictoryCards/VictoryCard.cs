@@ -17,5 +17,10 @@ namespace DominionSharp
                 return victoryPoints;
             }
         }
+
+        public override void play()
+        {
+            
+        }
     }
 }

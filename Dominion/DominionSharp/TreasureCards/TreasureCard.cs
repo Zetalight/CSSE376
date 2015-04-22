@@ -17,5 +17,10 @@ namespace DominionSharp
                 return value;
             }
         }
+
+        public override void play()
+        {
+            
+        }
     }
 }

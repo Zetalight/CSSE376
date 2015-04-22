@@ -20,7 +20,7 @@ namespace DominionSharp
         }
         public override void play()
         {
-            base.play()
+            base.play();
             Console.WriteLine("Market Played");
         }
     }
