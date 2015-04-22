@@ -133,6 +133,11 @@ namespace ClassLibrary1
         [TestMethod()]
         public void TestActionCardFunctions()
         {
+            Player B = new Player();
+            A = new ActionWoodcutter();
+            A.play(B);
+            Assert.AreEqual(B.getBuys(), 2);
+            Assert.AreEqual(B.getCoins(), 2);
 
         }
     }
