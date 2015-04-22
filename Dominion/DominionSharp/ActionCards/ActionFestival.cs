@@ -14,8 +14,9 @@ namespace DominionSharp
             this.cost = 5;
             this.picture = null; //TODO: Add Picture
         }
-        public override void play(ref List<Player> targets)
+        public override void play()
         {
+            
             Console.WriteLine("Festival Played");
         }
     }

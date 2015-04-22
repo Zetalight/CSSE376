@@ -12,15 +12,14 @@ namespace DominionSharp
 {
     public partial class FormGame : Form
     {
-        public Card startHand1;
+        private const int CARD_WIDTH = 128;
+        private const int CARD_HEIGHT = 200;
 
         public List<Player> players = new List<Player>();
 
         public FormGame()
         {
             InitializeComponent();
-            startHand1 = new ActionChapel(); //Make this general
-            button4.Image = startHand1.Picture;
         }
 
         public void setPlayerCount(int count)
@@ -28,27 +27,15 @@ namespace DominionSharp
             players.Clear();
             if (count >= 2 && count <= 4)
             {
-                int cardWidth = (tabsPlayers.Size.Width - 48) / 5;
-                int cardHeight = (tabsPlayers.Size.Height) - 32;
                 tabsPlayers.TabPages.Clear();
                 for (int i = 0; i < count; i++)
                 {
                     Player p = new Player();
                     players.Add(p);
                     tabsPlayers.TabPages.Add("Player" + (i + 1));
-
-                    var n = 0;
-                    foreach (Card card in p.getHand())
-                    {
-                        Button cardButton = new Button();
-                        cardButton.Text = card.Name;
-                        cardButton.Location = new Point(4 + n * (cardWidth + 8), 0);
-                        cardButton.Size = new Size(cardWidth, cardHeight);
-                        n++;
-                        tabsPlayers.TabPages[i].Controls.Add(cardButton);
-                    }
-
+                    tabsPlayers.TabPages[i].AutoScroll = true;
                 }
+                updateCardButtons();
             }
             else
             {
@@ -56,9 +43,40 @@ namespace DominionSharp
             }
         }
 
+        public void updateCardButtons()
+        {
+            for (int i = 0; i < players.Count; i++)
+            {
+                tabsPlayers.TabPages[i].Controls.Clear();
+                Player p = players[i];
+
+                var n = 0;
+                foreach (Card card in p.getHand())
+                {
+                    Button cardButton = new Button();
+                    cardButton.Text = card.Name;
+                    cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
+                    cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
+                    cardButton.Click += (sender, args) =>
+                    {
+                        p.playCard(card);
+                        cardButton.Dispose();
+                    };
+                    n++;
+                    tabsPlayers.TabPages[i].Controls.Add(cardButton);
+                }
+
+            }
+        }
+
         public int getPlayerTabCount()
         {
             return tabsPlayers.TabCount;
+        }
+
+        public int getCardButtonCount(int player)
+        {
+            return tabsPlayers.TabPages[player].Controls.Count;
         }
 
         public List<Player> getPlayers()
@@ -79,11 +97,6 @@ namespace DominionSharp
         public String getActionsText()
         {
             return lblActions.Text;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            ActionCard test = (ActionCard) startHand1;
         }
 
         private void FormGame_FormClosed(object sender, FormClosedEventArgs e)

@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace DominionSharp
 {
     public class Player
     {
-        private int coins = 0;
-        private int actions = 1;
-        private int buys = 1;
         private List<Card> deck = new List<Card>();
         private List<Card> hand = new List<Card>();
+        private List<Card> discard = new List<Card>();
+        
+        // list of cards that have been played for the 
+        // current turn, but not yet discarded
+        private List<Card> wumbo = new List<Card>();
 
         public Player()
         {
@@ -36,6 +40,11 @@ namespace DominionSharp
         // takes a random card from the deck and places it into the player's hand
         public Card drawCard()
         {
+            if (deck.Count == 0)
+            {
+                deck.AddRange(discard);
+                discard.Clear();
+            }
             Random rng = new Random();
             int index = rng.Next(deck.Count);
             Card c = deck[index];
@@ -54,34 +63,27 @@ namespace DominionSharp
             return hand;
         }
 
-        public int getCoins()
+        public List<Card> getDiscard()
         {
-            return this.coins;
+            return discard;
         }
 
-        public int getActions()
+        public List<Card> getWumbo()
         {
-            return this.actions;
+            return wumbo;
         }
 
-        public int getBuys()
+        public void endTurn()
         {
-            return this.buys;
+            discard.AddRange(wumbo);
+            wumbo.Clear();
         }
 
-        public void setCoins(int c)
+        public void playCard(Card c)
         {
-            this.coins = c;
-        }
-
-        public void setActions(int a)
-        {
-            this.actions = a;
-        }
-
-        public void setBuys(int b)
-        {
-            this.buys = b;
+            hand.Remove(c);
+            wumbo.Add(c);
+            c.play();
         }
 
         public int getDeckSize()

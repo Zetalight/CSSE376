@@ -14,7 +14,7 @@ namespace DominionSharp
             this.cost = 2;
             this.picture = null; //TODO: Add picture
         }
-        public override void play(ref List<Player> targets)
+        public override void play()
         {
             Console.WriteLine("Cellar Played");
         }

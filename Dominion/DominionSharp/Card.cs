@@ -37,5 +37,6 @@ namespace DominionSharp
             }
         }
 
+        public abstract void play();
     }
 }

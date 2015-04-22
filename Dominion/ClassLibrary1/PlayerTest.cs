@@ -15,31 +15,18 @@ namespace ClassLibrary1
         public void TestThatPlayerInitializes()
         {
             Player p = new Player();
+            Assert.AreEqual(5, p.getDeckSize());
+            Assert.AreEqual(5, p.getHandSize());
         }
 
         [TestMethod()]
-        public void TestThatPlayerValuesInitialize()
+        public void TestPlayerDraw()
         {
             Player p = new Player();
-            Assert.AreEqual(0, p.getCoins());
-            Assert.AreEqual(1, p.getActions());
-            Assert.AreEqual(1, p.getBuys());
-        }
-        [TestMethod()]
-        public void TestPlayerGetSets()
-        {
-            Player p = new Player();
-            Assert.AreEqual(0, p.getCoins());
-            Assert.AreEqual(1, p.getActions());
-            Assert.AreEqual(1, p.getBuys());
-            Assert.AreEqual(5, p.getDeckSize());
-            Assert.AreEqual(5, p.getHandSize());
-            p.setCoins(2);
-            p.setActions(2);
-            p.setBuys(2);
-            Assert.AreEqual(2, p.getCoins());
-            Assert.AreEqual(2, p.getActions());
-            Assert.AreEqual(2, p.getBuys());
+            for (int i = 0; i < 100; i++)
+            {
+                p.drawCard();
+            }
         }
     }
 }

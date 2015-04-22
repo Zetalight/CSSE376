@@ -29,19 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBoxSupply = new System.Windows.Forms.GroupBox();
-            this.Button2 = new System.Windows.Forms.Button();
             this.tabsPlayers = new System.Windows.Forms.TabControl();
             this.TabPage1 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
             this.TabPage2 = new System.Windows.Forms.TabPage();
             this.btnHideRevealHand = new System.Windows.Forms.Button();
             this.lblCoins = new System.Windows.Forms.Label();
             this.lblBuys = new System.Windows.Forms.Label();
             this.lblActions = new System.Windows.Forms.Label();
             this.btnStartEndTurn = new System.Windows.Forms.Button();
-            this.groupBoxSupply.SuspendLayout();
             this.tabsPlayers.SuspendLayout();
-            this.TabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxSupply
@@ -49,23 +45,12 @@
             this.groupBoxSupply.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxSupply.Controls.Add(this.Button2);
             this.groupBoxSupply.Location = new System.Drawing.Point(12, 12);
             this.groupBoxSupply.Name = "groupBoxSupply";
             this.groupBoxSupply.Size = new System.Drawing.Size(760, 267);
             this.groupBoxSupply.TabIndex = 8;
             this.groupBoxSupply.TabStop = false;
             this.groupBoxSupply.Text = "Supply";
-            // 
-            // Button2
-            // 
-            this.Button2.BackgroundImage = global::DominionSharp.Properties.Resources.chapel;
-            this.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Button2.Location = new System.Drawing.Point(6, 19);
-            this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(170, 242);
-            this.Button2.TabIndex = 0;
-            this.Button2.UseVisualStyleBackColor = true;
             // 
             // tabsPlayers
             // 
@@ -82,7 +67,6 @@
             // 
             // TabPage1
             // 
-            this.TabPage1.Controls.Add(this.button4);
             this.TabPage1.Location = new System.Drawing.Point(4, 22);
             this.TabPage1.Name = "TabPage1";
             this.TabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -90,17 +74,6 @@
             this.TabPage1.TabIndex = 2;
             this.TabPage1.Text = "*Player 1";
             this.TabPage1.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(5, 6);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 241);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // TabPage2
             // 
@@ -178,9 +151,7 @@
             this.Name = "FormGame";
             this.Text = "FormGame";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGame_FormClosed);
-            this.groupBoxSupply.ResumeLayout(false);
             this.tabsPlayers.ResumeLayout(false);
-            this.TabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,7 +160,6 @@
         #endregion
 
         internal System.Windows.Forms.GroupBox groupBoxSupply;
-        internal System.Windows.Forms.Button Button2;
         internal System.Windows.Forms.TabControl tabsPlayers;
         internal System.Windows.Forms.TabPage TabPage1;
         internal System.Windows.Forms.TabPage TabPage2;
@@ -197,7 +167,6 @@
         internal System.Windows.Forms.Label lblCoins;
         internal System.Windows.Forms.Label lblBuys;
         internal System.Windows.Forms.Label lblActions;
-        internal System.Windows.Forms.Button btnStartEndTurn;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnStartEndTurn;
     }
 }

@@ -54,6 +54,9 @@ namespace DominionSharp
             }
         }
 
-        public abstract void play(ref List<Player> targets);
+        public override void play()
+        {
+            
+        }
     }
 }
