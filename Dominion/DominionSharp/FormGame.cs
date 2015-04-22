@@ -61,6 +61,7 @@ namespace DominionSharp
                     {
                         p.playCard(card);
                         cardButton.Dispose();
+                        updateCardButtons();
                     };
                     n++;
                     tabsPlayers.TabPages[i].Controls.Add(cardButton);

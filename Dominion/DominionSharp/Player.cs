@@ -38,19 +38,21 @@ namespace DominionSharp
         }
 
         // takes a random card from the deck and places it into the player's hand
-        public Card drawCard()
+        public void drawCard()
         {
-            if (deck.Count == 0)
+            if (deck.Count == 0 && discard.Count != 0)
             {
                 deck.AddRange(discard);
                 discard.Clear();
             }
-            Random rng = new Random();
-            int index = rng.Next(deck.Count);
-            Card c = deck[index];
-            hand.Add(c);
-            deck.RemoveAt(index);
-            return c;
+            if (deck.Count > 0)
+            {
+                Random rng = new Random();
+                int index = rng.Next(deck.Count);
+                Card c = deck[index];
+                hand.Add(c);
+                deck.RemoveAt(index);
+            }
         }
 
         public List<Card> getDeck()

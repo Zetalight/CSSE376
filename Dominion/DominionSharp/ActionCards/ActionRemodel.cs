@@ -16,7 +16,11 @@ namespace DominionSharp
         }
         public override void play()
         {
+            base.play();
             Console.WriteLine("Remodel Played");
+            //TODO: Trash a card from your hand. 
+            //Gain a card costing up to $2 
+            //more than the trashed card.
         }
     }
 }

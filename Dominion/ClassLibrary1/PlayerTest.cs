@@ -20,10 +20,37 @@ namespace ClassLibrary1
         }
 
         [TestMethod()]
-        public void TestPlayerDraw()
+        public void TestPlayerInitializeValues()
         {
             Player p = new Player();
-            for (int i = 0; i < 100; i++)
+            Assert.AreEqual(5, p.getDeckSize());
+            Assert.AreEqual(5, p.getHandSize());
+
+            List<Card> cards = new List<Card>();
+            cards.AddRange(p.getDeck());
+            cards.AddRange(p.getHand());
+            int coppers = 0;
+            int estates = 0;
+            for (int i = 0; i < cards.Count; i++)
+            {
+                if (cards[i] is TreasureCopper)
+                {
+                    coppers++;
+                }
+                else if (cards[i] is VictoryEstate)
+                {
+                    estates++;
+                }
+            }
+            Assert.AreEqual(7, coppers);
+            Assert.AreEqual(3, estates);
+        }
+
+        [TestMethod()]
+        public void TestPlayerOverDraw()
+        {
+            Player p = new Player();
+            for (int i = 0; i < 11; i++)
             {
                 p.drawCard();
             }

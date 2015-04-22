@@ -16,7 +16,11 @@ namespace DominionSharp
         }
         public override void play()
         {
+            base.play();
             Console.WriteLine("Mine Played");
+            //TODO: Trash a Treasure card from your hand.
+            //Gain a Treasure card costing up to $3 more; 
+            //put it into your hand.
         }
     }
 }

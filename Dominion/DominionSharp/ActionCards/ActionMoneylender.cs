@@ -16,7 +16,9 @@ namespace DominionSharp
         }
         public override void play()
         {
+            base.play();
             Console.WriteLine("Moneylender Played");
+            //TODO: Trash copper for +3 coins
         }
     }
 }

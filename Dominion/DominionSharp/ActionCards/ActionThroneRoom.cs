@@ -16,7 +16,9 @@ namespace DominionSharp
         }
         public override void play()
         {
+            base.play();
             Console.WriteLine("Throne Room Played");
+            //TODO: Next action card is played TWICE
         }
     }
 }

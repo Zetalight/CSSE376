@@ -13,10 +13,14 @@ namespace DominionSharp
             this.name = "Council Room";
             this.cost = 5;
             this.picture = null; //TODO: Add Picture
+            this.cards = 4;
+            this.buys = 1;
         }
         public override void play()
         {
+            base.play();
             Console.WriteLine("Council Room Played");
+            //TODO: All other players draw a card
         }
     }
 }

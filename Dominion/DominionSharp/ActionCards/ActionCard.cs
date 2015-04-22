@@ -56,7 +56,15 @@ namespace DominionSharp
 
         public override void play()
         {
-            
+            Turn.Instance.Buys += this.buys;
+            Turn.Instance.Actions += this.actions;
+            Turn.Instance.Coins += this.coins;
+            Turn.Instance.Trashes += this.trashes;
+
+            for (int i = 0; i < this.cards; i++)
+            {
+                Turn.Instance.getActivePlayer().drawCard();
+            }
         }
     }
 }

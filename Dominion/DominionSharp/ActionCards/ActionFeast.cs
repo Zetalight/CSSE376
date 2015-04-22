@@ -16,7 +16,9 @@ namespace DominionSharp
         }
         public override void play()
         {
+            base.play();
             Console.WriteLine("Feast Played");
+            //TODO:Trash this for a card up to 5 coins;
         }
     }
 }

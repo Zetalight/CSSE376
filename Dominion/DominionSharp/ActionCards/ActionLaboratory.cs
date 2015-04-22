@@ -13,9 +13,12 @@ namespace DominionSharp
             this.name = "Laboratory";
             this.cost = 5;
             this.picture = null; //TODO: Add Picture
+            this.cards = 2;
+            this.actions = 1;
         }
         public override void play()
         {
+            base.play();
             Console.WriteLine("Laboratory Played");
         }
     }

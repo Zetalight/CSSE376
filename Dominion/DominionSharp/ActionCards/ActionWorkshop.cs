@@ -16,7 +16,9 @@ namespace DominionSharp
         }
         public override void play()
         {
+            base.play();
             Console.WriteLine("Workshop Played");
+            //TODO: Get 1 card that costs up to 4 coins
         }
     }
 }

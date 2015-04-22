@@ -11,25 +11,61 @@ namespace ClassLibrary1
     [TestClass()]
     public class TurnTest
     {
-        [TestMethod()]
-        public void TestThatTreasureInitializes()
+        private Player p1;
+        private Player p2;
+        private Player p3;
+        [TestInitialize()]
+        public void setup()
         {
-            var target = new FormGame();
-            Assert.AreEqual(target.getCoinsText(), "Coins: 0");
+            p1 = new Player();
+            p2 = new Player();
+            p3 = new Player();
+            List<Player> plist = new List<Player> {p1, p2, p3};
+            Turn.Instance.instantiate(ref plist);
+        }
+        [TestMethod()]
+        public void TestThatTurnInitializes()
+        {
+            Assert.AreEqual(p1, Turn.Instance.getActivePlayer());
+            Assert.AreEqual(0, Turn.Instance.Coins);
+            Assert.AreEqual(1, Turn.Instance.Actions);
+            Assert.AreEqual(1, Turn.Instance.Buys);
+            Assert.AreEqual(0, Turn.Instance.Trashes);    
         }
 
         [TestMethod()]
-        public void TestThatActionsInitializes()
+        public void TestNextTurn()
         {
-            var target = new FormGame();
-            Assert.AreEqual(target.getBuysText(), "Buys: 1");
-        }
-
-        [TestMethod()]
-        public void TestThatBuysInitializes()
-        {
-            var target = new FormGame();
-            Assert.AreEqual(target.getActionsText(), "Actions: 1");
+            Assert.AreEqual(0, Turn.Instance.Coins);
+            Assert.AreEqual(1, Turn.Instance.Actions);
+            Assert.AreEqual(1, Turn.Instance.Buys);
+            Assert.AreEqual(0, Turn.Instance.Trashes);
+            Turn.Instance.Coins = (3);
+            Turn.Instance.Actions = (3);
+            Turn.Instance.Buys = (3);
+            Turn.Instance.Trashes = (3);
+            Assert.AreEqual(3, Turn.Instance.Coins);
+            Assert.AreEqual(3, Turn.Instance.Actions);
+            Assert.AreEqual(3, Turn.Instance.Buys);
+            Assert.AreEqual(3, Turn.Instance.Trashes);
+            Turn.Instance.nextTurn();
+            Assert.AreEqual(p2, Turn.Instance.getActivePlayer());
+            Assert.AreEqual(0, Turn.Instance.Coins);
+            Assert.AreEqual(1, Turn.Instance.Actions);
+            Assert.AreEqual(1, Turn.Instance.Buys);
+            Assert.AreEqual(0, Turn.Instance.Trashes);
+            Turn.Instance.nextTurn();
+            Assert.AreEqual(p3, Turn.Instance.getActivePlayer());
+            Assert.AreEqual(0, Turn.Instance.Coins);
+            Assert.AreEqual(1, Turn.Instance.Actions);
+            Assert.AreEqual(1, Turn.Instance.Buys);
+            Assert.AreEqual(0, Turn.Instance.Trashes);
+            Turn.Instance.nextTurn();
+            Assert.AreEqual(p1, Turn.Instance.getActivePlayer());
+            Assert.AreEqual(0, Turn.Instance.Coins);
+            Assert.AreEqual(1, Turn.Instance.Actions);
+            Assert.AreEqual(1, Turn.Instance.Buys);
+            Assert.AreEqual(0, Turn.Instance.Trashes);
         }
     }
 }

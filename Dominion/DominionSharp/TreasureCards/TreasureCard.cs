@@ -20,7 +20,7 @@ namespace DominionSharp
 
         public override void play()
         {
-            Console.WriteLine(value);
+            Turn.Instance.Coins += value;
         }
     }
 }

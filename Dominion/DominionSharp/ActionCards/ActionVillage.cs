@@ -13,10 +13,12 @@ namespace DominionSharp
             this.name = "Village";
             this.cost = 3;
             this.picture = null;
+            this.cards = 1;
+            this.actions = 2;
         }
         public override void play()
         {
-
+            base.play();
         }
     }
 }

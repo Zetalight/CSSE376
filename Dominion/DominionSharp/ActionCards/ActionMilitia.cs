@@ -13,10 +13,14 @@ namespace DominionSharp
             this.name = "Militia";
             this.cost = 4;
             this.picture = null; //TODO: Add Picture
+            this.coins = 2;
         }
         public override void play()
         {
+            base.play();
             Console.WriteLine("Militia Played");
+            //TODO: Each other player discards 
+            //down to 3 cards in his hand.
         }
     }
 }
