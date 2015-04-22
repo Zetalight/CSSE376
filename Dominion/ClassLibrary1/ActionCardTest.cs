@@ -130,10 +130,63 @@ namespace ClassLibrary1
             Assert.AreEqual(6, A.Cost);
             Assert.AreEqual("Adventure", A.Name);
         }
+
         [TestMethod()]
         public void TestActionCardFunctions()
         {
+            Player B = new Player();
+            A = new ActionWoodcutter();
+            List<Player> targets = new List<Player> { B };
+            A.play(ref targets);
+            Assert.AreEqual(2, B.getBuys());
+            Assert.AreEqual(2, B.getCoins());
+            Assert.AreEqual(0, B.getActions());
+            Assert.AreEqual(4, B.getHandSize());
 
+            B = new Player();
+            A = new ActionFestival();
+            targets = new List<Player> { B };
+            A.play(ref targets);
+            Assert.AreEqual(2, B.getBuys());
+            Assert.AreEqual(2, B.getCoins());
+            Assert.AreEqual(2, B.getActions());
+            Assert.AreEqual(4, B.getHandSize());
+
+            B = new Player();
+            A = new ActionSmithy();
+            targets = new List<Player> { B };
+            A.play(ref targets);
+            Assert.AreEqual(1, B.getBuys());
+            Assert.AreEqual(0, B.getCoins());
+            Assert.AreEqual(0, B.getActions());
+            Assert.AreEqual(7, B.getHandSize());
+
+            B = new Player();
+            A = new ActionLaboratory();
+            targets = new List<Player> { B };
+            A.play(ref targets);
+            Assert.AreEqual(1, B.getBuys());
+            Assert.AreEqual(0, B.getCoins());
+            Assert.AreEqual(1, B.getActions());
+            Assert.AreEqual(6, B.getHandSize());
+
+            B = new Player();
+            A = new ActionMarket();
+            targets = new List<Player> { B };
+            A.play(ref targets);
+            Assert.AreEqual(2, B.getBuys());
+            Assert.AreEqual(1, B.getCoins());
+            Assert.AreEqual(1, B.getActions());
+            Assert.AreEqual(5, B.getHandSize());
+
+            B = new Player();
+            A = new ActionVillage();
+            targets = new List<Player> { B };
+            A.play(ref targets);
+            Assert.AreEqual(1, B.getBuys());
+            Assert.AreEqual(0, B.getCoins());
+            Assert.AreEqual(2, B.getActions());
+            Assert.AreEqual(5, B.getHandSize());
         }
     }
 }
