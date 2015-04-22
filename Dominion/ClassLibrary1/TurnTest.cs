@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ClassLibrary1
 {
     [TestClass()]
-    class TurnTest
+    public class TurnTest
     {
         [TestMethod()]
         public void TestThatTurnInitializes()
@@ -37,7 +37,22 @@ namespace ClassLibrary1
             Turn target = new Turn(ref plist);
             target.nextTurn();
             Assert.AreEqual(p2, target.getActivePlayer());
-
+            Assert.AreEqual(0, target.getCoins());
+            Assert.AreEqual(1, target.getActions());
+            Assert.AreEqual(1, target.getBuys());
+            Assert.AreEqual(0, target.getTrashes());
+            target.nextTurn();
+            Assert.AreEqual(p3, target.getActivePlayer());
+            Assert.AreEqual(0, target.getCoins());
+            Assert.AreEqual(1, target.getActions());
+            Assert.AreEqual(1, target.getBuys());
+            Assert.AreEqual(0, target.getTrashes());
+            target.nextTurn();
+            Assert.AreEqual(p1, target.getActivePlayer());
+            Assert.AreEqual(0, target.getCoins());
+            Assert.AreEqual(1, target.getActions());
+            Assert.AreEqual(1, target.getBuys());
+            Assert.AreEqual(0, target.getTrashes());
         }
     }
 }
