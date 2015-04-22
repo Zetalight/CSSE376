@@ -35,6 +35,18 @@ namespace ClassLibrary1
             Player p3 = new Player();
             List<Player> plist = new List<Player> { p1, p2, p3 };
             Turn target = new Turn(ref plist);
+            Assert.AreEqual(0, target.getCoins());
+            Assert.AreEqual(1, target.getActions());
+            Assert.AreEqual(1, target.getBuys());
+            Assert.AreEqual(0, target.getTrashes());
+            target.setCoins(3);
+            target.setActions(3);
+            target.setBuys(3);
+            target.setTrashes(3);
+            Assert.AreEqual(3, target.getCoins());
+            Assert.AreEqual(3, target.getActions());
+            Assert.AreEqual(3, target.getBuys());
+            Assert.AreEqual(3, target.getTrashes());
             target.nextTurn();
             Assert.AreEqual(p2, target.getActivePlayer());
             Assert.AreEqual(0, target.getCoins());
