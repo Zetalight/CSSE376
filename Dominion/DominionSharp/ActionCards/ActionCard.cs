@@ -54,6 +54,13 @@ namespace DominionSharp
             }
         }
 
-        public abstract void play(ref List<Player> targets);
+        public override void play(ref List<Player> targets)
+        {
+            Turn.Instance.setBuy(this.buys);
+            Turn.Instance.setActions(this.actions);
+            Turn.Instance.setCards(this.cards);
+            Turn.Instance.setCoins(this.coins);
+            Turn.Instance.setTrashes(this.trashes);
+        }
     }
 }

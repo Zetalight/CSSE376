@@ -134,59 +134,201 @@ namespace ClassLibrary1
         [TestMethod()]
         public void TestActionCardFunctions()
         {
-            Player B = new Player();
-            A = new ActionWoodcutter();
-            List<Player> targets = new List<Player> { B };
-            A.play(ref targets);
-            Assert.AreEqual(2, B.getBuys());
-            Assert.AreEqual(2, B.getCoins());
-            Assert.AreEqual(0, B.getActions());
-            Assert.AreEqual(4, B.getHandSize());
+            //2 coin cost cards
+            A = new ActionCellar();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(1, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
 
-            B = new Player();
-            A = new ActionFestival();
-            targets = new List<Player> { B };
-            A.play(ref targets);
-            Assert.AreEqual(2, B.getBuys());
-            Assert.AreEqual(2, B.getCoins());
-            Assert.AreEqual(2, B.getActions());
-            Assert.AreEqual(4, B.getHandSize());
+            A = new ActionChapel();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
 
-            B = new Player();
-            A = new ActionSmithy();
-            targets = new List<Player> { B };
-            A.play(ref targets);
-            Assert.AreEqual(1, B.getBuys());
-            Assert.AreEqual(0, B.getCoins());
-            Assert.AreEqual(0, B.getActions());
-            Assert.AreEqual(7, B.getHandSize());
+            A = new ActionMoat();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
 
-            B = new Player();
-            A = new ActionLaboratory();
-            targets = new List<Player> { B };
-            A.play(ref targets);
-            Assert.AreEqual(1, B.getBuys());
-            Assert.AreEqual(0, B.getCoins());
-            Assert.AreEqual(1, B.getActions());
-            Assert.AreEqual(6, B.getHandSize());
+            //3 coin cost cards
+            A = new ActionChancellor();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(2, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
 
-            B = new Player();
-            A = new ActionMarket();
-            targets = new List<Player> { B };
-            A.play(ref targets);
-            Assert.AreEqual(2, B.getBuys());
-            Assert.AreEqual(1, B.getCoins());
-            Assert.AreEqual(1, B.getActions());
-            Assert.AreEqual(5, B.getHandSize());
-
-            B = new Player();
             A = new ActionVillage();
-            targets = new List<Player> { B };
-            A.play(ref targets);
-            Assert.AreEqual(1, B.getBuys());
-            Assert.AreEqual(0, B.getCoins());
-            Assert.AreEqual(2, B.getActions());
-            Assert.AreEqual(5, B.getHandSize());
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(2, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionWoodcutter();
+            A.play();
+            Assert.AreEqual(2, Turn.Instance.getBuys());
+            Assert.AreEqual(2, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionWorkshop();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            //4 coin cost cards
+            A = new ActionBureaucrat();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionFeast();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            //A = new ActionGarden();
+            //A.play();
+            //Assert.AreEqual(1, Turn.Instance.getBuys());
+            //Assert.AreEqual(0, Turn.Instance.getCoins());
+            //Assert.AreEqual(0, Turn.Instance.getActions());
+            //Assert.AreEqual(0, Turn.Instance.getTrashes());
+            //Turn.Instance.reInitVals();
+
+            A = new ActionMilitia();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(2, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionMoneylender();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionRemodel();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionSmithy();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Turn.Instance.reInitVals();
+
+            A = new ActionSpy();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(1, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionThief();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionThroneRoom();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            //5 coin cost cards
+            A = new ActionFestival();
+            A.play();
+            Assert.AreEqual(2, Turn.Instance.getBuys());
+            Assert.AreEqual(2, Turn.Instance.getCoins());
+            Assert.AreEqual(2, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionLaboratory();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(1, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionLibrary();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionMarket();
+            A.play();
+            Assert.AreEqual(2, Turn.Instance.getBuys());
+            Assert.AreEqual(1, Turn.Instance.getCoins());
+            Assert.AreEqual(1, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionMine();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            A = new ActionWitch();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
+
+            //6 coin cost cards
+            A = new ActionAdventure();
+            A.play();
+            Assert.AreEqual(1, Turn.Instance.getBuys());
+            Assert.AreEqual(0, Turn.Instance.getCoins());
+            Assert.AreEqual(0, Turn.Instance.getActions());
+            Assert.AreEqual(0, Turn.Instance.getTrashes());
+            Turn.Instance.reInitVals();
         }
     }
 }
