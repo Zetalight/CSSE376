@@ -19,6 +19,10 @@ namespace ClassLibrary1
             Player p3 = new Player();
             List<Player> plist = new List<Player> {p1, p2, p3};
             Turn target = new Turn(ref plist);
+            Assert.AreEqual(p1, target.getActivePlayer());
+            Assert.AreEqual(0, target.getCoins());
+            Assert.AreEqual(1, target.getActions());
+            Assert.AreEqual(1, target.getBuys());
             
         }
 
@@ -31,6 +35,7 @@ namespace ClassLibrary1
             List<Player> plist = new List<Player> { p1, p2, p3 };
             Turn target = new Turn(ref plist);
             target.nextTurn();
+            Assert.AreEqual(p2, target.getActivePlayer());
         }
     }
 }
