@@ -135,7 +135,7 @@ namespace ClassLibrary1
         {
             Player B = new Player();
             A = new ActionWoodcutter();
-//            A.play(B);
+            A.play(new List<Player> {B});
             Assert.AreEqual(2, B.getBuys());
             Assert.AreEqual(2, B.getCoins());
             Assert.AreEqual(0, B.getActions());
@@ -143,7 +143,7 @@ namespace ClassLibrary1
 
             B = new Player();
             A = new ActionFestival();
-//            A.play(B);
+            A.play(new List<Player> {B});
             Assert.AreEqual(2, B.getBuys());
             Assert.AreEqual(2, B.getCoins());
             Assert.AreEqual(2, B.getActions());
@@ -151,11 +151,35 @@ namespace ClassLibrary1
 
             B = new Player();
             A = new ActionSmithy();
-//            A.play(B);
+            A.play(new List<Player> {B});
             Assert.AreEqual(1, B.getBuys());
             Assert.AreEqual(0, B.getCoins());
             Assert.AreEqual(0, B.getActions());
             Assert.AreEqual(7, B.getHandSize());
+
+            B = new Player();
+            A = new ActionLaboratory();
+            A.play(new List<Player> {B});
+            Assert.AreEqual(1, B.getBuys());
+            Assert.AreEqual(0, B.getCoins());
+            Assert.AreEqual(1, B.getActions());
+            Assert.AreEqual(6, B.getHandSize());
+
+            B = new Player();
+            A = new ActionMarket();
+            A.play(new List<Player> { B });
+            Assert.AreEqual(2, B.getBuys());
+            Assert.AreEqual(1, B.getCoins());
+            Assert.AreEqual(1, B.getActions());
+            Assert.AreEqual(5, B.getHandSize());
+
+            B = new Player();
+            A = new ActionVillage();
+            A.play(new List<Player> { B });
+            Assert.AreEqual(1, B.getBuys());
+            Assert.AreEqual(0, B.getCoins());
+            Assert.AreEqual(2, B.getActions());
+            Assert.AreEqual(5, B.getHandSize());
         }
     }
 }
