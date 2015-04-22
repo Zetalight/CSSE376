@@ -84,7 +84,6 @@ namespace DominionSharp
         private void button4_Click(object sender, EventArgs e)
         {
             ActionCard test = (ActionCard) startHand1;
-            test.play();
         }
 
         private void FormGame_FormClosed(object sender, FormClosedEventArgs e)
