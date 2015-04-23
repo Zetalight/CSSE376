@@ -12,7 +12,7 @@ namespace DominionSharp
         {
             this.name = "Festival";
             this.cost = 5;
-            this.picture = null; //TODO: Add Picture
+            this.picture = global::DominionSharp.Properties.Resources.festival; //TODO: Add Picture
             this.actions = 2;
             this.buys = 1;
             this.coins = 2;

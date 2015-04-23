@@ -12,7 +12,7 @@ namespace DominionSharp
         {
             this.name = "Witch";
             this.cost = 5;
-            this.picture = null;
+            this.picture = global::DominionSharp.Properties.Resources.witch;
             this.cards = 2;
         }
         public override void play()

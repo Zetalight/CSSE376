@@ -12,7 +12,7 @@ namespace DominionSharp
         {
             this.name = "Library";
             this.cost = 5;
-            this.picture = null; //TODO: Add Picture
+            this.picture = global::DominionSharp.Properties.Resources.library; //TODO: Add Picture
         }
         public override void play()
         {

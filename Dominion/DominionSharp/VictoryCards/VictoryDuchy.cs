@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    public class VictoryDutchy : VictoryCard
+    public class VictoryDuchy : VictoryCard
     {
-        public VictoryDutchy()
+        public VictoryDuchy()
         {
-            this.name = "Dutchy";
+            this.name = "Duchy";
             this.cost = 5;
             this.victoryPoints = 3;
-            this.picture = null;
+            this.picture = global::DominionSharp.Properties.Resources.duchy;
         }
     }
 }

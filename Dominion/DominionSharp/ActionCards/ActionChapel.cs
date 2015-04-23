@@ -12,7 +12,7 @@ namespace DominionSharp
         {
             this.name = "Chapel";
             this.cost = 2;
-            this.picture = global::DominionSharp.Properties.Resources.chapel; ;
+            this.picture = global::DominionSharp.Properties.Resources.chapel;
             this.trashes = 4;
         }
         public override void play()

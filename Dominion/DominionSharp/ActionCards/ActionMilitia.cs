@@ -12,7 +12,7 @@ namespace DominionSharp
         {
             this.name = "Militia";
             this.cost = 4;
-            this.picture = null; //TODO: Add Picture
+            this.picture = global::DominionSharp.Properties.Resources.militia; //TODO: Add Picture
             this.coins = 2;
         }
         public override void play()

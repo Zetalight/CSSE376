@@ -12,7 +12,7 @@ namespace DominionSharp
         {
             this.name = "Council Room";
             this.cost = 5;
-            this.picture = null; //TODO: Add Picture
+            this.picture = global::DominionSharp.Properties.Resources.councilroom; //TODO: Add Picture
             this.cards = 4;
             this.buys = 1;
         }

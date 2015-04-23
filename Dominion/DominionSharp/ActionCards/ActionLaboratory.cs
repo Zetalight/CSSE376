@@ -12,7 +12,7 @@ namespace DominionSharp
         {
             this.name = "Laboratory";
             this.cost = 5;
-            this.picture = null; //TODO: Add Picture
+            this.picture = global::DominionSharp.Properties.Resources.laboratory; //TODO: Add Picture
             this.cards = 2;
             this.actions = 1;
         }

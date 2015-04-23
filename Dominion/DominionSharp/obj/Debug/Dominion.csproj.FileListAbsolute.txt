@@ -28,3 +28,6 @@ C:\Users\enricotj\Code\QA\FinalProject\CSSE376\Dominion\DominionSharp\obj\Debug\
 C:\Users\enricotj\Code\QA\FinalProject\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.FormGame.resources
 C:\Users\enricotj\Code\QA\FinalProject\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.Properties.Resources.resources
 C:\Users\enricotj\Code\QA\FinalProject\CSSE376\Dominion\DominionSharp\obj\Debug\Dominion.csproj.GenerateResource.Cache
+C:\Users\siscodr\Documents\GitHub\CSSE376\Dominion\DominionSharp\bin\Debug\DominionSharp.exe.config
+C:\Users\siscodr\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.exe
+C:\Users\siscodr\Documents\GitHub\CSSE376\Dominion\DominionSharp\obj\Debug\DominionSharp.pdb

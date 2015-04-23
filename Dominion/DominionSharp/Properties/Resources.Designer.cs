@@ -69,5 +69,123 @@ namespace DominionSharp.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        internal static System.Drawing.Bitmap adventurer
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("adventurer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap bureaucrat
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("bureaucrat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap cellar
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("cellar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap chancellor
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("chancellor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap councilroom
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("councilroom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap feast
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("feast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap festival
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("festival", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap laboratory
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("laboratory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap library
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("library", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap market
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("market", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap militia
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("militia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap mine
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("mine", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("moat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap moneylender
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("moneylender", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap 
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("chapel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

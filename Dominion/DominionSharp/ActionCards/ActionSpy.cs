@@ -12,7 +12,7 @@ namespace DominionSharp
         {
             this.name = "Spy";
             this.cost = 4;
-            this.picture = null; //TODO: Add Picture
+            this.picture = global::DominionSharp.Properties.Resources.spy; //TODO: Add Picture
             this.cards = 1;
             this.actions = 1;
         }

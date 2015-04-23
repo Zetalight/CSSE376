@@ -12,7 +12,7 @@ namespace DominionSharp
         {
             this.name = "Woodcutter";
             this.cost = 3;
-            this.picture = null; //TODO: Add Picture
+            this.picture = global::DominionSharp.Properties.Resources.woodcutter; //TODO: Add Picture
             this.coins = 2;
             this.buys = 1;
         }

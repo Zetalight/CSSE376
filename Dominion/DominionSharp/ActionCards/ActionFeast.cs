@@ -12,7 +12,7 @@ namespace DominionSharp
         {
             this.name = "Feast";
             this.cost = 4;
-            this.picture = null; //TODO: Add Picture
+            this.picture = global::DominionSharp.Properties.Resources.feast; //TODO: Add Picture
         }
         public override void play()
         {

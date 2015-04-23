@@ -12,7 +12,7 @@ namespace DominionSharp
         {
             this.name = "Village";
             this.cost = 3;
-            this.picture = null;
+            this.picture = global::DominionSharp.Properties.Resources.village;
             this.cards = 1;
             this.actions = 2;
         }
