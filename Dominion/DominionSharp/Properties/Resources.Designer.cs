@@ -164,6 +164,8 @@ namespace DominionSharp.Properties {
                 object obj = ResourceManager.GetObject("mine", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
+        }
+        internal static System.Drawing.Bitmap moat
         {
             get
             {
