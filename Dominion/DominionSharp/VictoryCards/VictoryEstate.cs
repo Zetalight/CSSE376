@@ -13,7 +13,7 @@ namespace DominionSharp
             this.name = "Estate";
             this.cost = 2;
             this.victoryPoints = 1;
-            this.picture = null;
+            this.picture = global::DominionSharp.Properties.Resources.estate;
         }
     }
 }

@@ -10,10 +10,10 @@ namespace DominionSharp
     {
         public VictoryCurse()
         {
-            this.name = "Estate";
+            this.name = "Curse";
             this.cost = 0;
             this.victoryPoints = -1;
-            this.picture = null;
+            this.picture = global::DominionSharp.Properties.Resources.curse;
         }
     }
 }

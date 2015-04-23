@@ -13,7 +13,7 @@ namespace DominionSharp
             this.name = "Silver";
             this.cost = 3;
             this.value = 2;
-            this.picture = null;
+            this.picture = global::DominionSharp.Properties.Resources.silver;
         }
     }
 }

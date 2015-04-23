@@ -91,7 +91,7 @@
     <Compile Include="Turn.cs" />
     <Compile Include="VictoryCards\VictoryCard.cs" />
     <Compile Include="VictoryCards\VictoryCurse.cs" />
-    <Compile Include="VictoryCards\VictoryDutchy.cs" />
+    <Compile Include="VictoryCards\VictoryDuchy.cs" />
     <Compile Include="VictoryCards\VictoryEstate.cs" />
     <Compile Include="VictoryCards\VictoryProvince.cs" />
     <Compile Include="ActionCards\ActionWorkshop.cs" />
@@ -126,6 +126,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\chapel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\adventurer.jpg" />
+    <Content Include="Resources\bureaucrat.jpg" />
+    <Content Include="Resources\cellar.jpg" />
+    <Content Include="Resources\chancellor.jpg" />
+    <Content Include="Resources\copper.jpg" />
+    <Content Include="Resources\councilroom.jpg" />
+    <Content Include="Resources\Curse.jpg" />
+    <Content Include="Resources\duchy.jpg" />
+    <Content Include="Resources\estate.jpg" />
+    <Content Include="Resources\feast.jpg" />
+    <Content Include="Resources\festival.jpg" />
+    <Content Include="Resources\gardens.jpg" />
+    <Content Include="Resources\gold.jpg" />
+    <Content Include="Resources\laboratory.jpg" />
+    <Content Include="Resources\library.jpg" />
+    <Content Include="Resources\market.jpg" />
+    <Content Include="Resources\militia.jpg" />
+    <Content Include="Resources\mine.jpg" />
+    <Content Include="Resources\moat.jpg" />
+    <Content Include="Resources\moneylender.jpg" />
+    <Content Include="Resources\province.jpg" />
+    <Content Include="Resources\remodel.jpg" />
+    <Content Include="Resources\silver.jpg" />
+    <Content Include="Resources\smithy.jpg" />
+    <Content Include="Resources\spy.jpg" />
+    <Content Include="Resources\thief.jpg" />
+    <Content Include="Resources\throneroom.jpg" />
+    <Content Include="Resources\village.jpg" />
+    <Content Include="Resources\witch.jpg" />
+    <Content Include="Resources\woodcutter.jpg" />
+    <Content Include="Resources\workshop.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

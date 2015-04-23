@@ -13,7 +13,7 @@ namespace DominionSharp
             this.name = "Copper";
             this.cost = 0;
             this.value = 1;
-            this.picture = null;
+            this.picture = global::DominionSharp.Properties.Resources.copper;
         }
     }
 }

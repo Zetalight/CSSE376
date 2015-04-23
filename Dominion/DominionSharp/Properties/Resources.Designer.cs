@@ -181,11 +181,131 @@ namespace DominionSharp.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        internal static System.Drawing.Bitmap 
+        internal static System.Drawing.Bitmap remodel
         {
             get
             {
-                object obj = ResourceManager.GetObject("chapel", resourceCulture);
+                object obj = ResourceManager.GetObject("remodel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap smithy
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("smithy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap spy
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("spy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap thief
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("thief", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap throneroom
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("throneroom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap village
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("village", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap witch
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("witch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap woodcutter
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("woodcutter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap workshop
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("workshop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap estate
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("estate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap duchy
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("duchy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap province
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("province", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap copper
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("copper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap silver
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("silver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap gold
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("gold", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap curse
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("curse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
