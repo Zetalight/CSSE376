@@ -24,13 +24,13 @@ namespace ClassLibrary1
         {
             game.setPlayerCount(2);
             List<Player> players = game.getPlayers();
-            Assert.Equals(players.Count, 2);
-            Assert.Equals(game.getPlayerTabCount(), 2);
+            Assert.AreEqual(players.Count, 2);
+            Assert.AreEqual(game.getPlayerTabCount(), 2);
 
             for (int i = 0; i < players.Count; i++)
             {
-                Assert.Equals(players[i].getDeck().Count, 5);
-                Assert.Equals(players[i].getHand().Count, 5);
+                Assert.AreEqual(players[i].getDeck().Count, 5);
+                Assert.AreEqual(players[i].getHand().Count, 5);
             }
         }
 
@@ -39,13 +39,13 @@ namespace ClassLibrary1
         {
             game.setPlayerCount(4);
             List<Player> players = game.getPlayers();
-            Assert.Equals(players.Count, 4);
-            Assert.Equals(game.getPlayerTabCount(), 4);
+            Assert.AreEqual(players.Count, 4);
+            Assert.AreEqual(game.getPlayerTabCount(), 4);
 
             for (int i = 0; i < players.Count; i++)
             {
-                Assert.Equals(players[i].getDeck().Count, 5);
-                Assert.Equals(players[i].getHand().Count, 5);
+                Assert.AreEqual(players[i].getDeck().Count, 5);
+                Assert.AreEqual(players[i].getHand().Count, 5);
             }
         }
 
