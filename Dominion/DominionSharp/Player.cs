@@ -77,8 +77,14 @@ namespace DominionSharp
 
         public void endTurn()
         {
+            discard.AddRange(hand);
             discard.AddRange(wumbo);
             wumbo.Clear();
+            hand.Clear();
+            for (int i = 0; i < 5; i++)
+            {
+                drawCard();
+            }
         }
 
         public void playCard(Card c)
@@ -97,5 +103,23 @@ namespace DominionSharp
         {
             return this.hand.Count;
         }
+
+        public void gainCard(Card c)
+        {
+            discard.Add(c);
+        }
+
+        public bool hasMoatInHand()
+        {
+            foreach (Card c in hand)
+            {
+                if (c is ActionMoat)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }

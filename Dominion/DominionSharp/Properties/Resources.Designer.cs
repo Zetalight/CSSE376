@@ -63,249 +63,319 @@ namespace DominionSharp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adventurer {
+            get {
+                object obj = ResourceManager.GetObject("adventurer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bureaucrat {
+            get {
+                object obj = ResourceManager.GetObject("bureaucrat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cellar {
+            get {
+                object obj = ResourceManager.GetObject("cellar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chancellor {
+            get {
+                object obj = ResourceManager.GetObject("chancellor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chapel {
             get {
                 object obj = ResourceManager.GetObject("chapel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        internal static System.Drawing.Bitmap adventurer
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("adventurer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap bureaucrat
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("bureaucrat", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap cellar
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("cellar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap chancellor
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("chancellor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap councilroom
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("councilroom", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap feast
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("feast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap festival
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("festival", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap laboratory
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("laboratory", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap library
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("library", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap market
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("market", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap militia
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("militia", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap mine
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("mine", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap moat
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("moat", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap moneylender
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("moneylender", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap remodel
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("remodel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap smithy
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("smithy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap spy
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("spy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap thief
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("thief", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap throneroom
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("throneroom", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap village
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("village", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap witch
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("witch", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap woodcutter
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("woodcutter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap workshop
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("workshop", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap estate
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("estate", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap duchy
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("duchy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap province
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("province", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap copper
-        {
-            get
-            {
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap copper {
+            get {
                 object obj = ResourceManager.GetObject("copper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        internal static System.Drawing.Bitmap silver
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("silver", resourceCulture);
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap councilroom {
+            get {
+                object obj = ResourceManager.GetObject("councilroom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        internal static System.Drawing.Bitmap gold
-        {
-            get
-            {
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Curse {
+            get {
+                object obj = ResourceManager.GetObject("Curse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap duchy {
+            get {
+                object obj = ResourceManager.GetObject("duchy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estate {
+            get {
+                object obj = ResourceManager.GetObject("estate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap feast {
+            get {
+                object obj = ResourceManager.GetObject("feast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap festival {
+            get {
+                object obj = ResourceManager.GetObject("festival", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gardens {
+            get {
+                object obj = ResourceManager.GetObject("gardens", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gold {
+            get {
                 object obj = ResourceManager.GetObject("gold", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        internal static System.Drawing.Bitmap curse
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("curse", resourceCulture);
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap laboratory {
+            get {
+                object obj = ResourceManager.GetObject("laboratory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap library {
+            get {
+                object obj = ResourceManager.GetObject("library", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap market {
+            get {
+                object obj = ResourceManager.GetObject("market", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap militia {
+            get {
+                object obj = ResourceManager.GetObject("militia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mine {
+            get {
+                object obj = ResourceManager.GetObject("mine", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap moat {
+            get {
+                object obj = ResourceManager.GetObject("moat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap moneylender {
+            get {
+                object obj = ResourceManager.GetObject("moneylender", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap province {
+            get {
+                object obj = ResourceManager.GetObject("province", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap remodel {
+            get {
+                object obj = ResourceManager.GetObject("remodel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap silver {
+            get {
+                object obj = ResourceManager.GetObject("silver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap smithy {
+            get {
+                object obj = ResourceManager.GetObject("smithy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spy {
+            get {
+                object obj = ResourceManager.GetObject("spy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thief {
+            get {
+                object obj = ResourceManager.GetObject("thief", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap throneroom {
+            get {
+                object obj = ResourceManager.GetObject("throneroom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap village {
+            get {
+                object obj = ResourceManager.GetObject("village", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap witch {
+            get {
+                object obj = ResourceManager.GetObject("witch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap woodcutter {
+            get {
+                object obj = ResourceManager.GetObject("woodcutter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap workshop {
+            get {
+                object obj = ResourceManager.GetObject("workshop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

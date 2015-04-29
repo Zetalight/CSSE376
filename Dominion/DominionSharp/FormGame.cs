@@ -15,8 +15,6 @@ namespace DominionSharp
         private const int CARD_WIDTH = 128;
         private const int CARD_HEIGHT = 200;
 
-        public List<Player> players = new List<Player>();
-
         public FormGame()
         {
             InitializeComponent();
@@ -24,7 +22,7 @@ namespace DominionSharp
 
         public void setPlayerCount(int count)
         {
-            players.Clear();
+            List<Player> players = new List<Player>();
             if (count >= 2 && count <= 4)
             {
                 tabsPlayers.TabPages.Clear();
@@ -35,6 +33,7 @@ namespace DominionSharp
                     tabsPlayers.TabPages.Add("Player" + (i + 1));
                     tabsPlayers.TabPages[i].AutoScroll = true;
                 }
+                Turn.Instance.instantiate(players);
                 updateCardButtons();
             }
             else
@@ -45,18 +44,20 @@ namespace DominionSharp
 
         public void updateCardButtons()
         {
+            List<Player> players = Turn.Instance.Players;
             for (int i = 0; i < players.Count; i++)
             {
                 tabsPlayers.TabPages[i].Controls.Clear();
                 Player p = players[i];
-
                 var n = 0;
                 foreach (Card card in p.getHand())
                 {
                     Button cardButton = new Button();
-                    cardButton.Text = card.Name;
+                    //cardButton.Text = card.Name;
                     cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
                     cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
+                    cardButton.BackgroundImage = card.Picture;
+                    cardButton.BackgroundImageLayout = ImageLayout.Stretch;
                     cardButton.Click += (sender, args) =>
                     {
                         p.playCard(card);
@@ -66,7 +67,6 @@ namespace DominionSharp
                     n++;
                     tabsPlayers.TabPages[i].Controls.Add(cardButton);
                 }
-
             }
         }
 
@@ -78,11 +78,6 @@ namespace DominionSharp
         public int getCardButtonCount(int player)
         {
             return tabsPlayers.TabPages[player].Controls.Count;
-        }
-
-        public List<Player> getPlayers()
-        {
-            return players;
         }
 
         public String getCoinsText()

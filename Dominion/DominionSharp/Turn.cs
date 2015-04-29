@@ -31,7 +31,7 @@ namespace DominionSharp
             }
         }
 
-        public void instantiate(ref List<Player> plist)
+        public void instantiate(List<Player> plist)
         {
             instance.players = plist;
             instance.activePlayer = plist[0];
@@ -92,8 +92,21 @@ namespace DominionSharp
             return instance.activePlayer;
         }
 
+        public List<Player> Players
+        {
+            get
+            {
+                return players;
+            }
+            set
+            {
+                players = value;
+            }
+        }
+
         public void nextTurn()
         {
+            instance.activePlayer.endTurn();
             instance.currentPlayerIndex = (instance.currentPlayerIndex + 1) % instance.players.Count;
             instance.activePlayer = instance.players[instance.currentPlayerIndex];
             instance.reInitVals();

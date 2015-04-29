@@ -13,7 +13,7 @@ namespace DominionSharp
             this.name = "Curse";
             this.cost = 0;
             this.victoryPoints = -1;
-            this.picture = global::DominionSharp.Properties.Resources.curse;
+            this.picture = global::DominionSharp.Properties.Resources.Curse;
         }
     }
 }
