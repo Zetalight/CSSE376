@@ -150,13 +150,16 @@ namespace ClassLibrary1
             typeof(Player)
                 .GetField("hand", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
                 .SetValue(Turn.Instance.getActivePlayer(), handToGive);
-            currentplayer.playCard(new ActionCouncilRoom());
-            Assert.AreEqual(currentplayer.getHandSize(), 8);
+            currentplayer = Turn.Instance.getActivePlayer();
+            Turn.Instance.getActivePlayer().playCard(currentplayer.getHand()[currentplayer.getHandSize() - 1]);
+            Assert.AreEqual(8, currentplayer.getHandSize());
+            players = Turn.Instance.Players;
+            currentplayer = Turn.Instance.getActivePlayer();
             for (int i = 0; i < players.Count; i++ )
             {
-                if (players[i] != currentplayer)
+                if (!players[i].Equals(currentplayer))
                 {
-                    Assert.AreEqual(players[i].getHandSize(), 6);
+                    Assert.AreEqual(6, players[i].getHandSize());
                 }
             }
             //Witch Test
@@ -189,8 +192,8 @@ namespace ClassLibrary1
             typeof(Player)
                 .GetField("hand", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
                 .SetValue(Turn.Instance.getActivePlayer(), handToGive);
-            currentplayer.playCard(new ActionThroneRoom());
-            currentplayer.playCard(new ActionCouncilRoom());
+            currentplayer.playCard(Turn.Instance.getActivePlayer().getHand()[Turn.Instance.getActivePlayer().getHandSize() - 2]);
+            currentplayer.playCard(Turn.Instance.getActivePlayer().getHand()[Turn.Instance.getActivePlayer().getHandSize() - 1]);
             Assert.AreEqual(currentplayer.getHandSize(), 11);
             for (int i = 0; i < players.Count; i++)
             {
