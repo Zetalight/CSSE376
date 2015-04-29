@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.exe
+Dominion/DominionSharp/bin/Debug/DominionSharp.pdb
+Dominion/DominionSharp/bin/Debug/DominionSharp.exe
+*.coverage
