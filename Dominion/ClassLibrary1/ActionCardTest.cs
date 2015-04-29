@@ -132,6 +132,77 @@ namespace ClassLibrary1
         }
 
         [TestMethod()]
+        public void TestActionCardAdvancedFunctions()
+        {
+            //Number of Players
+            int numberOfPlayers = 3; //Must be at least 2
+            //Council Room Test
+            FormGame game = new FormGame();
+            game.setPlayerCount(numberOfPlayers);
+            List<Player> players = Turn.Instance.Players;
+            Player currentplayer = Turn.Instance.getActivePlayer();
+            List<Card> handToGive = new List<Card>();
+            handToGive.Add(new TreasureCopper());
+            handToGive.Add(new TreasureCopper());
+            handToGive.Add(new TreasureCopper());
+            handToGive.Add(new TreasureCopper());
+            handToGive.Add(new ActionCouncilRoom());
+            typeof(Player)
+                .GetField("hand", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
+                .SetValue(Turn.Instance.getActivePlayer(), handToGive);
+            currentplayer.playCard(new ActionCouncilRoom());
+            Assert.AreEqual(currentplayer.getHandSize(), 8);
+            for (int i = 0; i < players.Count; i++ )
+            {
+                if (players[i] != currentplayer)
+                {
+                    Assert.AreEqual(players[i].getHandSize(), 6);
+                }
+            }
+            //Witch Test
+            game = new FormGame();
+            game.setPlayerCount(numberOfPlayers);
+            players = Turn.Instance.Players;
+            currentplayer = Turn.Instance.getActivePlayer();
+            currentplayer.playCard(new ActionWitch());
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (players[i] != currentplayer)
+                {
+                    //This card's discard
+                    List<Card> discard = players[i].getDiscard();
+                    //Testing top card to be a curse
+                    Assert.AreEqual(discard[discard.Count - 1].GetType(), new VictoryCurse().GetType());
+                }
+            }
+            //ThroneRoom Test
+            game = new FormGame();
+            game.setPlayerCount(numberOfPlayers);
+            players = Turn.Instance.Players;
+            currentplayer = Turn.Instance.getActivePlayer();
+            handToGive = new List<Card>();
+            handToGive.Add(new TreasureCopper());
+            handToGive.Add(new TreasureCopper());
+            handToGive.Add(new TreasureCopper());
+            handToGive.Add(new ActionThroneRoom());
+            handToGive.Add(new ActionCouncilRoom());
+            typeof(Player)
+                .GetField("hand", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
+                .SetValue(Turn.Instance.getActivePlayer(), handToGive);
+            currentplayer.playCard(new ActionThroneRoom());
+            currentplayer.playCard(new ActionCouncilRoom());
+            Assert.AreEqual(currentplayer.getHandSize(), 11);
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (players[i] != currentplayer)
+                {
+                    Assert.AreEqual(players[i].getHandSize(), 7);
+                }
+            }
+        }
+
+
+        [TestMethod()]
         public void TestActionCardFunctions()
         {
             ReInitTurn();
