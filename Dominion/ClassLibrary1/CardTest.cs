@@ -38,12 +38,6 @@ namespace ClassLibrary1
             Assert.AreEqual("Estate", V.Name);
             Assert.AreEqual("Chapel", K.Name);
         }
-
-        [TestMethod()]
-        public void testImage()
-        {
-            Assert.Fail("No test yet!");
-        }
         [TestMethod()]
         public void testVictoryPoints()
         {

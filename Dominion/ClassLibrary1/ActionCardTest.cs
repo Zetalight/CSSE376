@@ -352,7 +352,7 @@ namespace ClassLibrary1
         private void ReInitTurn()
         {
             List<Player> players = new List<Player> { new Player() };
-            Turn.Instance.instantiate(ref players);
+            Turn.Instance.instantiate(players);
             Turn.Instance.reInitVals();
         }
     }

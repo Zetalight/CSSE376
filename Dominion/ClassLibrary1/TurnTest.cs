@@ -22,7 +22,7 @@ namespace ClassLibrary1
             p2 = new Player();
             p3 = new Player();
             plist = new List<Player> {p1, p2, p3};
-            Turn.Instance.instantiate(ref plist);
+            Turn.Instance.instantiate(plist);
         }
         [TestMethod()]
         public void TestThatTurnInitializes()
@@ -72,7 +72,7 @@ namespace ClassLibrary1
         [TestMethod()]
         public void TestGetPlayers()
         {
-            Assert.AreEqual(plist, Turn.Instance.getPlayers());
+            Assert.AreEqual(plist, Turn.Instance.Players);
         }
     }
 }
