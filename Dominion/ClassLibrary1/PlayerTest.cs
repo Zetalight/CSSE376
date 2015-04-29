@@ -55,5 +55,24 @@ namespace ClassLibrary1
                 p.drawCard();
             }
         }
+
+        [TestMethod()]
+        public void TestPlayerGainsCard()
+        {
+            Player p = new Player();
+            Assert.IsFalse(exists(p.getDiscard(), new ActionChapel()));
+            p.gainCard(new ActionChapel());
+            Assert.IsTrue(exists(p.getDiscard(), new ActionChapel()));
+        }
+
+        private Boolean exists(List<Card> clist, Card c)
+        {
+            foreach (Card c2 in clist)
+            {
+                if (c2.GetType() == c.GetType())
+                    return true;
+            }
+            return false;
+        }
     }
 }
