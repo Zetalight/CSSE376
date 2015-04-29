@@ -14,13 +14,14 @@ namespace ClassLibrary1
         private Player p1;
         private Player p2;
         private Player p3;
+        List<Player> plist;
         [TestInitialize()]
         public void setup()
         {
             p1 = new Player();
             p2 = new Player();
             p3 = new Player();
-            List<Player> plist = new List<Player> {p1, p2, p3};
+            plist = new List<Player> {p1, p2, p3};
             Turn.Instance.instantiate(ref plist);
         }
         [TestMethod()]
@@ -66,6 +67,12 @@ namespace ClassLibrary1
             Assert.AreEqual(1, Turn.Instance.Actions);
             Assert.AreEqual(1, Turn.Instance.Buys);
             Assert.AreEqual(0, Turn.Instance.Trashes);
+        }
+
+        [TestMethod()]
+        public void TestGetPlayers()
+        {
+            Assert.AreEqual(plist, Turn.Instance.getPlayers());
         }
     }
 }
