@@ -72,7 +72,7 @@ namespace ClassLibrary1
         [TestMethod()]
         public void TestGetPlayers()
         {
-            Assert.AreEqual(plist, Turn.Instance.getPlayers());
+            Assert.AreEqual(plist, Turn.Instance.players);
         }
     }
 }

@@ -65,6 +65,17 @@ namespace ClassLibrary1
             Assert.IsTrue(exists(p.getDiscard(), new ActionChapel()));
         }
 
+        [TestMethod()]
+        public void TestPlayerEndTurn()
+        {
+            Player p = new Player();
+            typeof(Player).GetField("hand", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(p, new List<Card> { new ActionBureaucrat(), new ActionChapel() });
+            p.endTurn();
+            Assert.IsFalse(exists(p.getHand(), new ActionBureaucrat()));
+            Assert.IsFalse(exists(p.getHand(), new ActionChapel()));
+            Assert.AreEqual(5, p.getHandSize());
+        }
+
         private Boolean exists(List<Card> clist, Card c)
         {
             foreach (Card c2 in clist)
