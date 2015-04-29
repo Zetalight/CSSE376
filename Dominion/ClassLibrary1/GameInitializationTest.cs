@@ -8,7 +8,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ClassLibrary1
 {
-    class GameInitializationTest
+    [TestClass()]
+    public class GameInitializationTest
     {
         FormGame game;
 
