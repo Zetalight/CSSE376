@@ -16,6 +16,8 @@ namespace DominionSharp
         private int actions;
         private int buys;
         private int trashes;
+        public enum Phases { Action, Buy, Cleanup, Draw };
+        private Phases phase;
 
         private Turn()
         {
@@ -37,6 +39,19 @@ namespace DominionSharp
             instance.activePlayer = plist[0];
             instance.currentPlayerIndex = 0;
             instance.reInitVals();
+            instance.phase = Phases.Action;
+        }
+
+        public Phases Phase
+        {
+            get
+            {
+                return phase;
+            }
+            set
+            {
+                phase = value;
+            }
         }
 
         public int Actions
@@ -112,12 +127,35 @@ namespace DominionSharp
             instance.reInitVals();
         }
 
+        public void nextPhase()
+        {
+            switch (phase)
+            {
+                case Phases.Action:
+                    phase = Phases.Buy;
+                    break;
+                case Phases.Buy:
+                    phase = Phases.Cleanup;
+                    break;
+                case Phases.Cleanup:
+                    phase = Phases.Draw;
+                    break;
+                case Phases.Draw:
+                    phase = Phases.Action;
+                    break;
+                default:
+                    phase = Phases.Action;
+                    break;
+            }
+        }
+
         public void reInitVals()
         {
             instance.coins = 0;
             instance.buys = 1;
             instance.actions = 1;
             instance.trashes = 0;
+            instance.phase = Phases.Action;
         }
     }
 }
