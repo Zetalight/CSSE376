@@ -36,7 +36,8 @@
             this.lblCoins = new System.Windows.Forms.Label();
             this.lblBuys = new System.Windows.Forms.Label();
             this.lblActions = new System.Windows.Forms.Label();
-            this.btnStartEndTurn = new System.Windows.Forms.Button();
+            this.btnNextPhase = new System.Windows.Forms.Button();
+            this.lbl_phase = new System.Windows.Forms.Label();
             this.tabsPlayers.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +100,7 @@
             // 
             this.lblCoins.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCoins.AutoSize = true;
-            this.lblCoins.Location = new System.Drawing.Point(503, 290);
+            this.lblCoins.Location = new System.Drawing.Point(525, 290);
             this.lblCoins.Name = "lblCoins";
             this.lblCoins.Size = new System.Drawing.Size(45, 13);
             this.lblCoins.TabIndex = 12;
@@ -109,7 +110,7 @@
             // 
             this.lblBuys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBuys.AutoSize = true;
-            this.lblBuys.Location = new System.Drawing.Point(375, 290);
+            this.lblBuys.Location = new System.Drawing.Point(419, 290);
             this.lblBuys.Name = "lblBuys";
             this.lblBuys.Size = new System.Drawing.Size(42, 13);
             this.lblBuys.TabIndex = 11;
@@ -119,34 +120,46 @@
             // 
             this.lblActions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblActions.AutoSize = true;
-            this.lblActions.Location = new System.Drawing.Point(235, 290);
+            this.lblActions.Location = new System.Drawing.Point(301, 290);
             this.lblActions.Name = "lblActions";
             this.lblActions.Size = new System.Drawing.Size(54, 13);
             this.lblActions.TabIndex = 10;
             this.lblActions.Text = "Actions: 1";
             // 
-            // btnStartEndTurn
+            // btnNextPhase
             // 
-            this.btnStartEndTurn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStartEndTurn.Location = new System.Drawing.Point(12, 285);
-            this.btnStartEndTurn.Name = "btnStartEndTurn";
-            this.btnStartEndTurn.Size = new System.Drawing.Size(137, 23);
-            this.btnStartEndTurn.TabIndex = 9;
-            this.btnStartEndTurn.Text = "Start/End Turn";
-            this.btnStartEndTurn.UseVisualStyleBackColor = true;
+            this.btnNextPhase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNextPhase.Location = new System.Drawing.Point(16, 285);
+            this.btnNextPhase.Name = "btnNextPhase";
+            this.btnNextPhase.Size = new System.Drawing.Size(96, 23);
+            this.btnNextPhase.TabIndex = 9;
+            this.btnNextPhase.Text = "Next Phase";
+            this.btnNextPhase.UseVisualStyleBackColor = true;
+            this.btnNextPhase.Click += new System.EventHandler(this.btnNextPhase_Click);
+            // 
+            // lbl_phase
+            // 
+            this.lbl_phase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_phase.AutoSize = true;
+            this.lbl_phase.Location = new System.Drawing.Point(176, 290);
+            this.lbl_phase.Name = "lbl_phase";
+            this.lbl_phase.Size = new System.Drawing.Size(61, 13);
+            this.lbl_phase.TabIndex = 13;
+            this.lbl_phase.Text = "Phase: Buy";
             // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 602);
+            this.Controls.Add(this.lbl_phase);
             this.Controls.Add(this.groupBoxSupply);
             this.Controls.Add(this.tabsPlayers);
             this.Controls.Add(this.btnHideRevealHand);
             this.Controls.Add(this.lblCoins);
             this.Controls.Add(this.lblBuys);
             this.Controls.Add(this.lblActions);
-            this.Controls.Add(this.btnStartEndTurn);
+            this.Controls.Add(this.btnNextPhase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormGame";
             this.Text = "FormGame";
@@ -167,6 +180,7 @@
         internal System.Windows.Forms.Label lblCoins;
         internal System.Windows.Forms.Label lblBuys;
         internal System.Windows.Forms.Label lblActions;
-        private System.Windows.Forms.Button btnStartEndTurn;
+        private System.Windows.Forms.Button btnNextPhase;
+        internal System.Windows.Forms.Label lbl_phase;
     }
 }

@@ -60,14 +60,27 @@ namespace DominionSharp
                     cardButton.BackgroundImageLayout = ImageLayout.Stretch;
                     cardButton.Click += (sender, args) =>
                     {
-                        p.playCard(card);
-                        cardButton.Dispose();
-                        updateCardButtons();
+                        if ((card is ActionCard && Turn.Instance.Phase.Equals(Phases.Action)) ||
+                            (card is TreasureCard && Turn.Instance.Phase.Equals(Phases.Buy)))
+                        {
+                            p.playCard(card);
+                            cardButton.Dispose();
+                            updateCardButtons();
+                            updateLabels();
+                        }
                     };
                     n++;
                     tabsPlayers.TabPages[i].Controls.Add(cardButton);
                 }
             }
+        }
+
+        private void updateLabels()
+        {
+            lbl_phase.Text = "Phase: " + Turn.Instance.Phase.toString();
+            lblActions.Text = "Actions: " + Turn.Instance.Actions;
+            lblBuys.Text = "Buys: " + Turn.Instance.Buys;
+            lblCoins.Text = "Coins: " + Turn.Instance.Coins;
         }
 
         public int getPlayerTabCount()
@@ -98,6 +111,12 @@ namespace DominionSharp
         private void FormGame_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnNextPhase_Click(object sender, EventArgs e)
+        {
+            Turn.Instance.nextPhase();
+            updateLabels();
         }
     }
 }
