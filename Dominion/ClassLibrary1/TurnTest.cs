@@ -68,12 +68,6 @@ namespace ClassLibrary1
             Assert.AreEqual(1, Turn.Instance.Buys);
             Assert.AreEqual(0, Turn.Instance.Trashes);
         }
-
-        [TestMethod()]
-        public void TestGetPlayers()
-        {
-            Assert.AreEqual(plist, Turn.Instance.Players);
-        }
         
         [TestMethod()]
         public void TestGetPlayers()
@@ -85,8 +79,8 @@ namespace ClassLibrary1
             //Council Room Test
             FormGame game = new FormGame();
             game.setPlayerCount(numberOfPlayers);
-            String currentPhase;
-            String newPhase;
+            Turn.Phases currentPhase;
+            Turn.Phases newPhase;
             for(int i = 0; i < numberOfTests; i++){
             currentPhase = Turn.Instance.Phase;
             Turn.Instance.nextPhase();
@@ -108,7 +102,7 @@ namespace ClassLibrary1
             }
             else
             {
-                Assert.Fail("The Phase is not a valid phase ( Action, Buy, Cleanup, or Draw)")
+                Assert.Fail("The Phase is not a valid phase ( Action, Buy, Cleanup, or Draw)");
             }
             }
         }
