@@ -74,5 +74,43 @@ namespace ClassLibrary1
         {
             Assert.AreEqual(plist, Turn.Instance.Players);
         }
+        
+        [TestMethod()]
+        public void TestGetPlayers()
+        {
+
+            //Number of Players
+            int numberOfPlayers = 3; //Must be at least 2
+            int numberOfTests = 20;
+            //Council Room Test
+            FormGame game = new FormGame();
+            game.setPlayerCount(numberOfPlayers);
+            String currentPhase;
+            String newPhase;
+            for(int i = 0; i < numberOfTests; i++){
+            currentPhase = Turn.Instance.Phase;
+            Turn.Instance.nextPhase();
+            newPhase = Turn.Instance.Phase;
+            if(currentPhase.Equals("Action")){
+                Assert.AreEqual("Buy", newPhase);
+            }
+            else if (currentPhase.Equals("Buy"))
+            {
+                Assert.AreEqual("Cleanup", newPhase);
+            }
+            else if (currentPhase.Equals("Cleanup"))
+            {
+                Assert.AreEqual("Draw", newPhase);
+            }
+            else if (currentPhase.Equals("Draw"))
+            {
+                Assert.AreEqual("Action", newPhase);
+            }
+            else
+            {
+                Assert.Fail("The Phase is not a valid phase ( Action, Buy, Cleanup, or Draw)")
+            }
+            }
+        }
     }
 }
