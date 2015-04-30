@@ -68,9 +68,15 @@ namespace ClassLibrary1
             Assert.AreEqual(1, Turn.Instance.Buys);
             Assert.AreEqual(0, Turn.Instance.Trashes);
         }
-        
+
         [TestMethod()]
         public void TestGetPlayers()
+        {
+            Assert.AreEqual(plist, Turn.Instance.Players);
+        }
+        
+        [TestMethod()]
+        public void TestPhases()
         {
 
             //Number of Players
@@ -85,20 +91,20 @@ namespace ClassLibrary1
             currentPhase = Turn.Instance.Phase;
             Turn.Instance.nextPhase();
             newPhase = Turn.Instance.Phase;
-            if(currentPhase.Equals("Action")){
-                Assert.AreEqual("Buy", newPhase);
+            if(currentPhase.Equals(Turn.Phases.Action)){
+                Assert.AreEqual(Turn.Phases.Buy, newPhase);
             }
-            else if (currentPhase.Equals("Buy"))
+            else if (currentPhase.Equals(Turn.Phases.Buy))
             {
-                Assert.AreEqual("Cleanup", newPhase);
+                Assert.AreEqual(Turn.Phases.Cleanup, newPhase);
             }
-            else if (currentPhase.Equals("Cleanup"))
+            else if (currentPhase.Equals(Turn.Phases.Cleanup))
             {
-                Assert.AreEqual("Draw", newPhase);
+                Assert.AreEqual(Turn.Phases.Draw, newPhase);
             }
-            else if (currentPhase.Equals("Draw"))
+            else if (currentPhase.Equals(Turn.Phases.Draw))
             {
-                Assert.AreEqual("Action", newPhase);
+                Assert.AreEqual(Turn.Phases.Action, newPhase);
             }
             else
             {
