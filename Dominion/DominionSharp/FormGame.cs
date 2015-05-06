@@ -14,6 +14,9 @@ namespace DominionSharp
     {
         private const int CARD_WIDTH = 128;
         private const int CARD_HEIGHT = 200;
+        private List<Pile> piles = new List<Pile>();
+        private List<Pile> victories = new List<Pile>();
+        private List<Pile> treasures = new List<Pile>();
 
         public FormGame()
         {
@@ -40,6 +43,9 @@ namespace DominionSharp
             {
                 throw new Exception("INVALID PLAYER COUNT");
             }
+            createPiles();
+            createTreasures();
+            createVictories();
         }
 
         public void updateCardButtons()
@@ -121,6 +127,61 @@ namespace DominionSharp
             Turn.Instance.nextPhase();
             updateLabels();
             updateCardButtons();
+        }
+        private void createPiles()
+        {
+            //Number of Piles to create
+            int numberOfPiles = 10;
+            //List of all Cards
+            List<Card> randomDeck = new List<Card>() { new ActionAdventure(),
+                new ActionBureaucrat(), new ActionCellar(), new ActionChancellor(), 
+                new ActionChapel(), new ActionCouncilRoom(), new ActionFeast(), 
+                new ActionFestival(), new ActionLaboratory(), new ActionLibrary(), 
+                new ActionMarket(), new ActionMilitia(), new ActionMine(), 
+                new ActionMoat(), new ActionMoneylender(), new ActionRemodel(), 
+                new ActionSmithy(), new ActionSpy(), new ActionThief(), 
+                new ActionThroneRoom(), new ActionVillage(), new ActionWitch(), 
+                new ActionWoodcutter(), new ActionWoodcutter(), new ActionWorkshop(), 
+                new VictoryGardens()};
+            //Add distinct cards to the pile.
+            for (int i = 0; i < numberOfPiles; i++) { }
+            Random rng = new Random();
+            int index = rng.Next(randomDeck.Count);
+            Card c = randomDeck[index];
+            piles.Add(new Pile(c));
+            randomDeck.RemoveAt(index);
+        }
+        public void createVictories()
+        {
+            int numberOfVictories;
+            if(getPlayerTabCount() == 2){
+                numberOfVictories = 8;
+            }
+            else{
+                numberOfVictories = 12;
+            }
+            victories.Add(new Pile(new VictoryEstate(), numberOfVictories));
+            victories.Add(new Pile(new VictoryDuchy(), numberOfVictories));
+            victories.Add(new Pile(new VictoryProvince(), numberOfVictories));
+            victories.Add(new Pile(new VictoryCurse(), (10 * (getPlayerTabCount() - 1))));
+        }
+        public void createTreasures()
+        {
+            treasures.Add(new Pile(new TreasureCopper(), 60 - (7 * getPlayerTabCount())));
+            treasures.Add(new Pile(new TreasureSilver(), 40));
+            treasures.Add(new Pile(new TreasureGold(), 30));
+        }
+        public List<Pile> getPiles()
+        {
+            return piles;
+        }
+        public List<Pile> getVictories()
+        {
+            return victories;
+        }
+        public List<Pile> getTreasures()
+        {
+            return treasures;
         }
     }
 }
