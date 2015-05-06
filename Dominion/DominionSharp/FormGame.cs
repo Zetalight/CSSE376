@@ -184,13 +184,13 @@ namespace DominionSharp
             int numberOfPiles = 10;
             //List of all Cards
             List<Card> randomDeck = new List<Card>() { new ActionAdventure(),
-                new ActionBureaucrat(), new ActionCellar(), new ActionChancellor(), 
+                new AttackBureaucrat(), new ActionCellar(), new ActionChancellor(), 
                 new ActionChapel(), new ActionCouncilRoom(), new ActionFeast(), 
                 new ActionFestival(), new ActionLaboratory(), new ActionLibrary(), 
-                new ActionMarket(), new ActionMilitia(), new ActionMine(), 
+                new ActionMarket(), new AttackMilitia(), new ActionMine(), 
                 new ActionMoat(), new ActionMoneylender(), new ActionRemodel(), 
-                new ActionSmithy(), new ActionSpy(), new ActionThief(), 
-                new ActionThroneRoom(), new ActionVillage(), new ActionWitch(), 
+                new ActionSmithy(), new AttackSpy(), new AttackThief(), 
+                new ActionThroneRoom(), new ActionVillage(), new AttackWitch(), 
                 new ActionWoodcutter(), new ActionWoodcutter(), new ActionWorkshop(), 
                 new VictoryGardens()};
             //Add distinct cards to the pile.
