@@ -60,13 +60,16 @@ namespace DominionSharp
                     cardButton.BackgroundImageLayout = ImageLayout.Stretch;
                     cardButton.Click += (sender, args) =>
                     {
-                        if ((card is ActionCard && Turn.Instance.Phase.Equals(Phases.Action)) ||
-                            (card is TreasureCard && Turn.Instance.Phase.Equals(Phases.Buy)))
+                        if (p.Equals(Turn.Instance.getActivePlayer()))
                         {
-                            p.playCard(card);
-                            cardButton.Dispose();
-                            updateCardButtons();
-                            updateLabels();
+                            if ((card is ActionCard && Turn.Instance.Phase.Equals(Turn.Phases.Action)) ||
+                                (card is TreasureCard && Turn.Instance.Phase.Equals(Turn.Phases.Buy)))
+                            {
+                                p.playCard(card);
+                                cardButton.Dispose();
+                                updateCardButtons();
+                                updateLabels();
+                            }
                         }
                     };
                     n++;
@@ -77,7 +80,7 @@ namespace DominionSharp
 
         private void updateLabels()
         {
-            lbl_phase.Text = "Phase: " + Turn.Instance.Phase.toString();
+            lbl_phase.Text = "Phase: " + Turn.Instance.Phase.ToString();
             lblActions.Text = "Actions: " + Turn.Instance.Actions;
             lblBuys.Text = "Buys: " + Turn.Instance.Buys;
             lblCoins.Text = "Coins: " + Turn.Instance.Coins;
@@ -117,6 +120,7 @@ namespace DominionSharp
         {
             Turn.Instance.nextPhase();
             updateLabels();
+            updateCardButtons();
         }
     }
 }

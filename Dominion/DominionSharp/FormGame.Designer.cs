@@ -143,9 +143,9 @@
             this.lbl_phase.AutoSize = true;
             this.lbl_phase.Location = new System.Drawing.Point(176, 290);
             this.lbl_phase.Name = "lbl_phase";
-            this.lbl_phase.Size = new System.Drawing.Size(61, 13);
+            this.lbl_phase.Size = new System.Drawing.Size(73, 13);
             this.lbl_phase.TabIndex = 13;
-            this.lbl_phase.Text = "Phase: Buy";
+            this.lbl_phase.Text = "Phase: Action";
             // 
             // FormGame
             // 
