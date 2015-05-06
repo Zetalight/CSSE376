@@ -86,6 +86,8 @@ namespace ClassLibrary1
             Assert.AreEqual(typeof(VictoryDuchy), v[1].getCard().GetType());
             Assert.AreEqual(v[0].getCount(), v[2].getCount());
             Assert.AreEqual(typeof(VictoryProvince), v[2].getCard().GetType());
+            Assert.AreEqual(10 * (Turn.Instance.Players.Count() - 1), v[3].getCount());
+            Assert.AreEqual(typeof(VictoryCurse), v[3].getCard().GetType());
         }
     }
 }
