@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ActionCardTest.cs" />
     <Compile Include="CardTest.cs" />
+    <Compile Include="EndGameTest.cs" />
     <Compile Include="PileTest.cs" />
     <Compile Include="TreasureCardTest.cs" />
     <Compile Include="TurnTest.cs" />

@@ -265,7 +265,6 @@ namespace DominionSharp
                 if (score > max)
                     maxind = i;
             }
-            Console.WriteLine("The winner is Player " + (maxind + 1));
             return maxind;
         }
     }
