@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    class Pile
+    public class Pile
     {
         private Card card;
         private int count;
@@ -24,7 +24,7 @@ namespace DominionSharp
         private void setCard(Card card){
             this.card = card;
         }
-        private Card getCard()
+        public Card getCard()
         {
             return this.card;
         }
@@ -32,13 +32,14 @@ namespace DominionSharp
         {
             this.count = count;
         }
-        private int getCount()
+        public int getCount()
         {
             return this.count;
         }
-        private void draw()
+        public bool draw()
         {
             count--;
+            return this.count > 0;
         }
     }
 }

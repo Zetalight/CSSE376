@@ -62,5 +62,24 @@ namespace ClassLibrary1
         {
             game.setPlayerCount(5);
         }
+
+        [TestMethod()]
+        public void TestThatGameMakesSupply()
+        {
+            List<Pile> p = game.getPiles();
+            Assert.IsNotNull(p);
+            Assert.AreEqual(10, p.Count());
+            List<Pile> t = game.getTreasures();
+            Assert.IsNotNull(t);
+            Assert.AreEqual(3, t.Count());
+            Assert.AreEqual(60 - (7 * Turn.Instance.Players.Count()), t[0].getCount());
+            Assert.AreEqual(40, t[1].getCount());
+            Assert.AreEqual(30, t[2].getCount());
+            List<Pile> v = game.getVictories();
+            Assert.IsNotNull(v);
+            Assert.AreEqual(Turn.Instance.Players.Count() == 2 ? 8 : 12, v[0].getCount());
+            Assert.AreEqual(v[0].getCount(), v[1].getCount());
+            Assert.AreEqual(v[0].getCount(), v[2].getCount());
+        }
     }
 }
