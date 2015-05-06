@@ -94,7 +94,7 @@
     <Compile Include="VictoryCards\VictoryCurse.cs" />
     <Compile Include="VictoryCards\VictoryDuchy.cs" />
     <Compile Include="VictoryCards\VictoryEstate.cs" />
-    <Compile Include="VictoryCards\VictoryGarden.cs" />
+    <Compile Include="VictoryCards\VictoryGardens.cs" />
     <Compile Include="VictoryCards\VictoryProvince.cs" />
     <Compile Include="ActionCards\ActionWorkshop.cs" />
     <EmbeddedResource Include="FormCreate.resx">
