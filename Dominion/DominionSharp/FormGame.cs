@@ -116,6 +116,8 @@ namespace DominionSharp
                                 {
                                     cardButton.Dispose();
                                     emptyPiles++;
+                                    if (card is VictoryProvince || emptyPiles >= 3)
+                                        endGame();
                                 }
                                 Turn.Instance.Buys--;
                                 p.gainCard(card);
@@ -190,7 +192,7 @@ namespace DominionSharp
                 new ActionSmithy(), new ActionSpy(), new ActionThief(), 
                 new ActionThroneRoom(), new ActionVillage(), new ActionWitch(), 
                 new ActionWoodcutter(), new ActionWoodcutter(), new ActionWorkshop(), 
-                /*new VictoryGardens()*/};
+                new VictoryGardens()};
             //Add distinct cards to the pile.
             for (int i = 0; i < numberOfPiles; i++)
             {
@@ -234,6 +236,37 @@ namespace DominionSharp
         public List<Pile> getTreasures()
         {
             return treasures;
+        }
+
+        public int endGame()
+        {
+            int maxind = 0;
+            int max = 0;
+            int score;
+            for (int i = 0; i < Turn.Instance.Players.Count(); i++)
+            {
+                Player p = Turn.Instance.Players[i];
+                List<Card> all = new List<Card>();
+                all.AddRange(p.getDeck());
+                all.AddRange(p.getHand());
+                all.AddRange(p.getDiscard());
+                all.AddRange(p.getWumbo());
+                score = 0;
+                foreach (Card c in all)
+                {
+                    if (c is VictoryCard)
+                    {
+                        VictoryCard c2 = (VictoryCard)c;
+                        score += c2.VictoryPoints;
+                    }
+                    if (c is VictoryGardens)
+                        score += (int)(all.Count / 10);
+                }
+                if (score > max)
+                    maxind = i;
+            }
+            Console.WriteLine("The winner is Player " + (maxind + 1));
+            return maxind;
         }
     }
 }
