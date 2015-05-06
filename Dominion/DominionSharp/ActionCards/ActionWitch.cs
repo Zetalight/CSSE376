@@ -30,7 +30,7 @@ namespace DominionSharp
                     if (p.hasMoatInHand())
                     {
                         DialogResult prompt = MessageBox.Show(
-                            "Would you like to defend with your Moat card?", "Player" + i, MessageBoxButtons.YesNo);
+                            "Would you like to defend with your Moat card?", "Player" + (i + 1), MessageBoxButtons.YesNo);
                         if (prompt == DialogResult.No)
                         {
                             p.gainCard(new VictoryCurse());

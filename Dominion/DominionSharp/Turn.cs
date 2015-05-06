@@ -141,6 +141,7 @@ namespace DominionSharp
                     phase = Phases.Draw;
                     break;
                 case Phases.Draw:
+                    nextTurn();
                     phase = Phases.Action;
                     break;
                 default:
