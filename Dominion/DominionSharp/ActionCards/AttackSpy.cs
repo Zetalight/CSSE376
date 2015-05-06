@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    public class ActionSpy : ActionCard
+    public class AttackSpy : AttackCard
     {
-        public ActionSpy()
+        public AttackSpy()
         {
             this.name = "Spy";
             this.cost = 4;
@@ -16,6 +16,12 @@ namespace DominionSharp
             this.cards = 1;
             this.actions = 1;
         }
+
+        protected override void attack(int playerNum)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void play()
         {
             base.play();

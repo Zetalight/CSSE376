@@ -44,14 +44,26 @@ namespace DominionSharp
             {
                 deck.AddRange(discard);
                 discard.Clear();
+                shuffleDeck();
             }
             if (deck.Count > 0)
             {
-                Random rng = new Random();
-                int index = rng.Next(deck.Count);
-                Card c = deck[index];
-                hand.Add(c);
-                deck.RemoveAt(index);
+                hand.Add(deck[0]);
+                deck.RemoveAt(0);
+            }
+        }
+
+        private void shuffleDeck()
+        {
+            Random rng = new Random();
+            int n = deck.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                Card val = deck[k];
+                deck[k] = deck[n];
+                deck[n] = val;
             }
         }
 
@@ -119,6 +131,13 @@ namespace DominionSharp
                 }
             }
             return false;
+        }
+
+        public void placeCardFromHandOnDeck(int i)
+        {
+            Card c = hand[i];
+            hand.RemoveAt(i);
+            deck.Insert(0, c);
         }
 
     }

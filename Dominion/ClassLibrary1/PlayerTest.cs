@@ -69,9 +69,9 @@ namespace ClassLibrary1
         public void TestPlayerEndTurn()
         {
             Player p = new Player();
-            typeof(Player).GetField("hand", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(p, new List<Card> { new ActionBureaucrat(), new ActionChapel() });
+            typeof(Player).GetField("hand", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(p, new List<Card> { new AttackBureaucrat(), new ActionChapel() });
             p.endTurn();
-            Assert.IsFalse(exists(p.getHand(), new ActionBureaucrat()));
+            Assert.IsFalse(exists(p.getHand(), new AttackBureaucrat()));
             Assert.IsFalse(exists(p.getHand(), new ActionChapel()));
             Assert.AreEqual(5, p.getHandSize());
         }
