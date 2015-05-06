@@ -82,6 +82,7 @@
       <DependentUpon>FormGame.cs</DependentUpon>
     </Compile>
     <Compile Include="ActionCards\ActionCard.cs" />
+    <Compile Include="Pile.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,7 +95,7 @@
     <Compile Include="VictoryCards\VictoryCurse.cs" />
     <Compile Include="VictoryCards\VictoryDuchy.cs" />
     <Compile Include="VictoryCards\VictoryEstate.cs" />
-    <Compile Include="VictoryCards\VictoryGarden.cs" />
+    <Compile Include="VictoryCards\VictoryGardens.cs" />
     <Compile Include="VictoryCards\VictoryProvince.cs" />
     <Compile Include="ActionCards\ActionWorkshop.cs" />
     <EmbeddedResource Include="FormCreate.resx">
