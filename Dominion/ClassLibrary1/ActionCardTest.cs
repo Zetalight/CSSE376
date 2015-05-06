@@ -18,21 +18,16 @@ namespace ClassLibrary1
         {
             A = new ActionChapel();
             A = new ActionVillage();
-            A = new ActionWitch();
             A = new ActionCellar();
             A = new ActionMoat();
             A = new ActionChancellor();
             A = new ActionWoodcutter();
             A = new ActionWorkshop();
-            A = new ActionBureaucrat();
             A = new ActionFeast();
             //A = new ActionGardens();
-            A = new ActionMilitia();
             A = new ActionMoneylender();
             A = new ActionRemodel();
             A = new ActionSmithy();
-            A = new ActionSpy();
-            A = new ActionThief();
             A = new ActionThroneRoom();
             A = new ActionCouncilRoom();
             A = new ActionFestival();
@@ -71,18 +66,9 @@ namespace ClassLibrary1
             Assert.AreEqual("Workshop", A.Name);
 
             //Costs 4
-            A = new ActionBureaucrat();
-            Assert.AreEqual(4, A.Cost);
-            Assert.AreEqual("Bureaucrat", A.Name);
-            A = new ActionFeast();
-            Assert.AreEqual(4, A.Cost);
-            Assert.AreEqual("Feast", A.Name);
             //A = new ActionGardens(); //Do We want to put as ActionCard or Victory Card. Bought like Action, used like Victory.
             //Assert.AreEqual(4, A.Cost);
             //Assert.AreEqual("Gardens", A.Name);
-            A = new ActionMilitia();
-            Assert.AreEqual(4, A.Cost);
-            Assert.AreEqual("Militia", A.Name);
             A = new ActionMoneylender();
             Assert.AreEqual(4, A.Cost);
             Assert.AreEqual("Moneylender", A.Name);
@@ -92,20 +78,11 @@ namespace ClassLibrary1
             A = new ActionSmithy();
             Assert.AreEqual(4, A.Cost);
             Assert.AreEqual("Smithy", A.Name);
-            A = new ActionSpy();
-            Assert.AreEqual(4, A.Cost);
-            Assert.AreEqual("Spy", A.Name);
-            A = new ActionThief();
-            Assert.AreEqual(4, A.Cost);
-            Assert.AreEqual("Thief", A.Name);
             A = new ActionThroneRoom();
             Assert.AreEqual(4, A.Cost);
             Assert.AreEqual("Throne Room", A.Name);
 
             //Costs 5
-            A = new ActionWitch();
-            Assert.AreEqual(5, A.Cost);
-            Assert.AreEqual("Witch", A.Name); 
             A = new ActionCouncilRoom();
             Assert.AreEqual(5, A.Cost);
             Assert.AreEqual("Council Room", A.Name);
@@ -160,22 +137,6 @@ namespace ClassLibrary1
                 if (!players[i].Equals(currentplayer))
                 {
                     Assert.AreEqual(6, players[i].getHandSize());
-                }
-            }
-            //Witch Test
-            game = new FormGame();
-            game.setPlayerCount(numberOfPlayers);
-            players = Turn.Instance.Players;
-            currentplayer = Turn.Instance.getActivePlayer();
-            currentplayer.playCard(new ActionWitch());
-            for (int i = 0; i < players.Count; i++)
-            {
-                if (players[i] != currentplayer)
-                {
-                    //This card's discard
-                    List<Card> discard = players[i].getDiscard();
-                    //Testing top card to be a curse
-                    Assert.AreEqual(discard[discard.Count - 1].GetType(), new VictoryCurse().GetType());
                 }
             }
             //ThroneRoom Test
@@ -270,14 +231,6 @@ namespace ClassLibrary1
             ReInitTurn();
 
             //4 coin cost cards
-            A = new ActionBureaucrat();
-            A.play();
-            Assert.AreEqual(1, Turn.Instance.Buys);
-            Assert.AreEqual(0, Turn.Instance.Coins);
-            Assert.AreEqual(1, Turn.Instance.Actions);
-            Assert.AreEqual(0, Turn.Instance.Trashes);
-            ReInitTurn();
-
             A = new ActionFeast();
             A.play();
             Assert.AreEqual(1, Turn.Instance.Buys);
@@ -293,14 +246,6 @@ namespace ClassLibrary1
             //Assert.AreEqual(0, Turn.Instance.Actions);
             //Assert.AreEqual(0, Turn.Instance.Trashes);
             //ReInitTurn();
-
-            A = new ActionMilitia();
-            A.play();
-            Assert.AreEqual(1, Turn.Instance.Buys);
-            Assert.AreEqual(2, Turn.Instance.Coins);
-            Assert.AreEqual(1, Turn.Instance.Actions);
-            Assert.AreEqual(0, Turn.Instance.Trashes);
-            ReInitTurn();
 
             A = new ActionMoneylender();
             A.play();
@@ -325,22 +270,6 @@ namespace ClassLibrary1
             Assert.AreEqual(1, Turn.Instance.Actions);
             Assert.AreEqual(0, Turn.Instance.Trashes);
             Assert.AreEqual(8, Turn.Instance.getActivePlayer().getHandSize());
-            ReInitTurn();
-
-            A = new ActionSpy();
-            A.play();
-            Assert.AreEqual(1, Turn.Instance.Buys);
-            Assert.AreEqual(0, Turn.Instance.Coins);
-            Assert.AreEqual(2, Turn.Instance.Actions);
-            Assert.AreEqual(0, Turn.Instance.Trashes);
-            ReInitTurn();
-
-            A = new ActionThief();
-            A.play();
-            Assert.AreEqual(1, Turn.Instance.Buys);
-            Assert.AreEqual(0, Turn.Instance.Coins);
-            Assert.AreEqual(1, Turn.Instance.Actions);
-            Assert.AreEqual(0, Turn.Instance.Trashes);
             ReInitTurn();
 
             A = new ActionThroneRoom();
@@ -402,15 +331,6 @@ namespace ClassLibrary1
             Assert.AreEqual(0, Turn.Instance.Coins);
             Assert.AreEqual(1, Turn.Instance.Actions);
             Assert.AreEqual(0, Turn.Instance.Trashes);
-            ReInitTurn();
-
-            A = new ActionWitch();
-            A.play();
-            Assert.AreEqual(1, Turn.Instance.Buys);
-            Assert.AreEqual(0, Turn.Instance.Coins);
-            Assert.AreEqual(1, Turn.Instance.Actions);
-            Assert.AreEqual(0, Turn.Instance.Trashes);
-            Assert.AreEqual(7, Turn.Instance.getActivePlayer().getHandSize());
             ReInitTurn();
 
             //6 coin cost cards

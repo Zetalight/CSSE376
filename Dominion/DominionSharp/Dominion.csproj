@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionCards\ActionAdventure.cs" />
-    <Compile Include="ActionCards\ActionBureaucrat.cs" />
+    <Compile Include="ActionCards\AttackBureaucrat.cs" />
     <Compile Include="ActionCards\ActionCellar.cs" />
     <Compile Include="ActionCards\ActionChancellor.cs" />
     <Compile Include="ActionCards\ActionCouncilRoom.cs" />
@@ -54,20 +54,21 @@
     <Compile Include="ActionCards\ActionLaboratory.cs" />
     <Compile Include="ActionCards\ActionLibrary.cs" />
     <Compile Include="ActionCards\ActionMarket.cs" />
-    <Compile Include="ActionCards\ActionMilitia.cs" />
+    <Compile Include="ActionCards\AttackMilitia.cs" />
     <Compile Include="ActionCards\ActionMine.cs" />
     <Compile Include="ActionCards\ActionMoat.cs" />
     <Compile Include="ActionCards\ActionMoneylender.cs" />
     <Compile Include="ActionCards\ActionRemodel.cs" />
     <Compile Include="ActionCards\ActionSmithy.cs" />
-    <Compile Include="ActionCards\ActionSpy.cs" />
-    <Compile Include="ActionCards\ActionThief.cs" />
+    <Compile Include="ActionCards\AttackSpy.cs" />
+    <Compile Include="ActionCards\AttackThief.cs" />
     <Compile Include="ActionCards\ActionThroneRoom.cs" />
     <Compile Include="ActionCards\ActionWoodcutter.cs" />
+    <Compile Include="ActionCards\AttackCard.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="ActionCards\ActionChapel.cs" />
     <Compile Include="ActionCards\ActionVillage.cs" />
-    <Compile Include="ActionCards\ActionWitch.cs" />
+    <Compile Include="ActionCards\AttackWitch.cs" />
     <Compile Include="FormCreate.cs">
       <SubType>Form</SubType>
     </Compile>

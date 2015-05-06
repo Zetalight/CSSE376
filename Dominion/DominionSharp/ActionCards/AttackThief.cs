@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace DominionSharp
 {
-    public class ActionThief : ActionCard
+    public class AttackThief : AttackCard
     {
-        public ActionThief()
+        public AttackThief()
         {
             this.name = "Thief";
             this.cost = 4;
             this.picture = global::DominionSharp.Properties.Resources.thief; //TODO: Add Picture
         }
+
+        protected override void attack(int playerNum)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void play()
         {
             base.play();
