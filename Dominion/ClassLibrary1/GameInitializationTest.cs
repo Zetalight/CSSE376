@@ -72,6 +72,8 @@ namespace ClassLibrary1
                 List<Pile> p = game.getPiles();
                 Assert.IsNotNull(p);
                 Assert.AreEqual(10, p.Count());
+                for (int i = 0; i < 10; i++)
+                    Assert.AreEqual(10, p[i].getCount());
                 List<Pile> t = game.getTreasures();
                 Assert.IsNotNull(t);
                 Assert.AreEqual(3, t.Count());
@@ -91,6 +93,7 @@ namespace ClassLibrary1
                 Assert.AreEqual(typeof(VictoryProvince), v[2].getCard().GetType());
                 Assert.AreEqual(10 * (n - 1), v[3].getCount());
                 Assert.AreEqual(typeof(VictoryCurse), v[3].getCard().GetType());
+                game = new FormGame();
             }
         }
     }

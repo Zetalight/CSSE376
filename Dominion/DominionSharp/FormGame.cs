@@ -14,6 +14,7 @@ namespace DominionSharp
     {
         private const int CARD_WIDTH = 128;
         private const int CARD_HEIGHT = 200;
+        private int emptyPiles;
         private List<Pile> piles = new List<Pile>();
         private List<Pile> victories = new List<Pile>();
         private List<Pile> treasures = new List<Pile>();
@@ -46,6 +47,7 @@ namespace DominionSharp
             createPiles();
             createTreasures();
             createVictories();
+            updateSupplyButtons();
         }
 
         public void updateCardButtons()
@@ -71,6 +73,8 @@ namespace DominionSharp
                             if ((card is ActionCard && Turn.Instance.Phase.Equals(Turn.Phases.Action)) ||
                                 (card is TreasureCard && Turn.Instance.Phase.Equals(Turn.Phases.Buy)))
                             {
+                                if (card is ActionCard)
+                                    Turn.Instance.Actions--;
                                 p.playCard(card);
                                 cardButton.Dispose();
                                 updateCardButtons();
@@ -80,6 +84,49 @@ namespace DominionSharp
                     };
                     n++;
                     tabsPlayers.TabPages[i].Controls.Add(cardButton);
+                }
+            }
+        }
+
+        public void updateSupplyButtons()
+        {
+            List<Player> players = Turn.Instance.Players;
+            for (int i = 0; i < players.Count; i++)
+            {
+                groupBoxSupply.Controls.Clear();
+                Player p = players[i];
+                var n = 0;
+                foreach (Pile pile in piles)
+                {
+                    Card card = pile.getCard();
+                    Button cardButton = new Button();
+                    //cardButton.Text = card.Name;
+                    cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
+                    cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
+                    cardButton.BackgroundImage = card.Picture;
+                    cardButton.BackgroundImageLayout = ImageLayout.Stretch;
+                    cardButton.Click += (sender, args) =>
+                    {
+                        if (p.Equals(Turn.Instance.getActivePlayer()))
+                        {
+                            if (Turn.Instance.Buys > 0 &&
+                                Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+                            {
+                                if (!pile.draw())
+                                {
+                                    cardButton.Dispose();
+                                    emptyPiles++;
+                                }
+                                Turn.Instance.Buys--;
+                                p.gainCard(card);
+                                Turn.Instance.Coins -= card.Cost;
+                                updateSupplyButtons();
+                                updateLabels();
+                            }
+                        }
+                    };
+                    n++;
+                    groupBoxSupply.Controls.Add(cardButton);
                 }
             }
         }
@@ -127,6 +174,7 @@ namespace DominionSharp
             Turn.Instance.nextPhase();
             updateLabels();
             updateCardButtons();
+            updateSupplyButtons();
         }
         private void createPiles()
         {
@@ -142,22 +190,26 @@ namespace DominionSharp
                 new ActionSmithy(), new ActionSpy(), new ActionThief(), 
                 new ActionThroneRoom(), new ActionVillage(), new ActionWitch(), 
                 new ActionWoodcutter(), new ActionWoodcutter(), new ActionWorkshop(), 
-                new VictoryGardens()};
+                /*new VictoryGardens()*/};
             //Add distinct cards to the pile.
-            for (int i = 0; i < numberOfPiles; i++) { }
-            Random rng = new Random();
-            int index = rng.Next(randomDeck.Count);
-            Card c = randomDeck[index];
-            piles.Add(new Pile(c));
-            randomDeck.RemoveAt(index);
+            for (int i = 0; i < numberOfPiles; i++)
+            {
+                Random rng = new Random();
+                int index = rng.Next(randomDeck.Count);
+                Card c = randomDeck[index];
+                piles.Add(new Pile(c));
+                randomDeck.RemoveAt(index);
+            }
         }
         public void createVictories()
         {
             int numberOfVictories;
-            if(getPlayerTabCount() == 2){
+            if (getPlayerTabCount() == 2)
+            {
                 numberOfVictories = 8;
             }
-            else{
+            else
+            {
                 numberOfVictories = 12;
             }
             victories.Add(new Pile(new VictoryEstate(), numberOfVictories));
