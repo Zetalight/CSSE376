@@ -59,6 +59,15 @@ namespace ClassLibrary1
 
         private class FakeAttackMilitia : AttackMilitia
         {
+            protected override void attack(int playerNum)
+            {
+                List<Card> cards = Turn.Instance.Players[playerNum].getHand();
+                Random rng = new Random();
+                while (cards.Count > 3)
+                {
+                    cards.RemoveAt((int)rng.Next(cards.Count));
+                }
+            }
             protected override bool defend(int playerNum)
             {
                 return AttackCardTest.defendList[playerNum];
@@ -119,6 +128,34 @@ namespace ClassLibrary1
                     else
                     {
                         Assert.IsTrue(discard.Count == 0);
+                    }
+                }
+            }
+        }
+
+        [TestMethod()]
+        public void TestMilitiaAttack()
+        {
+            initPlayers();
+
+            //Witch
+            Player currentplayer = Turn.Instance.getActivePlayer();
+            currentplayer.playCard(new FakeAttackMilitia());
+            List<Player> players = Turn.Instance.Players;
+            currentplayer = Turn.Instance.getActivePlayer();
+            Assert.AreEqual(2, Turn.Instance.Coins);
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (!players[i].Equals(currentplayer))
+                {
+                    List<Card> hand = players[i].getHand();
+                    if (!AttackCardTest.defendList[i])
+                    {
+                        Assert.IsTrue(hand.Count == 3);
+                    }
+                    else
+                    {
+                        Assert.IsTrue(hand.Count == 5);
                     }
                 }
             }

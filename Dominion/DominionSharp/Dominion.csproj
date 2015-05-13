@@ -82,6 +82,12 @@
       <DependentUpon>FormGame.cs</DependentUpon>
     </Compile>
     <Compile Include="ActionCards\ActionCard.cs" />
+    <Compile Include="FormMilitiaAttack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMilitiaAttack.Designer.cs">
+      <DependentUpon>FormMilitiaAttack.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pile.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGame.resx">
       <DependentUpon>FormGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMilitiaAttack.resx">
+      <DependentUpon>FormMilitiaAttack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

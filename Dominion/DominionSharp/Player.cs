@@ -167,5 +167,9 @@ namespace DominionSharp
             deck.Insert(0, c);
         }
 
+        public void setHand(List<Card> cards)
+        {
+            hand = cards;
+        }
     }
 }

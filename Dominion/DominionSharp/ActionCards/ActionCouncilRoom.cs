@@ -21,6 +21,15 @@ namespace DominionSharp
             base.play();
             Console.WriteLine("Council Room Played");
             //TODO: All other players draw a card
+            List<Player> players = Turn.Instance.Players;
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (!players[i].Equals(Turn.Instance.getActivePlayer()))
+                {
+                    players[i].drawCard();
+                }
+            }
+            Turn.Instance.Players = players;
         }
     }
 }
