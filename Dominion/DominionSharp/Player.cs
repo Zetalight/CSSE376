@@ -38,7 +38,6 @@ namespace DominionSharp
             }
         }
 
-
         public Player(int number)
         {
             this.number = number;
@@ -57,6 +56,13 @@ namespace DominionSharp
             {
                 drawCard();
             }
+        }
+
+        public void discardTopCardOfDeck()
+        {
+            Card c = this.deck[0];
+            this.deck.RemoveAt(0);
+            this.discard.Add(c);
         }
 
         public int getNumber()

@@ -14,6 +14,7 @@ namespace ClassLibrary1
     {
         private AttackCard A;
         public static List<bool> defendList = new List<bool>{true, false, true, false};
+        public static List<bool> spyDiscardList = new List<bool> { false, true, true, false };
 
         private class FakeAttackWitch : AttackWitch
         {
@@ -26,6 +27,7 @@ namespace ClassLibrary1
         private class FakeAttackBureaucrat : AttackBureaucrat
         {
             private String myReveal = "";
+
             protected override void attack(int playerNum)
             {
                 myReveal += reveal(playerNum);
@@ -43,9 +45,25 @@ namespace ClassLibrary1
 
         private class FakeAttackSpy : AttackSpy
         {
+            private String myReveal = "";
+
+            protected override void attack(int playerNum)
+            {
+                myReveal += reveal(playerNum);
+                if (AttackCardTest.spyDiscardList[playerNum])
+                {
+                    Turn.Instance.Players[playerNum].discardTopCardOfDeck();
+                }
+            }
+
             protected override bool defend(int playerNum)
             {
                 return AttackCardTest.defendList[playerNum];
+            }
+
+            public String getReveal()
+            {
+                return myReveal;
             }
         }
 
@@ -138,7 +156,7 @@ namespace ClassLibrary1
         {
             initPlayers();
 
-            //Witch
+            //Militia
             Player currentplayer = Turn.Instance.getActivePlayer();
             currentplayer.playCard(new FakeAttackMilitia());
             List<Player> players = Turn.Instance.Players;
@@ -166,7 +184,7 @@ namespace ClassLibrary1
         {
             initPlayers();
 
-            //Witch
+            //Bureaucrat
             Player currentplayer = Turn.Instance.getActivePlayer();
             FakeAttackBureaucrat bur = new FakeAttackBureaucrat();
             currentplayer.playCard(bur);
@@ -188,6 +206,42 @@ namespace ClassLibrary1
             expectedReveal += "Moat\n";
             expectedReveal += "Duchy\n";
             Assert.AreEqual(expectedReveal, bur.getReveal());
+        }
+
+        [TestMethod()]
+        public void TestSpyAttack()
+        {
+            initPlayers();
+
+            List<Player> players = Turn.Instance.Players;
+            String expectedReveal = "";
+            int ind = 0;
+            foreach (Player p in players)
+            {
+                if (!AttackCardTest.defendList[ind] && AttackCardTest.spyDiscardList[ind])
+                {
+                    expectedReveal += p.getDeck()[0].Name;
+                }
+                ind++;
+            }
+
+            //Spy
+            Player currentplayer = Turn.Instance.getActivePlayer();
+            FakeAttackSpy spy = new FakeAttackSpy();
+            currentplayer.playCard(spy);
+            players = Turn.Instance.Players;
+            currentplayer = Turn.Instance.getActivePlayer();
+            Assert.IsTrue(currentplayer.getHand().Count == 6);
+            Assert.IsTrue(Turn.Instance.Actions == 2);
+            for (int i = 1; i < players.Count; i++)
+            {
+                if (!AttackCardTest.defendList[i] && AttackCardTest.spyDiscardList[i])
+                {
+                    Assert.IsTrue(players[i].getDiscard().Count == 1);
+                }
+            }
+
+            Assert.AreEqual(expectedReveal, spy.getReveal());
         }
 
         private void initPlayers()

@@ -25,9 +25,11 @@ namespace DominionSharp
                 Player p = players[i];
                 if (!p.Equals(Turn.Instance.getActivePlayer()))
                 {
-                    if (p.hasMoatInHand())
+                    bool hasMoat = p.hasMoatInHand();
+                    if (hasMoat)
                     {
-                        if (!defend(i))
+                        bool def = defend(i);
+                        if (!def)
                         {
                             attack(i);
                         }
@@ -47,9 +49,9 @@ namespace DominionSharp
                 "Would you like to defend with your Moat card?", "Player" + (playerNum + 1), MessageBoxButtons.YesNo);
             if (prompt == DialogResult.No)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
 
     }
