@@ -63,13 +63,12 @@ namespace DominionSharp
         public void updateCardButtons(Player p, int begIndex = 0)
         {
             tabsPlayers.TabPages[p.getNumber()].Controls.Clear();
-            var n = 0;
             for (int i = begIndex; i < p.getHand().Count(); i++)
             {
                 Card card = p.getHand()[i];
                 Button cardButton = new Button();
                 //cardButton.Text = card.Name;
-                cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
+                cardButton.Location = new Point(4 + i * (CARD_WIDTH + 8), 16);
                 cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
                 cardButton.BackgroundImage = card.Picture;
                 cardButton.BackgroundImageLayout = ImageLayout.Stretch;
@@ -77,7 +76,6 @@ namespace DominionSharp
                 {
                     cardUpdateFunctionMaker(p, i, card, cardButton);
                 };
-                n++;
                 tabsPlayers.TabPages[p.getNumber()].Controls.Add(cardButton);
             }
 
@@ -94,7 +92,7 @@ namespace DominionSharp
                         Turn.Instance.Actions--;
                     p.playCard(card);
                     cardButton.Dispose();
-                    updateCardButtons(p, i);
+                    updateCardButtons(p, 0);
                     updateLabels();
                 }
             }
