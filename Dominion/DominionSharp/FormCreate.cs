@@ -12,19 +12,17 @@ namespace DominionSharp
 {
     public partial class FormCreate : Form
     {
-        FormGame game;
 
         public FormCreate()
         {
             InitializeComponent();
-            game = new FormGame();
-            game.Hide();
+            
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            FormGame game = new FormGame(Convert.ToInt32(comboNumPlayers.SelectedItem.ToString()));
             game.Show();
-            game.setPlayerCount(Convert.ToInt32(comboNumPlayers.SelectedItem.ToString()));
             this.Hide();
         }
     }

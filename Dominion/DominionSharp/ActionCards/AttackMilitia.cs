@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
 
 namespace DominionSharp
 {
@@ -12,13 +14,18 @@ namespace DominionSharp
         {
             this.name = "Militia";
             this.cost = 4;
-            this.picture = global::DominionSharp.Properties.Resources.militia; //TODO: Add Picture
+            this.picture = global::DominionSharp.Properties.Resources.militia;
             this.coins = 2;
         }
 
         protected override void attack(int playerNum)
         {
-            throw new NotImplementedException();
+            Player p = Turn.Instance.Players[playerNum];
+            if (p.getHand().Count > 3)
+            {
+                FormMilitiaAttack fma = new FormMilitiaAttack(p, playerNum);
+                fma.ShowDialog();
+            }
         }
 
         public override void play()

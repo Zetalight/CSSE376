@@ -19,6 +19,12 @@ namespace DominionSharp
         private List<Pile> victories = new List<Pile>();
         private List<Pile> treasures = new List<Pile>();
 
+        public FormGame(int playerNum)
+        {
+            InitializeComponent();
+            setPlayerCount(playerNum);
+        }
+
         public FormGame()
         {
             InitializeComponent();
@@ -263,9 +269,11 @@ namespace DominionSharp
                         score += (int)(all.Count / 10);
                 }
                 if (score > max)
+                {
+                    max = score;
                     maxind = i;
             }
-            Console.WriteLine("The winner is Player " + (maxind + 1));
+            }
             return maxind;
         }
     }
