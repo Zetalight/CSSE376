@@ -98,7 +98,18 @@ namespace DominionSharp
                         Turn.Instance.Actions--;
                     p.playCard(card);
                     cardButton.Dispose();
-                    updateCardButtons(p, 0);
+                    if (card is AttackCard)
+                    {
+                        List<Player> players = Turn.Instance.Players;
+                        for (int j = 0; j < getPlayerTabCount(); j++)
+                        {
+                            updateCardButtons(players[j], 0);
+                        }
+                    }
+                    else
+                    {
+                        updateCardButtons(p, 0);
+                    }
                     updateLabels();
                 }
             }
@@ -123,7 +134,7 @@ namespace DominionSharp
                     cardButton.BackgroundImageLayout = ImageLayout.Stretch;
                     cardButton.Click += (sender, args) =>
                     {
-                        supplyUpdateFunctionMaker(p, card, pile, cardButton);
+                        supplyUpdateFunctionMaker(card, pile, cardButton);
                     };
                     n++;
                     tabPiles.TabPages[0].Controls.Add(cardButton);
@@ -131,10 +142,9 @@ namespace DominionSharp
             }
         }
 
-        private void supplyUpdateFunctionMaker(Player p, Card card, Pile pile, Button cardButton)
+        private void supplyUpdateFunctionMaker(Card card, Pile pile, Button cardButton)
         {
-            if (p.Equals(Turn.Instance.getActivePlayer()))
-            {
+            Player p = Turn.Instance.getActivePlayer();
                 if (Turn.Instance.Buys > 0 &&
                     Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
                 {
@@ -150,7 +160,6 @@ namespace DominionSharp
                     Turn.Instance.Coins -= card.Cost;
                     updateLabels();
                 }
-            }
         }
 
         public void updateVictoryButtons()
@@ -172,7 +181,7 @@ namespace DominionSharp
                     cardButton.BackgroundImageLayout = ImageLayout.Stretch;
                     cardButton.Click += (sender, args) =>
                     {
-                        victoryUpdateFunctionMaker(p, card, pile, cardButton);
+                        victoryUpdateFunctionMaker(card, pile, cardButton);
                     };
                     n++;
                     tabPiles.TabPages[1].Controls.Add(cardButton);
@@ -180,10 +189,9 @@ namespace DominionSharp
             }
         }
 
-        private void victoryUpdateFunctionMaker(Player p, Card card, Pile pile, Button cardButton)
+        private void victoryUpdateFunctionMaker(Card card, Pile pile, Button cardButton)
         {
-            if (p.Equals(Turn.Instance.getActivePlayer()))
-            {
+            Player p = Turn.Instance.getActivePlayer();
                 if (Turn.Instance.Buys > 0 &&
                     Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
                 {
@@ -201,7 +209,6 @@ namespace DominionSharp
                     Turn.Instance.Coins -= card.Cost;
                     updateLabels();
                 }
-            }
         }
 
         public void updateTreasureButtons(int begIndex = 0)
@@ -214,13 +221,13 @@ namespace DominionSharp
                 var n = 0;
                 for (int j = 0; j < treasures.Count(); j++)
                 {
-                    treasureUpdateFunctionMaker(p, j, n);
+                    treasureUpdateFunctionMaker(j, n);
                     n++;
                 }
             }
         }
 
-        private void treasureUpdateFunctionMaker(Player p, int j, int n)
+        private void treasureUpdateFunctionMaker(int j, int n)
         {
             Pile pile = treasures[j];
             Card card = pile.getCard();
@@ -232,8 +239,7 @@ namespace DominionSharp
             cardButton.BackgroundImageLayout = ImageLayout.Stretch;
             cardButton.Click += (sender, args) =>
             {
-                if (p.Equals(Turn.Instance.getActivePlayer()))
-                {
+                Player p = Turn.Instance.getActivePlayer();
                     if (Turn.Instance.Buys > 0 &&
                         Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
                     {
@@ -249,7 +255,6 @@ namespace DominionSharp
                         Turn.Instance.Coins -= card.Cost;
                         updateLabels();
                     }
-                }
             };
             tabPiles.TabPages[2].Controls.Add(cardButton);
         }
@@ -294,9 +299,10 @@ namespace DominionSharp
 
         private void btnNextPhase_Click(object sender, EventArgs e)
         {
+            Player temp = Turn.Instance.getActivePlayer();
             Turn.Instance.nextPhase();
             updateLabels();
-            updateCardButtons(Turn.Instance.getActivePlayer());
+            updateCardButtons(temp);
         }
         private void createPiles()
         {
