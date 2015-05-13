@@ -37,6 +37,14 @@ namespace DominionSharp
                     tabsPlayers.TabPages.Add("Player" + (i + 1));
                     tabsPlayers.TabPages[i].AutoScroll = true;
                 }
+                tabPiles.TabPages.Clear();
+                tabPiles.TabPages.Add("Supply");
+                tabPiles.TabPages[0].AutoScroll = true;
+                tabPiles.TabPages.Add("Victories");
+                tabPiles.TabPages[1].AutoScroll = true;
+                tabPiles.TabPages.Add("Treasures");
+                tabPiles.TabPages[2].AutoScroll = true;
+
                 Turn.Instance.instantiate(players);
                 updateCardButtons();
             }
@@ -48,6 +56,8 @@ namespace DominionSharp
             createTreasures();
             createVictories();
             updateSupplyButtons();
+            updateVictoryButtons();
+            updateTreasureButtons();
         }
 
         public void updateCardButtons()
@@ -93,7 +103,7 @@ namespace DominionSharp
             List<Player> players = Turn.Instance.Players;
             for (int i = 0; i < players.Count; i++)
             {
-                groupBoxSupply.Controls.Clear();
+                tabPiles.TabPages[0].Controls.Clear();
                 Player p = players[i];
                 var n = 0;
                 foreach (Pile pile in piles)
@@ -128,7 +138,96 @@ namespace DominionSharp
                         }
                     };
                     n++;
-                    groupBoxSupply.Controls.Add(cardButton);
+                    tabPiles.TabPages[0].Controls.Add(cardButton);
+                }
+            }
+        }
+        public void updateVictoryButtons()
+        {
+            List<Player> players = Turn.Instance.Players;
+            for (int i = 0; i < players.Count; i++)
+            {
+                Player p = players[i];
+                tabPiles.TabPages[1].Controls.Clear();
+                var n = 0; 
+                foreach (Pile pile in victories)
+                {
+                    Card card = pile.getCard();
+                    Button cardButton = new Button();
+                    //cardButton.Text = card.Name;
+                    cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
+                    cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
+                    cardButton.BackgroundImage = card.Picture;
+                    cardButton.BackgroundImageLayout = ImageLayout.Stretch;
+                    cardButton.Click += (sender, args) =>
+                    {
+                        if (p.Equals(Turn.Instance.getActivePlayer()))
+                        {
+                            if (Turn.Instance.Buys > 0 &&
+                                Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+                            {
+                                if (!pile.draw())
+                                {
+                                    cardButton.Dispose();
+                                    emptyPiles++;
+                                    if (card is VictoryProvince || emptyPiles >= 3)
+                                        endGame();
+                                }
+                                Turn.Instance.Buys--;
+                                p.gainCard(card);
+                                Turn.Instance.Coins -= card.Cost;
+                                updateVictoryButtons();
+                                updateLabels();
+                            }
+                        }
+                    };
+                    n++;
+                    tabPiles.TabPages[1].Controls.Add(cardButton);
+                }
+            }
+        }
+
+        public void updateTreasureButtons()
+        {
+            List<Player> players = Turn.Instance.Players;
+            for (int i = 0; i < players.Count; i++)
+            {
+                Player p = players[i];
+                tabPiles.TabPages[2].Controls.Clear();
+                var n = 0; 
+                foreach (Pile pile in treasures)
+                {
+                    Card card = pile.getCard();
+                    Button cardButton = new Button();
+                    //cardButton.Text = card.Name;
+                    cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
+                    cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
+                    cardButton.BackgroundImage = card.Picture;
+                    cardButton.BackgroundImageLayout = ImageLayout.Stretch;
+                    cardButton.Click += (sender, args) =>
+                    {
+                        if (p.Equals(Turn.Instance.getActivePlayer()))
+                        {
+                            if (Turn.Instance.Buys > 0 &&
+                                Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+                            {
+                                if (!pile.draw())
+                                {
+                                    cardButton.Dispose();
+                                    emptyPiles++;
+                                    if (card is VictoryProvince || emptyPiles >= 3)
+                                        endGame();
+                                }
+                                Turn.Instance.Buys--;
+                                p.gainCard(card);
+                                Turn.Instance.Coins -= card.Cost;
+                                updateTreasureButtons();
+                                updateLabels();
+                            }
+                        }
+                    };
+                    n++;
+                    tabPiles.TabPages[2].Controls.Add(cardButton);
                 }
             }
         }
