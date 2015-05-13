@@ -38,13 +38,21 @@ namespace DominionSharp
                 tabsPlayers.TabPages.Clear();
                 for (int i = 0; i < count; i++)
                 {
-                    Player p = new Player();
+                    Player p = new Player(i);
                     players.Add(p);
                     tabsPlayers.TabPages.Add("Player" + (i + 1));
                     tabsPlayers.TabPages[i].AutoScroll = true;
+                    updateCardButtons(p);
                 }
+                tabPiles.TabPages.Clear();
+                tabPiles.TabPages.Add("Supply");
+                tabPiles.TabPages[0].AutoScroll = true;
+                tabPiles.TabPages.Add("Victories");
+                tabPiles.TabPages[1].AutoScroll = true;
+                tabPiles.TabPages.Add("Treasures");
+                tabPiles.TabPages[2].AutoScroll = true;
+
                 Turn.Instance.instantiate(players);
-                updateCardButtons();
             }
             else
             {
@@ -54,42 +62,46 @@ namespace DominionSharp
             createTreasures();
             createVictories();
             updateSupplyButtons();
+            updateVictoryButtons();
+            updateTreasureButtons();
         }
 
-        public void updateCardButtons()
+        public void updateCardButtons(Player p, int begIndex = 0)
         {
-            List<Player> players = Turn.Instance.Players;
-            for (int i = 0; i < players.Count; i++)
+            tabsPlayers.TabPages[p.getNumber()].Controls.Clear();
+            var n = 0;
+            for (int i = begIndex; i < p.getHand().Count(); i++)
             {
-                tabsPlayers.TabPages[i].Controls.Clear();
-                Player p = players[i];
-                var n = 0;
-                foreach (Card card in p.getHand())
+                Card card = p.getHand()[i];
+                Button cardButton = new Button();
+                //cardButton.Text = card.Name;
+                cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
+                cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
+                cardButton.BackgroundImage = card.Picture;
+                cardButton.BackgroundImageLayout = ImageLayout.Stretch;
+                cardButton.Click += (sender, args) =>
                 {
-                    Button cardButton = new Button();
-                    //cardButton.Text = card.Name;
-                    cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
-                    cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
-                    cardButton.BackgroundImage = card.Picture;
-                    cardButton.BackgroundImageLayout = ImageLayout.Stretch;
-                    cardButton.Click += (sender, args) =>
-                    {
-                        if (p.Equals(Turn.Instance.getActivePlayer()))
-                        {
-                            if ((card is ActionCard && Turn.Instance.Phase.Equals(Turn.Phases.Action)) ||
-                                (card is TreasureCard && Turn.Instance.Phase.Equals(Turn.Phases.Buy)))
-                            {
-                                if (card is ActionCard)
-                                    Turn.Instance.Actions--;
-                                p.playCard(card);
-                                cardButton.Dispose();
-                                updateCardButtons();
-                                updateLabels();
-                            }
-                        }
-                    };
-                    n++;
-                    tabsPlayers.TabPages[i].Controls.Add(cardButton);
+                    cardUpdateFunctionMaker(p, i, card, cardButton);
+                };
+                n++;
+                tabsPlayers.TabPages[p.getNumber()].Controls.Add(cardButton);
+            }
+
+        }
+
+        private void cardUpdateFunctionMaker(Player p, int i, Card card, Button cardButton)
+        {
+            if (p.Equals(Turn.Instance.getActivePlayer()))
+            {
+                if ((card is ActionCard && Turn.Instance.Actions > 0 && Turn.Instance.Phase.Equals(Turn.Phases.Action)) ||
+                    (card is TreasureCard && Turn.Instance.Phase.Equals(Turn.Phases.Buy)))
+                {
+                    if (card is ActionCard)
+                        Turn.Instance.Actions--;
+                    p.playCard(card);
+                    cardButton.Dispose();
+                    updateCardButtons(p, i);
+                    updateLabels();
                 }
             }
         }
@@ -99,7 +111,7 @@ namespace DominionSharp
             List<Player> players = Turn.Instance.Players;
             for (int i = 0; i < players.Count; i++)
             {
-                groupBoxSupply.Controls.Clear();
+                tabPiles.TabPages[0].Controls.Clear();
                 Player p = players[i];
                 var n = 0;
                 foreach (Pile pile in piles)
@@ -113,30 +125,135 @@ namespace DominionSharp
                     cardButton.BackgroundImageLayout = ImageLayout.Stretch;
                     cardButton.Click += (sender, args) =>
                     {
-                        if (p.Equals(Turn.Instance.getActivePlayer()))
-                        {
-                            if (Turn.Instance.Buys > 0 &&
-                                Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
-                            {
-                                if (!pile.draw())
-                                {
-                                    cardButton.Dispose();
-                                    emptyPiles++;
-                                    if (card is VictoryProvince || emptyPiles >= 3)
-                                        endGame();
-                                }
-                                Turn.Instance.Buys--;
-                                p.gainCard(card);
-                                Turn.Instance.Coins -= card.Cost;
-                                updateSupplyButtons();
-                                updateLabels();
-                            }
-                        }
+                        supplyUpdateFunctionMaker(p, card, pile, cardButton);
                     };
                     n++;
-                    groupBoxSupply.Controls.Add(cardButton);
+                    tabPiles.TabPages[0].Controls.Add(cardButton);
                 }
             }
+        }
+
+        private void supplyUpdateFunctionMaker(Player p, Card card, Pile pile, Button cardButton)
+        {
+            if (p.Equals(Turn.Instance.getActivePlayer()))
+            {
+                if (Turn.Instance.Buys > 0 &&
+                    Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+                {
+                    if (!pile.draw())
+                    {
+                        cardButton.Dispose();
+                        emptyPiles++;
+                        piles.Remove(pile);
+                        updateSupplyButtons();
+                    }
+                    Turn.Instance.Buys--;
+                    p.gainCard(card);
+                    Turn.Instance.Coins -= card.Cost;
+                    updateLabels();
+                }
+            }
+        }
+
+        public void updateVictoryButtons()
+        {
+            List<Player> players = Turn.Instance.Players;
+            for (int i = 0; i < players.Count; i++)
+            {
+                Player p = players[i];
+                tabPiles.TabPages[1].Controls.Clear();
+                var n = 0;
+                foreach (Pile pile in victories)
+                {
+                    Card card = pile.getCard();
+                    Button cardButton = new Button();
+                    //cardButton.Text = card.Name;
+                    cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
+                    cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
+                    cardButton.BackgroundImage = card.Picture;
+                    cardButton.BackgroundImageLayout = ImageLayout.Stretch;
+                    cardButton.Click += (sender, args) =>
+                    {
+                        victoryUpdateFunctionMaker(p, card, pile, cardButton);
+                    };
+                    n++;
+                    tabPiles.TabPages[1].Controls.Add(cardButton);
+                }
+            }
+        }
+
+        private void victoryUpdateFunctionMaker(Player p, Card card, Pile pile, Button cardButton)
+        {
+            if (p.Equals(Turn.Instance.getActivePlayer()))
+            {
+                if (Turn.Instance.Buys > 0 &&
+                    Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+                {
+                    if (!pile.draw())
+                    {
+                        cardButton.Dispose();
+                        victories.Remove(pile);
+                        emptyPiles++;
+                        updateVictoryButtons();
+                        if (card is VictoryProvince || emptyPiles >= 3)
+                            endGame();
+                    }
+                    Turn.Instance.Buys--;
+                    p.gainCard(card);
+                    Turn.Instance.Coins -= card.Cost;
+                    updateLabels();
+                }
+            }
+        }
+
+        public void updateTreasureButtons(int begIndex = 0)
+        {
+            List<Player> players = Turn.Instance.Players;
+            for (int i = begIndex; i < players.Count; i++)
+            {
+                Player p = players[i];
+                tabPiles.TabPages[2].Controls.Clear();
+                var n = 0;
+                for (int j = 0; j < treasures.Count(); j++)
+                {
+                    treasureUpdateFunctionMaker(p, j, n);
+                    n++;
+                }
+            }
+        }
+
+        private void treasureUpdateFunctionMaker(Player p, int j, int n)
+        {
+            Pile pile = treasures[j];
+            Card card = pile.getCard();
+            Button cardButton = new Button();
+            //cardButton.Text = card.Name;
+            cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
+            cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
+            cardButton.BackgroundImage = card.Picture;
+            cardButton.BackgroundImageLayout = ImageLayout.Stretch;
+            cardButton.Click += (sender, args) =>
+            {
+                if (p.Equals(Turn.Instance.getActivePlayer()))
+                {
+                    if (Turn.Instance.Buys > 0 &&
+                        Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+                    {
+                        if (!pile.draw())
+                        {
+                            cardButton.Dispose();
+                            emptyPiles++;
+                            treasures.Remove(pile);
+                            updateTreasureButtons(j);
+                        }
+                        Turn.Instance.Buys--;
+                        p.gainCard(card);
+                        Turn.Instance.Coins -= card.Cost;
+                        updateLabels();
+                    }
+                }
+            };
+            tabPiles.TabPages[2].Controls.Add(cardButton);
         }
 
         private void updateLabels()
@@ -181,8 +298,7 @@ namespace DominionSharp
         {
             Turn.Instance.nextPhase();
             updateLabels();
-            updateCardButtons();
-            updateSupplyButtons();
+            updateCardButtons(Turn.Instance.getActivePlayer());
         }
         private void createPiles()
         {

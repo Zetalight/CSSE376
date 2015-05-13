@@ -13,6 +13,7 @@ namespace DominionSharp
         private List<Card> deck = new List<Card>();
         private List<Card> hand = new List<Card>();
         private List<Card> discard = new List<Card>();
+        private int number = -1;
         
         // list of cards that have been played for the 
         // current turn, but not yet discarded
@@ -35,6 +36,32 @@ namespace DominionSharp
             {
                 drawCard();
             }
+        }
+
+
+        public Player(int number)
+        {
+            this.number = number;
+            // set initial deck cards (7 coppers, 3 estates)
+            for (int i = 0; i < 7; i++)
+            {
+                deck.Add(new TreasureCopper());
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                deck.Add(new VictoryEstate());
+            }
+
+            // draw initial hand of 5 cards
+            for (int i = 0; i < 5; i++)
+            {
+                drawCard();
+            }
+        }
+
+        public int getNumber()
+        {
+            return number;
         }
 
         // takes a random card from the deck and places it into the player's hand
