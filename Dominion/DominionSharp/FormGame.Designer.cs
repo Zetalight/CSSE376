@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBoxSupply = new System.Windows.Forms.GroupBox();
             this.tabsPlayers = new System.Windows.Forms.TabControl();
             this.TabPage1 = new System.Windows.Forms.TabPage();
             this.TabPage2 = new System.Windows.Forms.TabPage();
@@ -43,22 +42,7 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabsPlayers.SuspendLayout();
             this.tabPiles.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBoxSupply
-            // 
-            this.groupBoxSupply.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxSupply.Location = new System.Drawing.Point(153, 17);
-            this.groupBoxSupply.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBoxSupply.Name = "groupBoxSupply";
-            this.groupBoxSupply.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBoxSupply.Size = new System.Drawing.Size(1013, 164);
-            this.groupBoxSupply.TabIndex = 8;
-            this.groupBoxSupply.TabStop = false;
-            this.groupBoxSupply.Text = "Supply";
             // 
             // tabsPlayers
             // 
@@ -175,7 +159,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.groupBoxSupply);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -214,7 +197,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGame_FormClosed);
             this.tabsPlayers.ResumeLayout(false);
             this.tabPiles.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +204,6 @@
 
         #endregion
 
-        internal System.Windows.Forms.GroupBox groupBoxSupply;
         internal System.Windows.Forms.TabControl tabsPlayers;
         internal System.Windows.Forms.TabPage TabPage1;
         internal System.Windows.Forms.TabPage TabPage2;
