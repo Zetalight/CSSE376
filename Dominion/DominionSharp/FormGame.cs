@@ -32,10 +32,11 @@ namespace DominionSharp
                 tabsPlayers.TabPages.Clear();
                 for (int i = 0; i < count; i++)
                 {
-                    Player p = new Player();
+                    Player p = new Player(i);
                     players.Add(p);
                     tabsPlayers.TabPages.Add("Player" + (i + 1));
                     tabsPlayers.TabPages[i].AutoScroll = true;
+                    updateCardButtons(p);
                 }
                 tabPiles.TabPages.Clear();
                 tabPiles.TabPages.Add("Supply");
@@ -46,7 +47,6 @@ namespace DominionSharp
                 tabPiles.TabPages[2].AutoScroll = true;
 
                 Turn.Instance.instantiate(players);
-                updateCardButtons();
             }
             else
             {
@@ -60,13 +60,9 @@ namespace DominionSharp
             updateTreasureButtons();
         }
 
-        public void updateCardButtons(int begIndex = 0)
+        public void updateCardButtons(Player p, int begIndex = 0)
         {
-            List<Player> players = Turn.Instance.Players;
-            for (int i = 0; i < players.Count; i++)
-            {
-                tabsPlayers.TabPages[i].Controls.Clear();
-                Player p = players[i];
+                tabsPlayers.TabPages[p.getNumber()].Controls.Clear();
                 var n = 0;
                 foreach (Card card in p.getHand())
                 {
@@ -81,9 +77,8 @@ namespace DominionSharp
                         cardUpdateFunctionMaker(p, card, cardButton);
                     };
                     n++;
-                    tabsPlayers.TabPages[i].Controls.Add(cardButton);
+                    tabsPlayers.TabPages[p.getNumber()].Controls.Add(cardButton);
                 }
-            }
         }
 
         private void cardUpdateFunctionMaker(Player p, Card card, Button cardButton)
@@ -97,7 +92,7 @@ namespace DominionSharp
                         Turn.Instance.Actions--;
                     p.playCard(card);
                     cardButton.Dispose();
-                    updateCardButtons();
+                    updateCardButtons(p);
                     updateLabels();
                 }
             }
@@ -292,9 +287,14 @@ namespace DominionSharp
 
         private void btnNextPhase_Click(object sender, EventArgs e)
         {
+            Player p = Turn.Instance.getActivePlayer();
             Turn.Instance.nextPhase();
             updateLabels();
-            updateCardButtons();
+            updateCardButtons(p);
+            //if (Turn.Instance.getPhase() == Turn.Phases.Action) 
+            //{
+            //    updateCardButtons(Turn.Instance.getActivePlayer());
+            //}
         }
         private void createPiles()
         {

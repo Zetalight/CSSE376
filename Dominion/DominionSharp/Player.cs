@@ -13,13 +13,15 @@ namespace DominionSharp
         private List<Card> deck = new List<Card>();
         private List<Card> hand = new List<Card>();
         private List<Card> discard = new List<Card>();
+        private int number;
         
         // list of cards that have been played for the 
         // current turn, but not yet discarded
         private List<Card> wumbo = new List<Card>();
 
-        public Player()
+        public Player(int number)
         {
+            this.number = number;
             // set initial deck cards (7 coppers, 3 estates)
             for (int i = 0; i < 7; i++)
             {
@@ -35,6 +37,11 @@ namespace DominionSharp
             {
                 drawCard();
             }
+        }
+
+        public int getNumber()
+        {
+            return number;
         }
 
         // takes a random card from the deck and places it into the player's hand

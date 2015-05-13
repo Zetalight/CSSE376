@@ -127,6 +127,11 @@ namespace DominionSharp
             instance.reInitVals();
         }
 
+        public Phases getPhase()
+        {
+            return phase;
+        }
+
         public void nextPhase()
         {
             switch (phase)
