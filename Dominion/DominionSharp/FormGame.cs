@@ -98,7 +98,18 @@ namespace DominionSharp
                         Turn.Instance.Actions--;
                     p.playCard(card);
                     cardButton.Dispose();
-                    updateCardButtons(p, 0);
+                    if (card is AttackCard)
+                    {
+                        List<Player> players = Turn.Instance.Players;
+                        for (int j = 0; j < getPlayerTabCount(); j++)
+                        {
+                            updateCardButtons(players[j], 0);
+                        }
+                    }
+                    else
+                    {
+                        updateCardButtons(p, 0);
+                    }
                     updateLabels();
                 }
             }

@@ -163,5 +163,10 @@ namespace DominionSharp
             instance.trashes = 0;
             instance.phase = Phases.Action;
         }
+
+        public int getActivePlayerIndex()
+        {
+            return currentPlayerIndex;
+        }
     }
 }

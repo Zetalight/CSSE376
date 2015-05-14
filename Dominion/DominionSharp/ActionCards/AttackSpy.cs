@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DominionSharp
 {
@@ -19,7 +20,20 @@ namespace DominionSharp
 
         protected override void attack(int playerNum)
         {
-            throw new NotImplementedException();
+            DialogResult dr = MessageBox.Show(reveal(playerNum) 
+                + " was revealed.\nPress \"Yes\" to discard or \"No\" to put it back.",
+                "Player" + (playerNum + 1) + " reveals the top card of their deck...",
+                MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                Turn.Instance.Players[playerNum].discardTopCardOfDeck();
+            }
+        }
+
+        protected String reveal(int playerNum)
+        {
+            Player p = Turn.Instance.Players[playerNum];
+            return p.getDeck()[0].Name;
         }
 
         public override void play()
@@ -30,6 +44,14 @@ namespace DominionSharp
             //reveals the top card of his deck and 
             //either discards it or puts it back, 
             //your choice.
+            int i = Turn.Instance.getActivePlayerIndex();
+            if (Turn.Instance.getActivePlayer().hasMoatInHand())
+            {
+                if (!defend(i))
+                {
+                    attack(i);
+                }
+            }
         }
     }
 }
