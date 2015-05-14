@@ -52,7 +52,7 @@
             this.tabsPlayers.Controls.Add(this.TabPage1);
             this.tabsPlayers.Controls.Add(this.TabPage2);
             this.tabsPlayers.Location = new System.Drawing.Point(16, 386);
-            this.tabsPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabsPlayers.Margin = new System.Windows.Forms.Padding(4);
             this.tabsPlayers.Name = "tabsPlayers";
             this.tabsPlayers.SelectedIndex = 0;
             this.tabsPlayers.Size = new System.Drawing.Size(1013, 340);
@@ -61,9 +61,9 @@
             // TabPage1
             // 
             this.TabPage1.Location = new System.Drawing.Point(4, 25);
-            this.TabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage1.Name = "TabPage1";
-            this.TabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.TabPage1.Size = new System.Drawing.Size(1005, 311);
             this.TabPage1.TabIndex = 2;
             this.TabPage1.Text = "*Player 1";
@@ -72,9 +72,9 @@
             // TabPage2
             // 
             this.TabPage2.Location = new System.Drawing.Point(4, 25);
-            this.TabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage2.Name = "TabPage2";
-            this.TabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.TabPage2.Size = new System.Drawing.Size(1005, 311);
             this.TabPage2.TabIndex = 3;
             this.TabPage2.Text = "Player 2";
@@ -84,12 +84,13 @@
             // 
             this.btnHideRevealHand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHideRevealHand.Location = new System.Drawing.Point(845, 351);
-            this.btnHideRevealHand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHideRevealHand.Margin = new System.Windows.Forms.Padding(4);
             this.btnHideRevealHand.Name = "btnHideRevealHand";
             this.btnHideRevealHand.Size = new System.Drawing.Size(183, 28);
             this.btnHideRevealHand.TabIndex = 7;
             this.btnHideRevealHand.Text = "Hide/Reveal Hand";
             this.btnHideRevealHand.UseVisualStyleBackColor = true;
+            this.btnHideRevealHand.Click += new System.EventHandler(this.btnHideRevealHand_Click);
             // 
             // lblCoins
             // 
@@ -128,7 +129,7 @@
             // 
             this.btnNextPhase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNextPhase.Location = new System.Drawing.Point(21, 351);
-            this.btnNextPhase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNextPhase.Margin = new System.Windows.Forms.Padding(4);
             this.btnNextPhase.Name = "btnNextPhase";
             this.btnNextPhase.Size = new System.Drawing.Size(128, 28);
             this.btnNextPhase.TabIndex = 9;
@@ -191,7 +192,7 @@
             this.Controls.Add(this.btnNextPhase);
             this.Controls.Add(this.tabPiles);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormGame";
             this.Text = "FormGame";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGame_FormClosed);

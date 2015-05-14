@@ -385,5 +385,24 @@ namespace DominionSharp
             }
             return maxind;
         }
+
+        private void btnHideRevealHand_Click(object sender, EventArgs e)
+        {
+            var tab = tabsPlayers.SelectedIndex;
+            Player p = Turn.Instance.Players[tab];
+            tabsPlayers.TabPages[tab].Controls.Clear();
+            var n = 0;
+            foreach (Card card in p.getHand())
+            {
+                Button cardButton = new Button();
+                //cardButton.Text = card.Name;
+                cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
+                cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
+                cardButton.BackgroundImage = global::DominionSharp.Properties.Resources.back;
+                cardButton.BackgroundImageLayout = ImageLayout.Stretch;
+                tabsPlayers.TabPages[p.getNumber()].Controls.Add(cardButton);
+                n++;
+            }
+        }
     }
 }
