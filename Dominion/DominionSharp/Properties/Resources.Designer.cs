@@ -379,13 +379,5 @@ namespace DominionSharp.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        internal static System.Drawing.Bitmap garden
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("garden", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
