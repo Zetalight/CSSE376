@@ -350,7 +350,7 @@ namespace DominionSharp
         private void createPiles(List<Card> cards)
         {
             foreach (Card c in cards){
-            piles.Add(new Pile(c));
+                piles.Add(new Pile(c));
             }
         }
         private void createPiles()

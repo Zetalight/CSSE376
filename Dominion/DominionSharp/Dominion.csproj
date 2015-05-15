@@ -82,6 +82,18 @@
       <DependentUpon>FormGame.cs</DependentUpon>
     </Compile>
     <Compile Include="ActionCards\ActionCard.cs" />
+    <Compile Include="FormSupplySetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSupplySetup.Designer.cs">
+      <DependentUpon>FormSupplySetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThiefGain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThiefGain.Designer.cs">
+      <DependentUpon>FormThiefGain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMilitiaAttack.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +104,12 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormThiefTrash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThiefTrash.Designer.cs">
+      <DependentUpon>FormThiefTrash.cs</DependentUpon>
+    </Compile>
     <Compile Include="TreasureCards\TreasureCard.cs" />
     <Compile Include="TreasureCards\TreasureCopper.cs" />
     <Compile Include="TreasureCards\TreasureGold.cs" />
@@ -110,6 +128,12 @@
     <EmbeddedResource Include="FormGame.resx">
       <DependentUpon>FormGame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSupplySetup.resx">
+      <DependentUpon>FormSupplySetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThiefGain.resx">
+      <DependentUpon>FormThiefGain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMilitiaAttack.resx">
       <DependentUpon>FormMilitiaAttack.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +147,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="FormThiefTrash.resx">
+      <DependentUpon>FormThiefTrash.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

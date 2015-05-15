@@ -33,7 +33,8 @@ namespace DominionSharp
         protected String reveal(int playerNum)
         {
             Player p = Turn.Instance.Players[playerNum];
-            return p.getDeck()[0].Name;
+            Card rev = p.revealTopDeck(1)[0];
+            return rev.Name;
         }
 
         public override void play()

@@ -87,6 +87,29 @@ namespace DominionSharp
             }
         }
 
+        //reveals the top "n" cards of the deck
+        public List<Card> revealTopDeck(int n)
+        {
+            List<Card> result = new List<Card>();
+            for (int i = 1; i <= n; i++)
+			{
+                if (deck.Count < i) 
+                {
+                    deck.Clear();
+                    deck.AddRange(discard);
+                    discard.Clear();
+                    shuffleDeck();
+                    deck.InsertRange(0, result);
+                    result.Add(deck[i - 1]);
+                }
+                else
+                {
+                    result.Add(deck[i - 1]);
+                }
+			}
+            return result;
+        }
+
         private void shuffleDeck()
         {
             Random rng = new Random();

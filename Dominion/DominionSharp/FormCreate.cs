@@ -21,8 +21,9 @@ namespace DominionSharp
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            FormGame game = new FormGame(Convert.ToInt32(comboNumPlayers.SelectedItem.ToString()));
-            game.Show();
+            int n = Convert.ToInt32(comboNumPlayers.SelectedItem.ToString());
+            FormSupplySetup supply = new FormSupplySetup(n);
+            supply.Show();
             this.Hide();
         }
     }
