@@ -352,17 +352,15 @@ namespace DominionSharp
                 tabsPlayers.SelectedIndex = Turn.Instance.getActivePlayerIndex();
             }
         }
-        
-        private void createPiles(List<Card> cards)
+
+        private void createPiles(List<Card> cards = null)
         {
-            foreach (Card c in cards){
-            piles.Add(new Pile(c));
+            if(cards==null)
+            {
+                cards = new List<Card>();
             }
-        }
-        private void createPiles()
-        {
             //Number of Piles to create
-            int numberOfPiles = 10;
+            int numberOfPiles = 10-cards.Count;
             //List of all Cards
             List<Card> randomDeck = new List<Card>() { new ActionAdventure(),
                 new AttackBureaucrat(), new ActionCellar(), new ActionChancellor(), 
@@ -374,6 +372,11 @@ namespace DominionSharp
                 new ActionThroneRoom(), new ActionVillage(), new AttackWitch(), 
                 new ActionWoodcutter(), new ActionWoodcutter(), new ActionWorkshop(), 
                 new VictoryGardens()};
+            foreach (Card c in cards)
+            {
+                randomDeck.Remove(c);
+                piles.Add(new Pile(c));
+            }
             //Add distinct cards to the pile.
             for (int i = 0; i < numberOfPiles; i++)
             {
