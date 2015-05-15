@@ -157,50 +157,46 @@ namespace DominionSharp
 
         public void updateSupplyButtons()
         {
-            List<Player> players = Turn.Instance.Players;
-            for (int i = 0; i < players.Count; i++)
+            var n = 0;
+            foreach (Pile pile in piles)
             {
-                tabPiles.TabPages[0].Controls.Clear();
-                Player p = players[i];
-                var n = 0;
-                foreach (Pile pile in piles)
+                Card card = pile.getCard();
+                Button cardButton = new Button();
+                //cardButton.Text = card.Name;
+                cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
+                cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
+                cardButton.BackgroundImage = card.Picture;
+                cardButton.BackgroundImageLayout = ImageLayout.Stretch;
+                cardButton.Click += (sender, args) =>
+                cardButton.Name = pile.getCount().ToString();
+                cardButton.Click += (sender, args) =>
                 {
-                    Card card = pile.getCard();
-                    Button cardButton = new Button();
-                    //cardButton.Text = card.Name;
-                    cardButton.Location = new Point(4 + n * (CARD_WIDTH + 8), 16);
-                    cardButton.Size = new Size(CARD_WIDTH, CARD_HEIGHT);
-                    cardButton.BackgroundImage = card.Picture;
-                    cardButton.BackgroundImageLayout = ImageLayout.Stretch;
-                    cardButton.Click += (sender, args) =>
-                    cardButton.Name = pile.getCount().ToString();
-                    {
-                        supplyUpdateFunctionMaker(card, pile, cardButton);
-                    };
-                    n++;
-                    tabPiles.TabPages[0].Controls.Add(cardButton);
-                }
+                    supplyUpdateFunctionMaker(card, pile, cardButton);
+                };
+                n++;
+                tabPiles.TabPages[0].Controls.Add(cardButton);
             }
         }
 
         private void supplyUpdateFunctionMaker(Card card, Pile pile, Button cardButton)
         {
             Player p = Turn.Instance.getActivePlayer();
-                if (Turn.Instance.Buys > 0 &&
-                    Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+            if (Turn.Instance.Buys > 0 &&
+                Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+            {
+                if (!pile.draw())
                 {
-                    if (!pile.draw())
-                    {
-                        cardButton.Dispose();
-                        emptyPiles++;
-                        piles.Remove(pile);
-                        updateSupplyButtons();
-                    }
-                    Turn.Instance.Buys--;
-                    p.gainCard(card);
-                    Turn.Instance.Coins -= card.Cost;
-                    updateLabels();
+                    cardButton.Dispose();
+                    emptyPiles++;
+                    piles.Remove(pile);
+                    updateSupplyButtons();
                 }
+                Turn.Instance.Buys--;
+                p.gainCard(card);
+                Turn.Instance.Coins -= card.Cost;
+                updateLabels();
+                Console.WriteLine(card.Name + " BOUGHT");
+            }
         }
 
         public void updateVictoryButtons()
@@ -281,21 +277,21 @@ namespace DominionSharp
             cardButton.Click += (sender, args) =>
             {
                 Player p = Turn.Instance.getActivePlayer();
-                    if (Turn.Instance.Buys > 0 &&
+                if (Turn.Instance.Buys > 0 &&
                         Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+                {
+                    if (!pile.draw())
                     {
-                        if (!pile.draw())
-                        {
-                            cardButton.Dispose();
-                            emptyPiles++;
-                            treasures.Remove(pile);
-                            updateTreasureButtons(j);
-                        }
-                        Turn.Instance.Buys--;
-                        p.gainCard(card);
-                        Turn.Instance.Coins -= card.Cost;
-                        updateLabels();
+                        cardButton.Dispose();
+                        emptyPiles++;
+                        treasures.Remove(pile);
+                        updateTreasureButtons(j);
                     }
+                    Turn.Instance.Buys--;
+                    p.gainCard(card);
+                    Turn.Instance.Coins -= card.Cost;
+                    updateLabels();
+                }
             };
             tabPiles.TabPages[2].Controls.Add(cardButton);
         }
@@ -340,10 +336,15 @@ namespace DominionSharp
 
         private void btnNextPhase_Click(object sender, EventArgs e)
         {
+            int prevPlayerTurn = Turn.Instance.getActivePlayerIndex();
             Player temp = Turn.Instance.getActivePlayer();
             Turn.Instance.nextPhase();
             updateLabels();
             updateCardButtons(temp);
+            if (prevPlayerTurn != Turn.Instance.getActivePlayerIndex())
+            {
+                tabsPlayers.SelectedIndex = Turn.Instance.getActivePlayerIndex();
+            }
         }
         
         private void createPiles(List<Card> cards)

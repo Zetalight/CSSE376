@@ -214,16 +214,6 @@ namespace ClassLibrary1
             initPlayers();
 
             List<Player> players = Turn.Instance.Players;
-            String expectedReveal = "";
-            int ind = 0;
-            foreach (Player p in players)
-            {
-                if (!AttackCardTest.defendList[ind] && AttackCardTest.spyDiscardList[ind])
-                {
-                    expectedReveal += p.getDeck()[0].Name;
-                }
-                ind++;
-            }
 
             //Spy
             Player currentplayer = Turn.Instance.getActivePlayer();
@@ -241,7 +231,7 @@ namespace ClassLibrary1
                 }
             }
 
-            Assert.AreEqual(expectedReveal, spy.getReveal());
+            Assert.AreEqual("CopperCopper", spy.getReveal());
         }
 
         private void initPlayers()
