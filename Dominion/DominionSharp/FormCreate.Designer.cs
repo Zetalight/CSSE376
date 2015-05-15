@@ -36,9 +36,10 @@
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(87, 7);
+            this.Label1.Location = new System.Drawing.Point(116, 9);
+            this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(96, 13);
+            this.Label1.Size = new System.Drawing.Size(129, 17);
             this.Label1.TabIndex = 5;
             this.Label1.Text = "Number of Players:";
             // 
@@ -53,18 +54,20 @@
             "2",
             "3",
             "4"});
-            this.comboNumPlayers.Location = new System.Drawing.Point(118, 24);
+            this.comboNumPlayers.Location = new System.Drawing.Point(157, 30);
+            this.comboNumPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboNumPlayers.Name = "comboNumPlayers";
-            this.comboNumPlayers.Size = new System.Drawing.Size(36, 21);
+            this.comboNumPlayers.Size = new System.Drawing.Size(47, 24);
             this.comboNumPlayers.TabIndex = 4;
             this.comboNumPlayers.Text = "2";
             // 
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(10, 128);
+            this.btnStart.Location = new System.Drawing.Point(13, 158);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(265, 123);
+            this.btnStart.Size = new System.Drawing.Size(353, 151);
             this.btnStart.TabIndex = 3;
             this.btnStart.Text = "Start Game";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -72,12 +75,13 @@
             // 
             // FormCreate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(379, 322);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.comboNumPlayers);
             this.Controls.Add(this.btnStart);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormCreate";
             this.Text = "Dominion - Create Game";
             this.ResumeLayout(false);

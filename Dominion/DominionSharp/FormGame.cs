@@ -30,7 +30,7 @@ namespace DominionSharp
             InitializeComponent();
         }
 
-        public void setPlayerCount(int count)
+        public void setPlayerCount(int count, List<Card> cards = null)
         {
             List<Player> players = new List<Player>();
             if (count >= 2 && count <= 4)
@@ -64,47 +64,6 @@ namespace DominionSharp
             {
                 throw new Exception("INVALID PLAYER COUNT");
             }
-            createPiles();
-            createTreasures();
-            createVictories();
-            updateSupplyButtons();
-            updateVictoryButtons();
-            updateTreasureButtons();
-        }
-        public void setPlayerCount(int count, List<Card> cards)
-        {
-            List<Player> players = new List<Player>();
-            if (count >= 2 && count <= 4)
-            {
-                tabsPlayers.TabPages.Clear();
-                for (int i = 0; i < count; i++)
-                {
-                    Player p = new Player(i);
-                    players.Add(p);
-                    tabsPlayers.TabPages.Add("Player" + (i + 1));
-                    tabsPlayers.TabPages[i].AutoScroll = true;
-                    hideHand(p);
-                }
-                tabPiles.TabPages.Clear();
-                tabPiles.TabPages.Add("Supply");
-                tabPiles.TabPages[0].AutoScroll = true;
-                tabPiles.TabPages.Add("Victories");
-                tabPiles.TabPages[1].AutoScroll = true;
-                tabPiles.TabPages.Add("Treasures");
-                tabPiles.TabPages[2].AutoScroll = true; 
-                tabsPlayers.Selected += (sender, args) =>
-                {
-                    Player p = Turn.Instance.Players[tabsPlayers.SelectedIndex];
-                    hideHand(p);
-                    p.hide(true);
-                };
-
-                Turn.Instance.instantiate(players);
-            }
-            else
-            {
-                throw new Exception("INVALID PLAYER COUNT");
-            }
             createPiles(cards);
             createTreasures();
             createVictories();
@@ -112,6 +71,7 @@ namespace DominionSharp
             updateVictoryButtons();
             updateTreasureButtons();
         }
+        
         public void updateCardButtons(Player p, int begIndex = 0)
         {
             tabsPlayers.TabPages[p.getNumber()].Controls.Clear();
