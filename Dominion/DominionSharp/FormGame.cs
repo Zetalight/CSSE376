@@ -83,7 +83,7 @@ namespace DominionSharp
                     players.Add(p);
                     tabsPlayers.TabPages.Add("Player" + (i + 1));
                     tabsPlayers.TabPages[i].AutoScroll = true;
-                    updateCardButtons(p);
+                    hideHand(p);
                 }
                 tabPiles.TabPages.Clear();
                 tabPiles.TabPages.Add("Supply");
@@ -91,7 +91,13 @@ namespace DominionSharp
                 tabPiles.TabPages.Add("Victories");
                 tabPiles.TabPages[1].AutoScroll = true;
                 tabPiles.TabPages.Add("Treasures");
-                tabPiles.TabPages[2].AutoScroll = true;
+                tabPiles.TabPages[2].AutoScroll = true; 
+                tabsPlayers.Selected += (sender, args) =>
+                {
+                    Player p = Turn.Instance.Players[tabsPlayers.SelectedIndex];
+                    hideHand(p);
+                    p.hide(true);
+                };
 
                 Turn.Instance.instantiate(players);
             }
