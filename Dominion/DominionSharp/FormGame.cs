@@ -71,7 +71,41 @@ namespace DominionSharp
             updateVictoryButtons();
             updateTreasureButtons();
         }
+        public void setPlayerCount(int count, List<Card> cards)
+        {
+            List<Player> players = new List<Player>();
+            if (count >= 2 && count <= 4)
+            {
+                tabsPlayers.TabPages.Clear();
+                for (int i = 0; i < count; i++)
+                {
+                    Player p = new Player(i);
+                    players.Add(p);
+                    tabsPlayers.TabPages.Add("Player" + (i + 1));
+                    tabsPlayers.TabPages[i].AutoScroll = true;
+                    updateCardButtons(p);
+                }
+                tabPiles.TabPages.Clear();
+                tabPiles.TabPages.Add("Supply");
+                tabPiles.TabPages[0].AutoScroll = true;
+                tabPiles.TabPages.Add("Victories");
+                tabPiles.TabPages[1].AutoScroll = true;
+                tabPiles.TabPages.Add("Treasures");
+                tabPiles.TabPages[2].AutoScroll = true;
 
+                Turn.Instance.instantiate(players);
+            }
+            else
+            {
+                throw new Exception("INVALID PLAYER COUNT");
+            }
+            createPiles(cards);
+            createTreasures();
+            createVictories();
+            updateSupplyButtons();
+            updateVictoryButtons();
+            updateTreasureButtons();
+        }
         public void updateCardButtons(Player p, int begIndex = 0)
         {
             tabsPlayers.TabPages[p.getNumber()].Controls.Clear();
@@ -139,6 +173,7 @@ namespace DominionSharp
                     cardButton.BackgroundImage = card.Picture;
                     cardButton.BackgroundImageLayout = ImageLayout.Stretch;
                     cardButton.Click += (sender, args) =>
+                    cardButton.Name = pile.getCount().ToString();
                     {
                         supplyUpdateFunctionMaker(card, pile, cardButton);
                     };
@@ -309,6 +344,13 @@ namespace DominionSharp
             Turn.Instance.nextPhase();
             updateLabels();
             updateCardButtons(temp);
+        }
+        
+        private void createPiles(List<Card> cards)
+        {
+            foreach (Card c in cards){
+            piles.Add(new Pile(c));
+            }
         }
         private void createPiles()
         {
