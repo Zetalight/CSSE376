@@ -14,6 +14,7 @@ namespace DominionSharp
         private List<Card> hand = new List<Card>();
         private List<Card> discard = new List<Card>();
         private int number = -1;
+        private bool hidden = true;
         
         // list of cards that have been played for the 
         // current turn, but not yet discarded
@@ -118,6 +119,16 @@ namespace DominionSharp
         public List<Card> getWumbo()
         {
             return wumbo;
+        }
+
+        public bool isHidden()
+        {
+            return this.hidden;
+        }
+
+        public void hide(bool hidden)
+        {
+            this.hidden = hidden;
         }
 
         public void endTurn()

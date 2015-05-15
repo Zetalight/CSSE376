@@ -42,7 +42,7 @@ namespace DominionSharp
                     players.Add(p);
                     tabsPlayers.TabPages.Add("Player" + (i + 1));
                     tabsPlayers.TabPages[i].AutoScroll = true;
-                    updateCardButtons(p);
+                    hideHand(p);
                 }
                 tabPiles.TabPages.Clear();
                 tabPiles.TabPages.Add("Supply");
@@ -51,6 +51,12 @@ namespace DominionSharp
                 tabPiles.TabPages[1].AutoScroll = true;
                 tabPiles.TabPages.Add("Treasures");
                 tabPiles.TabPages[2].AutoScroll = true;
+                tabsPlayers.Selected += (sender, args) =>
+                {
+                    Player p = Turn.Instance.Players[tabsPlayers.SelectedIndex];
+                    hideHand(p);
+                    p.hide(true);                    
+                };
 
                 Turn.Instance.instantiate(players);
             }
@@ -401,7 +407,19 @@ namespace DominionSharp
         {
             var tab = tabsPlayers.SelectedIndex;
             Player p = Turn.Instance.Players[tab];
-            tabsPlayers.TabPages[tab].Controls.Clear();
+            if (p.isHidden())
+            {
+                updateCardButtons(p);
+            }
+            else
+            {
+                hideHand(p);
+            }
+            p.hide(!p.isHidden());
+        }
+        private void hideHand(Player p)
+        {
+            tabsPlayers.TabPages[p.getNumber()].Controls.Clear();
             var n = 0;
             foreach (Card card in p.getHand())
             {
