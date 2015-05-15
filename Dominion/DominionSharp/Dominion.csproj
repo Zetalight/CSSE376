@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\adventurer.jpg" />
+    <Content Include="Resources\back.jpg" />
     <Content Include="Resources\bureaucrat.jpg" />
     <Content Include="Resources\cellar.jpg" />
     <Content Include="Resources\chancellor.jpg" />
