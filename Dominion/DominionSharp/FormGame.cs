@@ -153,8 +153,8 @@ namespace DominionSharp
         {
             Player p = Turn.Instance.getActivePlayer();
             bool canBuy = Turn.Instance.Buys > 0 &&
-                Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost;
-            FormCardDetail detail = new FormCardDetail(card, canBuy);
+                Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost && pile.getCount() > 0;
+            FormCardDetail detail = new FormCardDetail(card, canBuy, pile.getCount());
             DialogResult dr = detail.ShowDialog();
             if (canBuy && dr == DialogResult.Yes)
             {
@@ -203,23 +203,26 @@ namespace DominionSharp
         private void victoryUpdateFunctionMaker(Card card, Pile pile, Button cardButton)
         {
             Player p = Turn.Instance.getActivePlayer();
-                if (Turn.Instance.Buys > 0 &&
-                    Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+            bool canBuy = Turn.Instance.Buys > 0 &&
+                    Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost && pile.getCount() > 0;
+            FormCardDetail detail = new FormCardDetail(card, canBuy, pile.getCount());
+            DialogResult dr = detail.ShowDialog();
+            if (canBuy && dr == DialogResult.Yes)
+            {
+                if (!pile.draw())
                 {
-                    if (!pile.draw())
-                    {
-                        cardButton.Dispose();
-                        victories.Remove(pile);
-                        emptyPiles++;
-                        updateVictoryButtons();
-                        if (card is VictoryProvince || emptyPiles >= 3)
-                            endGame();
-                    }
-                    Turn.Instance.Buys--;
-                    p.gainCard(card);
-                    Turn.Instance.Coins -= card.Cost;
-                    updateLabels();
+                    cardButton.Dispose();
+                    victories.Remove(pile);
+                    emptyPiles++;
+                    updateVictoryButtons();
+                    if (card is VictoryProvince || emptyPiles >= 3)
+                        endGame();
                 }
+                Turn.Instance.Buys--;
+                p.gainCard(card);
+                Turn.Instance.Coins -= card.Cost;
+                updateLabels();
+            }
         }
 
         public void updateTreasureButtons(int begIndex = 0)
@@ -251,8 +254,11 @@ namespace DominionSharp
             cardButton.Click += (sender, args) =>
             {
                 Player p = Turn.Instance.getActivePlayer();
-                if (Turn.Instance.Buys > 0 &&
-                        Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+                bool canBuy = Turn.Instance.Buys > 0 &&
+                    Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost && pile.getCount() > 0;
+                FormCardDetail detail = new FormCardDetail(card, canBuy, pile.getCount());
+                DialogResult dr = detail.ShowDialog();
+                if (canBuy && dr == DialogResult.Yes)
                 {
                     if (!pile.draw())
                     {

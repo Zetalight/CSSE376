@@ -31,13 +31,14 @@
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_confirm = new System.Windows.Forms.Button();
             this.picbox_card = new System.Windows.Forms.PictureBox();
+            this.lbl_count = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_card)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_exit
             // 
             this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exit.Location = new System.Drawing.Point(330, 547);
+            this.btn_exit.Location = new System.Drawing.Point(329, 547);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(109, 50);
             this.btn_exit.TabIndex = 0;
@@ -65,11 +66,22 @@
             this.picbox_card.TabIndex = 2;
             this.picbox_card.TabStop = false;
             // 
+            // lbl_count
+            // 
+            this.lbl_count.AutoSize = true;
+            this.lbl_count.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_count.Location = new System.Drawing.Point(216, 563);
+            this.lbl_count.Name = "lbl_count";
+            this.lbl_count.Size = new System.Drawing.Size(18, 20);
+            this.lbl_count.TabIndex = 3;
+            this.lbl_count.Text = "1";
+            // 
             // FormCardDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 609);
+            this.Controls.Add(this.lbl_count);
             this.Controls.Add(this.picbox_card);
             this.Controls.Add(this.btn_confirm);
             this.Controls.Add(this.btn_exit);
@@ -78,6 +90,7 @@
             this.Text = "Card Detail";
             ((System.ComponentModel.ISupportInitialize)(this.picbox_card)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -86,5 +99,6 @@
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_confirm;
         private System.Windows.Forms.PictureBox picbox_card;
+        private System.Windows.Forms.Label lbl_count;
     }
 }

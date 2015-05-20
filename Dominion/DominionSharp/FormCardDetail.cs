@@ -13,6 +13,19 @@ namespace DominionSharp
     public partial class FormCardDetail : Form
     {
         Card card;
+        public FormCardDetail(Card c, bool canConfirm, int n)
+        {
+            InitializeComponent();
+            this.card = c;
+            this.picbox_card.BackgroundImage = card.Picture;
+            if (!canConfirm)
+            {
+                this.btn_confirm.Enabled = false;
+            }
+
+            this.lbl_count.Text = "" + n;
+        }
+
         public FormCardDetail(Card c, bool canConfirm)
         {
             InitializeComponent();

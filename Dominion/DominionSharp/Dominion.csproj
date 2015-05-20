@@ -75,6 +75,12 @@
     <Compile Include="FormCardDetail.Designer.cs">
       <DependentUpon>FormCardDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCellar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCellar.Designer.cs">
+      <DependentUpon>FormCellar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="ActionCards\ActionWorkshop.cs" />
     <EmbeddedResource Include="FormCardDetail.resx">
       <DependentUpon>FormCardDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCellar.resx">
+      <DependentUpon>FormCellar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCreate.resx">
       <DependentUpon>FormCreate.cs</DependentUpon>
