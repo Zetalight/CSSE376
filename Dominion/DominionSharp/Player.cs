@@ -185,6 +185,11 @@ namespace DominionSharp
             hand.Remove(c);
             wumbo.Add(c);
             c.play();
+            if (Turn.Instance.getThroneRoom() == true)
+            {
+                c.play();
+                Turn.Instance.setThroneRoom(false);
+            }
         }
 
         public int getDeckSize()

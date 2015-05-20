@@ -16,6 +16,7 @@ namespace DominionSharp
         private int actions;
         private int buys;
         private int trashes;
+        private bool throneRoom;
         public enum Phases { Action, Buy, Cleanup, Draw };
         private Phases phase;
 
@@ -119,6 +120,14 @@ namespace DominionSharp
             }
         }
 
+        public bool getThroneRoom()
+        {
+            return Instance.throneRoom;
+        }
+        public void setThroneRoom(bool value)
+        {
+            instance.throneRoom = value;
+        }
         public void nextTurn()
         {
             instance.activePlayer.endTurn();
@@ -162,6 +171,7 @@ namespace DominionSharp
             instance.actions = 1;
             instance.trashes = 0;
             instance.phase = Phases.Action;
+            instance.setThroneRoom(false);
         }
 
         public int getActivePlayerIndex()
