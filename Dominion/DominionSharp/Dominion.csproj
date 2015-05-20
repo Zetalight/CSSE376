@@ -112,6 +112,12 @@
     <Compile Include="FormMilitiaAttack.Designer.cs">
       <DependentUpon>FormMilitiaAttack.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTrash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrash.Designer.cs">
+      <DependentUpon>FormTrash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pile.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
