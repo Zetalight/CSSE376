@@ -21,6 +21,13 @@ namespace DominionSharp
             Console.WriteLine("Cellar Played");
             //TODO: Discard any number of cards.
             //+1 Card per card discarded.
+            discard();
+        }
+
+        protected void discard()
+        {
+            FormCellar fc = new FormCellar();
+            fc.ShowDialog();
         }
     }
 }
