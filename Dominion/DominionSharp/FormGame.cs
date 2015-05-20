@@ -309,10 +309,10 @@ namespace DominionSharp
             updateCardButtons(temp);
             if (prevPlayerTurn != Turn.Instance.getActivePlayerIndex())
             {
-                tabsPlayers.SelectedIndex = Turn.Instance.getActivePlayerIndex();
                 Player p = Turn.Instance.getActivePlayer();
                 hideHand(p);
                 p.hide(true);
+                tabsPlayers.SelectedIndex = Turn.Instance.getActivePlayerIndex();
             }
         }
         

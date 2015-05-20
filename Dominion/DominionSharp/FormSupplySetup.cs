@@ -74,7 +74,7 @@ namespace DominionSharp
                 checkCount--;
             }
 
-            if (checkCount == 10)
+            if (checkCount <= 10)
             {
                 btn_ok.Enabled = true;
             }
