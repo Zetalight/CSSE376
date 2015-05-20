@@ -69,8 +69,9 @@ namespace DominionSharp
         }
 
         // takes a random card from the deck and places it into the player's hand
-        public void drawCard()
+        public Card drawCard()
         {
+            Card c = new TreasureCopper();
             if (deck.Count == 0 && discard.Count != 0)
             {
                 deck.AddRange(discard);
@@ -80,8 +81,24 @@ namespace DominionSharp
             if (deck.Count > 0)
             {
                 hand.Add(deck[0]);
+                c = deck[0];
                 deck.RemoveAt(0);
             }
+            return c;
+        }
+
+        public Card libraryDraw()
+        {
+            Card c;
+            if (deck.Count == 0 && discard.Count != 0)
+            {
+                deck.AddRange(discard);
+                discard.Clear();
+                shuffleDeck();
+            }
+            c = deck[0];
+            deck.RemoveAt(0);
+            return c;
         }
 
         //reveals the top "n" cards of the deck

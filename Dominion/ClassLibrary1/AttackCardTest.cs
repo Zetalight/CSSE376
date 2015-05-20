@@ -67,8 +67,12 @@ namespace ClassLibrary1
             }
         }
 
-        private class FakeAttackTheif : AttackThief
+        private class FakeAttackThief : AttackThief
         {
+            public override void play()
+            {
+            }
+
             protected override bool defend(int playerNum)
             {
                 return AttackCardTest.defendList[playerNum];
@@ -270,7 +274,7 @@ namespace ClassLibrary1
             ReInitTurn();
 
             //4 coin cost cards
-            A = new AttackBureaucrat();
+            A = new FakeAttackBureaucrat();
             A.play();
             Assert.AreEqual(1, Turn.Instance.Buys);
             Assert.AreEqual(0, Turn.Instance.Coins);
@@ -278,7 +282,7 @@ namespace ClassLibrary1
             Assert.AreEqual(0, Turn.Instance.Trashes);
             ReInitTurn();
 
-            A = new AttackMilitia();
+            A = new FakeAttackMilitia();
             A.play();
             Assert.AreEqual(1, Turn.Instance.Buys);
             Assert.AreEqual(2, Turn.Instance.Coins);
@@ -286,7 +290,7 @@ namespace ClassLibrary1
             Assert.AreEqual(0, Turn.Instance.Trashes);
             ReInitTurn();
 
-            A = new AttackSpy();
+            A = new FakeAttackSpy();
             A.play();
             Assert.AreEqual(1, Turn.Instance.Buys);
             Assert.AreEqual(0, Turn.Instance.Coins);
@@ -294,7 +298,7 @@ namespace ClassLibrary1
             Assert.AreEqual(0, Turn.Instance.Trashes);
             ReInitTurn();
 
-            A = new AttackThief();
+            A = new FakeAttackThief();
             A.play();
             Assert.AreEqual(1, Turn.Instance.Buys);
             Assert.AreEqual(0, Turn.Instance.Coins);
@@ -302,7 +306,7 @@ namespace ClassLibrary1
             Assert.AreEqual(0, Turn.Instance.Trashes);
             ReInitTurn();
 
-            A = new AttackWitch();
+            A = new FakeAttackWitch();
             A.play();
             Assert.AreEqual(1, Turn.Instance.Buys);
             Assert.AreEqual(0, Turn.Instance.Coins);

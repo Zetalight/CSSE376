@@ -24,7 +24,7 @@ namespace DominionSharp
             discard();
         }
 
-        protected void discard()
+        protected virtual void discard()
         {
             FormCellar fc = new FormCellar();
             fc.ShowDialog();
