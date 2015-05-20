@@ -15,6 +15,8 @@ namespace DominionSharp
         Player player;
         List<Card> cards;
         List<Card> newHand = new List<Card>();
+        List<Card> discarded = new List<Card>();
+
         public FormMilitiaAttack(Player p, int num)
         {
             InitializeComponent();
@@ -36,6 +38,10 @@ namespace DominionSharp
                 if (player.Equals(players[i]))
                 {
                     Turn.Instance.Players[i].setHand(newHand);
+                    foreach (Card c in discarded)
+                    {
+                        Turn.Instance.Players[i].gainCard(c);
+                    }
                 }
             }
             this.Close();
@@ -69,11 +75,16 @@ namespace DominionSharp
             {
                 btn_ok.Enabled = true;
                 newHand.Clear();
+                discarded.Clear();
                 for (int i = 0; i < ckls_cards.Items.Count; i++)
                 {
                     if (ckls_cards.GetItemChecked(i) || (i == e.Index && e.NewValue == CheckState.Checked))
                     {
                         newHand.Add(cards[i]);
+                    }
+                    else
+                    {
+                        discarded.Add(cards[i]);
                     }
                 }
             }
