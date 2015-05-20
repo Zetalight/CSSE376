@@ -13,6 +13,14 @@ namespace ClassLibrary1
     {
         private ActionCard A;
 
+        private class FakeMoneyLender : ActionMoneylender
+        {
+            protected override bool trashCopper()
+            {
+                return true;
+            }
+        }
+
         [TestMethod()]
         public void TestThatActionCardsCanInitialize()
         {
@@ -190,6 +198,24 @@ namespace ClassLibrary1
             Assert.AreEqual(handSize - 3, currentplayer.getHand().Count);
             Assert.AreEqual(discardSize, currentplayer.getDiscard().Count);
             Assert.AreEqual(wumboSize + 1, currentplayer.getWumbo().Count);
+        }
+
+        [TestMethod()]
+        public void TestMoneyLender()
+        {
+            //MoneyLender Test
+            FormGame game = new FormGame();
+            game.setPlayerCount(3);
+            List<Player> players = Turn.Instance.Players;
+            Player currentplayer = Turn.Instance.getActivePlayer();
+            List<Card> DeckToGive = new List<Card>() { new TreasureCopper(), new TreasureCopper(), new TreasureCopper(), new TreasureCopper(), new TreasureCopper()};
+            typeof(Player)
+                .GetField("deck", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
+                .SetValue(Turn.Instance.getActivePlayer(), DeckToGive);
+            int startCoins = Turn.Instance.Coins;
+            currentplayer.playCard(new FakeMoneyLender());
+            Assert.AreEqual(startCoins + 3, Turn.Instance.Coins);
+            Assert.AreEqual(4, Turn.Instance.getActivePlayer().getHand().Count);
         }
 
         private class FakeActionChapel:ActionChapel
