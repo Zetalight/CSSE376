@@ -50,6 +50,19 @@ namespace DominionSharp
             this.discard.Add(c);
         }
 
+        public void discardFromDeck(Card c)
+        {
+            for (int i = 0; i < deck.Count; i++)
+            {
+                if (deck[i].Equals(c))
+                {
+                    discard.Add(deck[i]);
+                    deck.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+
         public int getNumber()
         {
             return number;

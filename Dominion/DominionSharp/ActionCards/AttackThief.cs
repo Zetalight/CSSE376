@@ -52,6 +52,10 @@ namespace DominionSharp
                     {
                         tc.Add((TreasureCard)c);
                     }
+                    else
+                    {
+                        Turn.Instance.Players[i].discardFromDeck(c);
+                    }
                 }
                 treasures.Add(i, tc);
 	        }
