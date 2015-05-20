@@ -155,14 +155,15 @@ namespace ClassLibrary1
                 .SetValue(Turn.Instance.getActivePlayer(), handToGive);
             currentplayer.playCard(Turn.Instance.getActivePlayer().getHand()[Turn.Instance.getActivePlayer().getHandSize() - 2]);
             currentplayer.playCard(Turn.Instance.getActivePlayer().getHand()[Turn.Instance.getActivePlayer().getHandSize() - 1]);
-            //Assert.AreEqual(11, currentplayer.getHandSize());
+            Assert.AreEqual(11, currentplayer.getHandSize());
             for (int i = 0; i < players.Count; i++)
             {
                 if (players[i] != currentplayer)
                 {
-                   //Assert.AreEqual(players[i].getHandSize(), 7);
+                    Assert.AreEqual(players[i].getHandSize(), 7);
                 }
             }
+            
             //ActionChancellor Test
             game = new FormGame();
             game.setPlayerCount(numberOfPlayers);
@@ -174,8 +175,42 @@ namespace ClassLibrary1
                 .SetValue(Turn.Instance.getActivePlayer(), DeckToGive);
             currentplayer.playCard(new ActionChancellor());
             Assert.AreEqual(0, currentplayer.getDeck().Count);
+            
+            //ActionChapel Test
+            game = new FormGame();
+            game.setPlayerCount(numberOfPlayers);
+            players = Turn.Instance.Players;
+            currentplayer = Turn.Instance.getActivePlayer();
+            int deckSize = currentplayer.getDeck().Count;
+            int handSize = currentplayer.getHand().Count;
+            int discardSize = currentplayer.getDiscard().Count;
+            int wumboSize = currentplayer.getWumbo().Count;
+            currentplayer.playCard(new FakeActionChapel());
+            Assert.AreEqual(deckSize, currentplayer.getDeck().Count);
+            Assert.AreEqual(handSize - 3, currentplayer.getHand().Count);
+            Assert.AreEqual(discardSize, currentplayer.getDiscard().Count);
+            Assert.AreEqual(wumboSize + 1, currentplayer.getWumbo().Count);
         }
 
+        private class FakeActionChapel:ActionChapel
+        {
+            protected override void createForm()
+            {
+                List<Card> newHand = new List<Card>();
+                List<Card> oldHand = Turn.Instance.getActivePlayer().getHand();
+                for (int i = 0; i < oldHand.Count - 3; i++)
+                {
+                    newHand.Add(oldHand[i]);
+                }
+                    Turn.Instance.getActivePlayer().setHand(newHand);
+            }
+        }
+
+        [TestMethod()]
+        public void TestActionCardChapel()
+        {
+
+        }
 
         [TestMethod()]
         public void TestActionCardFunctions()

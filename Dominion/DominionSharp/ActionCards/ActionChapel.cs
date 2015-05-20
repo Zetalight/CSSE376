@@ -19,6 +19,12 @@ namespace DominionSharp
         {
             base.play();
             Console.WriteLine("Chapel Played");
+            createForm();
+        }
+        protected virtual void createForm()
+        {
+            FormTrash ft = new FormTrash(Turn.Instance.getActivePlayer(), this.trashes);
+            ft.ShowDialog();
         }
     }
 }
