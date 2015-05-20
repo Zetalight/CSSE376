@@ -90,15 +90,20 @@ namespace DominionSharp
                 };
                 tabsPlayers.TabPages[p.getNumber()].Controls.Add(cardButton);
             }
-
         }
 
         private void cardUpdateFunctionMaker(Player p, int i, Card card, Button cardButton)
         {
             if (p.Equals(Turn.Instance.getActivePlayer()))
             {
-                if ((card is ActionCard && Turn.Instance.Actions > 0 && Turn.Instance.Phase.Equals(Turn.Phases.Action)) ||
-                    (card is TreasureCard && Turn.Instance.Phase.Equals(Turn.Phases.Buy)))
+                bool canPlay = (card is ActionCard && Turn.Instance.Actions > 0 && Turn.Instance.Phase.Equals(Turn.Phases.Action));
+                if (card is ActionCard)
+                {
+                    FormCardDetail detail = new FormCardDetail(card, canPlay);
+                    DialogResult dr = detail.ShowDialog();
+                    canPlay = canPlay && dr == DialogResult.Yes;
+                }
+                if (canPlay || (card is TreasureCard && Turn.Instance.Phase.Equals(Turn.Phases.Buy)))
                 {
                     if (card is ActionCard)
                         Turn.Instance.Actions--;
@@ -147,8 +152,11 @@ namespace DominionSharp
         private void supplyUpdateFunctionMaker(Card card, Pile pile, Button cardButton)
         {
             Player p = Turn.Instance.getActivePlayer();
-            if (Turn.Instance.Buys > 0 &&
-                Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost)
+            bool canBuy = Turn.Instance.Buys > 0 &&
+                Turn.Instance.Phase.Equals(Turn.Phases.Buy) && Turn.Instance.Coins >= card.Cost;
+            FormCardDetail detail = new FormCardDetail(card, canBuy);
+            DialogResult dr = detail.ShowDialog();
+            if (canBuy && dr == DialogResult.Yes)
             {
                 if (!pile.draw())
                 {
