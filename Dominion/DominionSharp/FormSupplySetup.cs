@@ -32,11 +32,29 @@ namespace DominionSharp
                 ckls_cards.Items.Add(c.Name);
             }
 
-            this.btn_ok.Enabled = false;
+            this.btn_ok.Enabled = true;
+            ckls_cards.CheckOnClick = true;
         }
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
+            List<int> uncheckedIndices = new List<int>();
+            for (int i = 0; i < ckls_cards.Items.Count; i++)
+            {
+                if (!ckls_cards.CheckedItems.Contains(ckls_cards.Items[i])) {
+                    uncheckedIndices.Add(i);
+                }
+            }
+            Console.WriteLine(ckls_cards.CheckedItems.Count);
+            Random r = new Random();
+            for (int i = ckls_cards.CheckedItems.Count; i < 10; i++)
+            {
+                Console.WriteLine(i);
+                int ck = r.Next(uncheckedIndices.Count);
+                ckls_cards.SetItemChecked(uncheckedIndices[ck], true);
+                uncheckedIndices.RemoveAt(ck);
+            }
+            Console.WriteLine(ckls_cards.CheckedItems.Count);
             foreach (int i in ckls_cards.CheckedIndices)
             {
                 supply.Add(cards[i]);
@@ -73,7 +91,7 @@ namespace DominionSharp
                 checkCount--;
             }
 
-            if (checkCount == 10)
+            if (checkCount <= 10)
             {
                 btn_ok.Enabled = true;
             }

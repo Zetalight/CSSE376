@@ -38,11 +38,11 @@
             // 
             this.lbl_instructions.AutoSize = true;
             this.lbl_instructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_instructions.Location = new System.Drawing.Point(42, 9);
+            this.lbl_instructions.Location = new System.Drawing.Point(59, 9);
             this.lbl_instructions.Name = "lbl_instructions";
-            this.lbl_instructions.Size = new System.Drawing.Size(230, 20);
+            this.lbl_instructions.Size = new System.Drawing.Size(196, 20);
             this.lbl_instructions.TabIndex = 0;
-            this.lbl_instructions.Text = "Select supply cards (exactly 10)";
+            this.lbl_instructions.Text = "Select supply cards (<=10)";
             // 
             // btn_ok
             // 

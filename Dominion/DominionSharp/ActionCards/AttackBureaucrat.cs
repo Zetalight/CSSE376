@@ -53,7 +53,7 @@ namespace DominionSharp
             //Each other player reveals a Victory card 
             //from his hand and puts it on his deck 
             //(or reveals a hand with no Victory cards).
-            Turn.Instance.getActivePlayer().gainCard(new TreasureSilver());
+            Turn.Instance.getActivePlayer().placeCardOnDeck(new TreasureSilver());
             base.play();
         }
     }
