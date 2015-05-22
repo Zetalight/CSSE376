@@ -50,6 +50,11 @@ namespace DominionSharp
             this.discard.Add(c);
         }
 
+        public void placeCardOnDeck(Card c)
+        {
+            deck.Insert(0, c);
+        }
+
         public void discardFromDeck(Card c)
         {
             for (int i = 0; i < deck.Count; i++)
