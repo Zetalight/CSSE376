@@ -13,7 +13,7 @@ namespace DominionSharp
             this.name = "Gardens";
             this.cost = 0;
             this.victoryPoints = 0;
-            this.picture = global::DominionSharp.Properties.Resources.garden;
+            this.picture = global::DominionSharp.Properties.Resources.gardens;
         }
     }
 }

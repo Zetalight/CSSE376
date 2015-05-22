@@ -12,16 +12,13 @@ namespace DominionSharp
 {
     public partial class FormSupplySetup : Form
     {
-        private List<Card> cards = new List<Card>() { new ActionAdventure(),
-                new AttackBureaucrat(), new ActionCellar(), new ActionChancellor(), 
-                new ActionChapel(), new ActionCouncilRoom(), new ActionFeast(), 
-                new ActionFestival(), new ActionLaboratory(), new ActionLibrary(), 
-                new ActionMarket(), new AttackMilitia(), new ActionMine(), 
-                new ActionMoat(), new ActionMoneylender(), new ActionRemodel(), 
-                new ActionSmithy(), new AttackSpy(), new AttackThief(), 
-                new ActionThroneRoom(), new ActionVillage(), new AttackWitch(), 
-                new ActionWoodcutter(), new ActionWoodcutter(), new ActionWorkshop(), 
-                new VictoryGardens()};
+        private List<Card> cards = new List<Card>() {
+                new AttackBureaucrat(), new ActionChancellor(), new ActionChapel(),
+                new ActionCouncilRoom(), new ActionFestival(), new ActionLaboratory(),
+                new ActionWoodcutter(), new VictoryGardens(), new ActionMoneylender(),
+                new ActionMarket(), new AttackMilitia(), new ActionMoat(),
+                new ActionRemodel(), new ActionSmithy(), new AttackSpy(),
+                new AttackThief(), new ActionVillage(), new AttackWitch()};
 
         private List<Card> supply = new List<Card>();
         private int numPlayers;
@@ -34,6 +31,8 @@ namespace DominionSharp
             {
                 ckls_cards.Items.Add(c.Name);
             }
+
+            this.btn_ok.Enabled = false;
         }
 
         private void btn_ok_Click(object sender, EventArgs e)
@@ -74,7 +73,7 @@ namespace DominionSharp
                 checkCount--;
             }
 
-            if (checkCount <= 10)
+            if (checkCount == 10)
             {
                 btn_ok.Enabled = true;
             }
