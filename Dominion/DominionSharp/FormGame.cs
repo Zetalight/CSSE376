@@ -128,6 +128,7 @@ namespace DominionSharp
 
         public void updateSupplyButtons()
         {
+            tabPiles.TabPages[0].Controls.Clear();
             var n = 0;
             foreach (Pile pile in piles)
             {
@@ -158,6 +159,11 @@ namespace DominionSharp
             DialogResult dr = detail.ShowDialog();
             if (canBuy && dr == DialogResult.Yes)
             {
+                Turn.Instance.Buys--;
+                p.gainCard(card);
+                Turn.Instance.Coins -= card.Cost;
+                updateLabels();
+                Console.WriteLine(card.Name + " BOUGHT");
                 if (!pile.draw())
                 {
                     cardButton.Dispose();
@@ -165,16 +171,12 @@ namespace DominionSharp
                     piles.Remove(pile);
                     updateSupplyButtons();
                 }
-                Turn.Instance.Buys--;
-                p.gainCard(card);
-                Turn.Instance.Coins -= card.Cost;
-                updateLabels();
-                Console.WriteLine(card.Name + " BOUGHT");
             }
         }
 
         public void updateVictoryButtons()
         {
+            tabPiles.TabPages[1].Controls.Clear();
             List<Player> players = Turn.Instance.Players;
             for (int i = 0; i < players.Count; i++)
             {
@@ -227,6 +229,7 @@ namespace DominionSharp
 
         public void updateTreasureButtons(int begIndex = 0)
         {
+            tabPiles.TabPages[2].Controls.Clear();
             List<Player> players = Turn.Instance.Players;
             for (int i = begIndex; i < players.Count; i++)
             {
